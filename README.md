@@ -1,5 +1,5 @@
 # emy
-Emy is here to help people finding food and fight against food waste
+Emy is here to help people finding food and fight against food waste.
 ## Prerequires 
 * Docker 
 ## Installation
