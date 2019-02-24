@@ -43,7 +43,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route path="/" component={Welcome} strict={true} exact={true}/>
+        <Route path="/welcome" component={Welcome} strict={true} exact={true}/>
         { foodstuffRoutes }
         { imageRoutes }
         <Route render={() => <h1>Not Found</h1>} />
