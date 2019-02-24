@@ -41,9 +41,6 @@ class Create extends Component {
         )}
 
         <Form onSubmit={this.props.create} values={this.props.item} />
-        <Link to="." className="btn btn-primary">
-          Back to list
-        </Link>
       </div>
     );
   }
