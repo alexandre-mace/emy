@@ -55,7 +55,7 @@ class Form extends Component {
         <Field
           component={this.renderField}
           name="expirationDate"
-          type="dateTime"
+          type="date"
           placeholder=""
           required={true}
         />
