@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { list, reset } from '../../actions/foodstuff/list';
+import Modal from 'react-awesome-modal';
 
 class List extends Component {
   static propTypes = {
@@ -37,7 +38,7 @@ class List extends Component {
   render() {
     return (
       <div>
-        <h1>FoodStuff List</h1>
+        <h1>FoodStuff Liszerzt</h1>
 
         {this.props.loading && (
           <div className="alert alert-info">Loading...</div>
@@ -79,6 +80,29 @@ class List extends Component {
                       {item['@id']}
                     </Link>
                   </th>
+{/*                  <td>        <Modal visible={this.state.visibleAddProduct} width="400" className="modal-popup" effect="fadeInUp" onClickAway={() => this.closeModalAddProduct()}>
+                    <div className="popup-takeit">
+
+                      <h3>Ajouter un produit !</h3>
+
+                      <form className="form-addproduct" action="index.html" method="post" runat="server">
+                        <input type="text" name=""  placeholder="Nom du produit"/>
+
+                        <div className="file-input">
+                          <input type="file" id="myfile" name="myfile" onChange={this.handleChange}/>
+                          <div className="placeholder-gif">
+                          </div>
+                        </div>
+
+                        <input className="input-small" type="text" id="datepicker" name="" value="" placeholder="Définissez un jour !"/>
+                        <input className="input-small input-small2" type="text" name="" value="" placeholder="Définissez un horaire !"/>
+                        <input type="text" name="" value="" placeholder="Adresse"/>
+                        <input type="number" name="" value="" placeholder="Téléphone"/>
+                        <input type="submit" className="buttonadd" name="button" placeholder="Ajouter le produit"/>
+
+                      </form>
+                    </div>
+                  </Modal></td>*/}
                   <td>{item['name']}</td>
                   <td>{item['expirationDate']}</td>
                   <td>{item['address']}</td>
