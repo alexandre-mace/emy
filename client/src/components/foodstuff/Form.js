@@ -78,7 +78,6 @@ class Form extends Component {
           name="availabilities"
           type="text"
           placeholder=""
-          required={true}
         />
         <Field
           component={this.renderField}

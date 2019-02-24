@@ -28,8 +28,6 @@ class Create extends Component {
 
     return (
       <div>
-        <h1>New FoodStuff</h1>
-
         {this.props.loading && (
           <div className="alert alert-info" role="status">
             Loading...

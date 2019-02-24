@@ -25,9 +25,6 @@ import imageRoutes from './routes/image';
 
 import Welcome from './Welcome';
 
-
-
-
 const history = createBrowserHistory();
 const store = createStore(
   combineReducers({

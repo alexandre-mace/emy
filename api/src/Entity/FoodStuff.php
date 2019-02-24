@@ -50,7 +50,6 @@ class FoodStuff
 
     /**
      * @ORM\Column(type="array")
-     * @Assert\NotNull
      * @Groups({"food_stuff"})
      */
     private $availabilities = [];
