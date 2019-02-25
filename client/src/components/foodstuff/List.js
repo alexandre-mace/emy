@@ -152,6 +152,8 @@ class List extends Component {
 
           </div>
 
+          
+
         
         <ul className="ul-list-map" id="myUL">
             {this.props.retrieved &&

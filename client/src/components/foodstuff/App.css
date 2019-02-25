@@ -256,7 +256,7 @@ color:white;
   position:relative;
   top:1.5px;
   height:auto;
-  margin-right:10px;
+  margin-right:4px;
 }
 
 .ul-list-map li div a{
@@ -298,12 +298,10 @@ color:white !important;
   width:16px;
   height:auto;
   position:relative;
-  top:3px;
+  top:-1px;
 }
 
-
 /* PopupTakeIt */
-
 .modal-popup{
   background:white;
 }
@@ -389,6 +387,14 @@ height:auto;
 margin-top:30px;
 }
 
+.popup-takeit label{
+  margin-bottom:2px;
+}
+
+.popup-takeit form{
+  margin-top:20px;
+}
+
 .form-addproduct input{
 width:100%;
 border:0;
@@ -398,6 +404,10 @@ padding-bottom: 7px;
 font-size:14px;
 outline: none;
 transition: 450ms;
+}
+
+.form-group{
+  margin-bottom:8px;
 }
 
 .form-addproduct input:focus{
@@ -466,18 +476,85 @@ display:block;
 width:auto;
 height:100%;
 }
+.form-control-label{
+  display: none;
+}
 
 #imgInp[src=""] {
  display: none !important;
 }
 
-.buttonadd{
+.ctnAutoComplete{
+  position: relative;
+}
+
+.google-covert{
+  width:90%;
+  position: absolute;
+  left:5%;
+  z-index:1000;
+  background:white;
+}
+
+.style-unordered-list{
+  list-style: none;
+}
+
+.style-unordered-list li{
+  padding:2px 10px;
+  cursor:pointer;
+  list-style-type: none;
+  transition:50ms;
+}
+
+.location-box-cover > input{
+  width:100%;
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.style-unordered-list li:hover{
+  background:orangered;
+  color:white;
+}
+
+.style-unordered-list li:first-child{
+  padding-top:8px;
+}
+
+.style-unordered-list li:last-child{
+  padding-bottom:6px;
+}
+
+.google-covert > .custom-style-list:first-child{
+  display:none;
+}
+
+.btn-form{
   font-size:14px;
   font-weight: 500;
-  padding-top:10px;
+  padding:10px 18px;
   background:orangered;
   border-radius: 24px;
   color:white;
+  border:0;
+  margin-top:10px;
+}
+
+.btn-form:hover{
+  background:orangered;
 }
 
 

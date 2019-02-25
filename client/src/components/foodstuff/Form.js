@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
+import Search from './AutoComplete';
 
 class Form extends Component {
   static propTypes = {
@@ -45,6 +46,8 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit}>
+
+        <label>Nom du produit :</label>
         <Field
           component={this.renderField}
           name="name"
@@ -52,6 +55,8 @@ class Form extends Component {
           placeholder=""
           required={true}
         />
+
+        <label>Date de péremption :</label>
         <Field
           component={this.renderField}
           name="expirationDate"
@@ -59,13 +64,16 @@ class Form extends Component {
           placeholder=""
           required={true}
         />
-        <Field
+        <label>Saisissez votre adresse :</label>
+        <Search
           component={this.renderField}
           name="address"
           type="text"
           placeholder=""
           required={true}
         />
+      
+        <label>Votre téléphone :</label>
         <Field
           component={this.renderField}
           name="phoneNumber"
@@ -73,12 +81,16 @@ class Form extends Component {
           placeholder=""
           required={true}
         />
+
+        <label>Vos disponibilités :</label>
         <Field
           component={this.renderField}
           name="availabilities"
           type="text"
           placeholder=""
         />
+
+        <label>Insérer votre image :</label>
         <Field
           component={this.renderField}
           name="image"
@@ -86,8 +98,8 @@ class Form extends Component {
           placeholder=""
         />
 
-        <button type="submit" className="btn btn-success">
-          Submit
+        <button type="submit" className="btn btn-success btn-form">
+          Ajouter le produit !
         </button>
       </form>
     );
