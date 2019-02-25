@@ -186,7 +186,7 @@ background-repeat: no-repeat; /* Do not repeat the icon image */
 .ul-list-map{
   list-style: none;
   width:100%;
-  height:calc(100vh - 120px);
+  height:calc(100% - 120px);
   overflow: scroll;
   margin:0 auto;
 }
