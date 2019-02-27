@@ -27,7 +27,7 @@ export class MapContainer extends Component {
       }
       function getMarkers() {
           const markers = [];
-          self.props.foodstuffs['hydra:member'].forEach(function(foodstuff) {
+          self.props.foodstuffs && self.props.foodstuffs['hydra:member'].forEach(function(foodstuff) {
               markers.push(getMarkerData(foodstuff))
           });
           return markers;
