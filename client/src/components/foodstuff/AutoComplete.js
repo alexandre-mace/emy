@@ -16,7 +16,6 @@ class Search extends Component {
   }
 
   render() {
-      console.log(this.state.place);
     return (
       <div >
          <GoogleComponent

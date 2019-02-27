@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Modal from 'react-awesome-modal';
 
 
@@ -26,7 +26,6 @@ export default class Item extends React.Component {
     
 
     render() {
-      console.log(this.props);
       return(
         <li key={this.props.item['@id']}>
 

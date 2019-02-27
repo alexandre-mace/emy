@@ -169,7 +169,7 @@ class List extends Component {
 
         <div id="map">
 
-         <MapContainer/>          
+         <MapContainer foodstuffs={this.props.retrieved}/>
 
         </div>
       </div>
