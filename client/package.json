@@ -21,7 +21,7 @@
     "react-awesome-modal": "^2.0.5",
     "react-dom": "^16.6.0",
     "react-geocode": "^0.1.2",
-    "react-google-location": "^1.2.2",
+    "react-google-location": "git@github.com:sebcnst/react-google-location.git",
     "react-load-script": "^0.0.6",
     "react-places-autocomplete": "^7.2.1",
     "react-redux": "^5.1.0",

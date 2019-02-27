@@ -64,6 +64,7 @@ class Form extends Component {
           placeholder=""
           required={true}
         />
+
         <label>Saisissez votre adresse :</label>
         <Search
           component={this.renderField}
@@ -73,7 +74,7 @@ class Form extends Component {
           required={true}
         />
       
-        <label>Votre téléphone :</label>
+        <label className="label-phone">Votre téléphone :</label>
         <Field
           component={this.renderField}
           name="phoneNumber"

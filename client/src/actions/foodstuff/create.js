@@ -14,6 +14,7 @@ export function success(created) {
 }
 
 export function create(values) {
+  console.log(values)
   return dispatch => {
     dispatch(loading(true));
 

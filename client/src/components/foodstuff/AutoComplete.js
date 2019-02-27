@@ -1,4 +1,4 @@
-import { GoogleComponent } from 'react-google-location' 
+import { GoogleComponent } from './map/GoogleComponent'; 
 
 //... 
 import React, { Component } from 'react';
@@ -17,15 +17,18 @@ class Search extends Component {
 
   render() {
     return (
-      <div >
-         <GoogleComponent
-          placeholder={''}
+      <div>
+        <GoogleComponent
           apiKey={API_KEY}
           language={'fr'}
           coordinates={true}
           locationBoxStyle={'custom-style'}
           locationListStyle={'custom-style-list'}
-          onChange={(e) => { this.setState({ place: e }) }} />
+          onChange={(e) => { this.setState({ place: e }) }} 
+          id={'foodstuff_address'}
+          name={'address'}
+          required={'required'}
+        />
       </div>
 
     )
