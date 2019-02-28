@@ -9,6 +9,7 @@ import MapContainer from '../map/MapContainer';
 import ListItem from './ListItem';
 import '../../App.css';
 import Header from '../block/Header';
+import LeafletMap from "../map/LeafletMap";
 
 class List extends Component {
     static propTypes = {
@@ -103,11 +104,11 @@ class List extends Component {
     }
 
     render() {
-        let mapContainer;
+        let mapContainer = '';
         if (this.props.retrieved) {
-            mapContainer = <div id="map"><MapContainer foodstuffs={this.props.retrieved}/></div>;
-        } else {
-            mapContainer = '';
+            console.log('hi from list');
+            console.log(this.props.retrieved);
+            mapContainer = <LeafletMap foodstuffs={this.props.retrieved}/>;
         }
 
         return (
