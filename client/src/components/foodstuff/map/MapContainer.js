@@ -33,6 +33,7 @@ export class MapContainer extends Component {
 
     }
   componentDidMount() {
+    console.log(this.props.foodstuffs);
           const markerPromises = this.getMarkers(this.props.foodstuffs);
           Promise.all(markerPromises).then(markers => {
               this.setState({
@@ -40,21 +41,49 @@ export class MapContainer extends Component {
               })
           });
     }
-/*  componentDidUpdate(prevState, prevProps) {
-      console.log('test');
-    if (this.props.foodstuffs !== prevProps.foodstuffs && this.props.foodstuffs !== null) {
-        const markerPromises = this.getMarkers(this.props.foodstuffs);
-        Promise.all(markerPromises).then(markers => {
-            this.setState({
-                markers: markers
-            })
-        });
-    }
-  }*/
+  // componentDidUpdate(prevState, prevProps) {
+  //     console.log('test');
+  //   if (this.props.foodstuffs !== prevProps.foodstuffs && this.props.foodstuffs !== null) {
+  //     console.log(this.props.foodstuffs['hydra:member']);
+  //       if (typeof this.props.foodstuffs['hydra:member'] !== 'undefined' && typeof prevProps.foodstuffs['hydra:member'] !== 'undefined') {
+
+  //       }
+  //   }
+  // }
 
    render() {
+     let markers = [];
+    const markerPromises = this.getMarkers(this.props.foodstuffs);
+    Promise.all(markerPromises).then(markerPromise => {
+      markers = markerPromise;
+      console.log('je suis render');
+      // console.log(this.props.foodstuffs);
+      console.log(markers);
+     return (
+       <Map
+         zoom={10}
+         google={this.props.google}
+         initialCenter={{
+           lat: 44.8416487,
+           lng: -0.5704502
+         }}
+       >
+       {markers.map((marker) => {
+           return <Marker
+               name='Location'
+               position={{ lat: marker[1], lng: marker[2] }}
+               key={marker[0]}
+               id={marker[0]}
+               icon={MarkerIcon}
+           />
+           }
+       )}
+       </Map>
+     );
+    });
+     console.log('je suis render');
      console.log(this.props.foodstuffs);
-     console.log(this.state.markers);
+     console.log(markers);
     return (
       <Map
         zoom={10}
@@ -64,7 +93,7 @@ export class MapContainer extends Component {
           lng: -0.5704502
         }}
       >
-      {this.state.markers.map((marker) => {
+      {markers.map((marker) => {
           return <Marker
               name='Location'
               position={{ lat: marker[1], lng: marker[2] }}
