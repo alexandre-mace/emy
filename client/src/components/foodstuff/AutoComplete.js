@@ -17,7 +17,6 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
         <GoogleComponent
           apiKey={API_KEY}
           language={'fr'}
@@ -25,12 +24,9 @@ class Search extends Component {
           locationBoxStyle={'custom-style'}
           locationListStyle={'custom-style-list'}
           onChange={(e) => { this.setState({ place: e }) }} 
-          id={'foodstuff_address'}
-          name={'address'}
+          id={'form_address_autocomplete'}
           required={'required'}
         />
-      </div>
-
     )
   } 
 }

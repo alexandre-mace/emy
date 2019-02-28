@@ -175,16 +175,16 @@ export class GoogleComponent extends Component {
   render() {
 
     return (
-      React.createElement("div", { className: 'location-box-cover', ref: (node) => this.setWrapperRef(node) },
+      React.createElement("div", { className: 'location-box-cover form-group', ref: (node) => this.setWrapperRef(node) },
 
         React.createElement("input", {
-          type: "text",
-          id: this.props.id,
           name: this.props.name,
-          required: this.props.required,
           className: this.props.locationBoxStyle ? this.props.locationBoxStyle : 'location-box',
-          onChange: (e) => this.arrangeValue(e.target.value),
+          type: "text",
+          required: this.props.required,
           placeholder: '',
+          id: this.props.id,
+          onChange: (e) => this.arrangeValue(e.target.value),
           value: this.state.place,
           title: this.state.place
         }

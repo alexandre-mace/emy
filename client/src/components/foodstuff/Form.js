@@ -42,7 +42,12 @@ class Form extends Component {
       </div>
     );
   };
-
+  bindAddressInput() {
+      let autocompleteInput = document.getElementById("form_address_autocomplete");
+      let addressInput = document.getElementById("foodstuff_address");
+      addressInput.value = autocompleteInput.value;
+      alert(addressInput.value);
+  }
   render() {
     return (
       <form onSubmit={this.props.handleSubmit}>
@@ -66,14 +71,14 @@ class Form extends Component {
         />
 
         <label>Saisissez votre adresse :</label>
-        <Search
-          component={this.renderField}
-          name="address"
-          type="text"
-          placeholder=""
-          required={true}
-        />
-      
+        <Search/>
+          <Field
+              component={this.renderField}
+              name="address"
+              type="text"
+              placeholder=""
+              required={true}
+          />
         <label className="label-phone">Votre téléphone :</label>
         <Field
           component={this.renderField}
@@ -99,7 +104,7 @@ class Form extends Component {
           placeholder=""
         />
 
-        <button type="submit" className="btn btn-success btn-form">
+        <button type="submit" className="btn btn-success btn-form" onClick={this.bindAddressInput}>
           Ajouter le produit !
         </button>
       </form>
