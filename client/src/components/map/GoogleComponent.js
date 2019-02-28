@@ -63,14 +63,14 @@ export class GoogleComponent extends Component {
 
       _fire.then((dataJson) => {
         return dataJson.json().then((data) => {
-          if (data.status == "OK" && data.predictions.length > 0) {
+          if (data.status === "OK" && data.predictions.length > 0) {
             for (let loc = 0; loc < data.predictions.length; loc++) {
               child.push(React.createElement("li",
                 { key: loc, className: this.state.liStyle, onClick: () => this.arrangeList(data.predictions[loc].description), },
                 data.predictions[loc].description));
             }
           }
-          else if (data.state == "REQUEST_DENIED") {
+          else if (data.state === "REQUEST_DENIED") {
             child.push(React.createElement("li",
               { className: this.state.liStyle }, data.error_message));
           }
@@ -140,7 +140,6 @@ export class GoogleComponent extends Component {
     this.setState({ collectionShow: false })
   }
   arrangeValue(item) {
-
     this.getInfo(item)
     this.setState({ place: item })
     this.state.returnData.place = item;
@@ -156,7 +155,7 @@ export class GoogleComponent extends Component {
     this.state.returnData.place = place;
 
     if (this.props.coordinates) {
-      if (location.status == 'OK') {
+      if (location.status === 'OK') {
 
         this.state.returnData.coordinates = location.results[0].geometry.location
       }

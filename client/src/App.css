@@ -7,22 +7,22 @@
 }
 
 /* width */
-.ul-list-map::-webkit-scrollbar {
+.foodstuff-list::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
-.ul-list-map::-webkit-scrollbar-track {
+.foodstuff-list::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
 /* Handle */
-.ul-list-map::-webkit-scrollbar-thumb {
+.foodstuff-list::-webkit-scrollbar-thumb {
   background: orangered;
 }
 
 /* Handle on hover */
-.ul-list-map::-webkit-scrollbar-thumb:hover {
+.foodstuff-list::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
@@ -103,13 +103,13 @@ header nav ul li a{
 /* Start Wrapper */
 
 
-#wrapper{
+#list-map-wrapper{
   width:100%;
   height:calc(100vh - 70px);
   display: flex;
   justify-content: space-between;
 }
-.list-map{
+.foodstuff-list-wrapper{
   width:450px;
   height:100%;
   background:white;
@@ -149,12 +149,12 @@ margin:auto;
 
 
 /* Search in list */
-.search-list{
+.foodstuff-list-commands{
 width:100%;
 margin:0 auto;
 }
 
-.search-list button{
+.foodstuff-list-commands button{
 width:100%;
 border:0;
 height:60px;
@@ -166,7 +166,7 @@ outline: none;
 cursor: pointer;
 }
 
-.search-list input{
+.foodstuff-list-commands input{
 width:100%;
 display: block;
 background:#F9F9F9;
@@ -178,12 +178,12 @@ font-size:16px;
 color:#1B1B1B;
 font-weight: 500;
 background-size: 28px;
-background-image: url('assets/img/glass.png'); /* Add a search icon to input */
+background-image: url('components/foodstuff/assets/img/glass.png'); /* Add a search icon to input */
 background-position: 10px 12px; /* Position the search icon */
 background-repeat: no-repeat; /* Do not repeat the icon image */
 }
 
-.ul-list-map{
+.foodstuff-list{
   list-style: none;
   width:100%;
   height:calc(100% - 120px);
@@ -191,7 +191,7 @@ background-repeat: no-repeat; /* Do not repeat the icon image */
   margin:0 auto;
 }
 
-.ul-list-map li{
+.foodstuff-list li{
   width:100%;
   margin:0 auto;
   display: flex;
@@ -210,39 +210,39 @@ color:white;
 }
 
 
-.ul-list-map li .img-produit{
+.foodstuff-list li .img-produit{
   display: block;
   width:100px;
   height:auto;
   margin-left:20px;
 }
 
-.ul-list-map li .ctn-desc-item{
+.foodstuff-list li .ctn-desc-item{
   margin-left:20px;
   margin-right:20px;
 }
 
-.ul-list-map li div h2{
+.foodstuff-list li div h2{
   padding-bottom:5px;
   font-size:18px;
 }
 
-.ul-list-map li div p{
+.foodstuff-list li div p{
   font-size:14px;
   font-weight: 300;
 }
 
-.ul-list-map li div span{
+.foodstuff-list li div span{
   display: inline-block;
   width:100%;
   font-size:14px;
 }
-.ul-list-map li div span span{
+.foodstuff-list li div span span{
   width:auto;
   font-weight: 400;
 }
 
-.ul-list-map li svg{
+.foodstuff-list li svg{
   display: inline-block;
   width:14px;
   position:relative;
@@ -250,7 +250,7 @@ color:white;
   height:auto;
 }
 
-.ul-list-map li .img-calendar{
+.foodstuff-list li .img-calendar{
   display: inline-block;
   width:14px;
   position:relative;
@@ -259,7 +259,7 @@ color:white;
   margin-right:4px;
 }
 
-.ul-list-map li div a{
+.foodstuff-list li div a{
   padding:10px 18px;
   background:orangered;
   color:white !important;
@@ -284,7 +284,7 @@ border-color:white !important;
 color:orangered !important;
 }
 
-.ul-list-map li div a:last-child{
+.foodstuff-list li div a:last-child{
   background:transparent !important;
   color:black !important;
 }
@@ -293,7 +293,7 @@ color:orangered !important;
 color:white !important;
 }
 
-.ul-list-map li div a:last-child img{
+.foodstuff-list li div a:last-child img{
   display: inline-block;
   width:16px;
   height:auto;

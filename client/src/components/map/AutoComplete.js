@@ -1,9 +1,5 @@
-import { GoogleComponent } from './map/GoogleComponent'; 
-
-//... 
+import { GoogleComponent } from './GoogleComponent';
 import React, { Component } from 'react';
-
-
 
 const API_KEY = 'AIzaSyCgFf-er2mba4V3HG0awy_w7M13nlrNtaY';  
 
@@ -30,6 +26,5 @@ class Search extends Component {
     )
   } 
 }
-
 
 export default Search;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
-import Search from './AutoComplete';
+import Search from '../map/AutoComplete';
 
 class Form extends Component {
   static propTypes = {
