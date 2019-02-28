@@ -10,52 +10,51 @@ export class MapContainer extends Component {
       markers: []
     }
   }
-  componentDidUpdate(prevState, prevProps) {
-    if (this.props.foodstuffs !== prevProps.foodstuffs && this.props.foodstuffs !== null) {
-      if (this.props.foodstuffs['hydra:member'] !== undefined && prevProps.foodstuffs['hydra:member'] !== undefined) {
-        if (this.props.foodstuffs['hydra:member'] !== undefined && this.props.foodstuffs['hydra:member'].length !== prevProps.foodstuffs['hydra:member'].length) {
-          console.log(this.props.foodstuffs['hydra:member'].length);
-          var self = this;
-          const google = window.google;
-          const geocoder = new google.maps.Geocoder();
-          function getMarkerData(foodstuff) {
-              return new Promise(function (resolve, reject) {
-                  geocoder.geocode( { 'address': foodstuff['address']}, function(results, status) {
-                    console.log(status);
-                      if (status === google.maps.GeocoderStatus.OK) {
-                          resolve([foodstuff['id'], results[0].geometry.location.lat(), results[0].geometry.location.lng()]);
-                      } else {
-                          reject(new Error('Couldnt\'t find the location ' + foodstuff['address']));
-                      }
-                  });
-              })
-          }
-          function getMarkers() {
-              const markers = [];
-              self.props.foodstuffs && self.props.foodstuffs['hydra:member'].forEach(function(foodstuff) {
-                  markers.push(getMarkerData(foodstuff))
-              });
-              console.log(markers);
-              return markers;
-    
-          }
-          const markerPromises = getMarkers;
-          Promise.all(markerPromises).then(function (markers) {
-            console.log(markers);
-              self.setState({
+    getMarkerData = foodstuff => {
+        const google = window.google;
+        const geocoder = new google.maps.Geocoder();
+        return new Promise(function (resolve, reject) {
+            geocoder.geocode( { 'address': foodstuff['address']}, function(results, status) {
+                console.log(status);
+                if (status === google.maps.GeocoderStatus.OK) {
+                    resolve([foodstuff['id'], results[0].geometry.location.lat(), results[0].geometry.location.lng()]);
+                } else {
+                    reject(new Error('Couldnt\'t find the location ' + foodstuff['address']));
+                }
+            });
+        })
+    }
+    getMarkers = (foodstuffs) => {
+        const markers = [];
+        foodstuffs && foodstuffs['hydra:member'].forEach(foodstuff => {
+            markers.push(this.getMarkerData(foodstuff))
+        });
+        return markers;
+
+    }
+  componentDidMount() {
+          const markerPromises = this.getMarkers(this.props.foodstuffs);
+          Promise.all(markerPromises).then(markers => {
+              this.setState({
                   markers: markers
               })
           });
-      }
- 
-      } 
-
     }
-  }
+/*  componentDidUpdate(prevState, prevProps) {
+      console.log('test');
+    if (this.props.foodstuffs !== prevProps.foodstuffs && this.props.foodstuffs !== null) {
+        const markerPromises = this.getMarkers(this.props.foodstuffs);
+        Promise.all(markerPromises).then(markers => {
+            this.setState({
+                markers: markers
+            })
+        });
+    }
+  }*/
 
    render() {
      console.log(this.props.foodstuffs);
-     console.log(this.state.marker);
+     console.log(this.state.markers);
     return (
       <Map
         zoom={10}
