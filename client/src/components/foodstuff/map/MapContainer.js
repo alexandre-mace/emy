@@ -10,38 +10,52 @@ export class MapContainer extends Component {
       markers: []
     }
   }
-  componentWillMount() {
-      var self = this;
-      const google = window.google;
-      const geocoder = new google.maps.Geocoder();
-      function getMarkerData(foodstuff) {
-          return new Promise(function (resolve, reject) {
-              geocoder.geocode( { 'address': foodstuff['address']}, function(results, status) {
-                  if (status === google.maps.GeocoderStatus.OK) {
-                      resolve([foodstuff['id'], results[0].geometry.location.lat(), results[0].geometry.location.lng()]);
-                  } else {
-                      reject(new Error('Couldnt\'t find the location ' + foodstuff['address']));
-                  }
+  componentDidUpdate(prevState, prevProps) {
+    if (this.props.foodstuffs !== prevProps.foodstuffs && this.props.foodstuffs !== null) {
+      if (this.props.foodstuffs['hydra:member'] !== undefined && prevProps.foodstuffs['hydra:member'] !== undefined) {
+        if (this.props.foodstuffs['hydra:member'] !== undefined && this.props.foodstuffs['hydra:member'].length !== prevProps.foodstuffs['hydra:member'].length) {
+          console.log(this.props.foodstuffs['hydra:member'].length);
+          var self = this;
+          const google = window.google;
+          const geocoder = new google.maps.Geocoder();
+          function getMarkerData(foodstuff) {
+              return new Promise(function (resolve, reject) {
+                  geocoder.geocode( { 'address': foodstuff['address']}, function(results, status) {
+                    console.log(status);
+                      if (status === google.maps.GeocoderStatus.OK) {
+                          resolve([foodstuff['id'], results[0].geometry.location.lat(), results[0].geometry.location.lng()]);
+                      } else {
+                          reject(new Error('Couldnt\'t find the location ' + foodstuff['address']));
+                      }
+                  });
+              })
+          }
+          function getMarkers() {
+              const markers = [];
+              self.props.foodstuffs && self.props.foodstuffs['hydra:member'].forEach(function(foodstuff) {
+                  markers.push(getMarkerData(foodstuff))
               });
-          })
-      }
-      function getMarkers() {
-          const markers = [];
-          self.props.foodstuffs && self.props.foodstuffs['hydra:member'].forEach(function(foodstuff) {
-              markers.push(getMarkerData(foodstuff))
+              console.log(markers);
+              return markers;
+    
+          }
+          const markerPromises = getMarkers;
+          Promise.all(markerPromises).then(function (markers) {
+            console.log(markers);
+              self.setState({
+                  markers: markers
+              })
           });
-          return markers;
-
       }
-      const markerPromises = getMarkers();
-      Promise.all(markerPromises).then(function (markers) {
-          self.setState({
-              markers: markers
-          })
-      });
+ 
+      } 
+
+    }
   }
 
    render() {
+     console.log(this.props.foodstuffs);
+     console.log(this.state.marker);
     return (
       <Map
         zoom={10}

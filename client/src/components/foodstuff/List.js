@@ -105,6 +105,7 @@ class List extends Component {
   
 
   render() {
+    console.log(this.props.retrieved);
     return (
       <div>
         <header>
@@ -168,7 +169,6 @@ class List extends Component {
         </div>
 
         <div id="map">
-
          <MapContainer foodstuffs={this.props.retrieved}/>
 
         </div>
