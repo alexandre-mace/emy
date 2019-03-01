@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import {GoogleApiWrapper} from 'google-maps-react';
+import {markerIcon}  from '../../assets/js/marker-icon.js'
 
 type State = {
     lat: number,
@@ -47,25 +48,20 @@ export class LeafletMap extends Component<{}, State> {
                 this.setState({
                     markers: markers
                 });
-                console.log(markers);
             });
         }
     }
 
     render() {
         window.dispatchEvent(new Event('resize'));
-        console.log(this.state.markers);
-        this.state.markers.forEach(marker => {
-            console.log(marker[1]);
-        });
         return (
             <Map center={[ 44.8637065, -0.6561808]} zoom={this.state.zoom}>
                 <TileLayer
-                    url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    url='http://{s}.tile.openstreetmap.fr/openriverboatmap/{z}/{x}/{y}.png'
+                    attribution='map data © [[http://osm.org/copyright|OpenStreetMap contributors]] under ODbL  - tiles OpenRiverboatMap'
                 />
                 {this.state.markers.map((marker) => {
-                    return <Marker key={marker[0]} position={[marker[1], marker[2]]}>
+                    return <Marker icon={markerIcon} key={marker[0]} position={[marker[1], marker[2]]}>
                         <Popup>
                             A pretty CSS3 popup. <br/> Easily customizable.
                         </Popup>

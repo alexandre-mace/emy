@@ -46,7 +46,6 @@ class Form extends Component {
       let autocompleteInput = document.getElementById("form_address_autocomplete");
       let addressInput = document.getElementById("foodstuff_address");
       addressInput.value = autocompleteInput.value;
-      alert(addressInput.value);
   }
   render() {
     return (

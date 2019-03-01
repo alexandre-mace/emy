@@ -106,8 +106,6 @@ class List extends Component {
     render() {
         let mapContainer = '';
         if (this.props.retrieved) {
-            console.log('hi from list');
-            console.log(this.props.retrieved);
             mapContainer = <LeafletMap foodstuffs={this.props.retrieved}/>;
         }
 
