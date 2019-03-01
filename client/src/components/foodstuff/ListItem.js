@@ -23,7 +23,7 @@ export default class ListItem extends React.Component {
 
     render() {
         return(
-            <li key={this.props.item['@id']}>
+            <li key={this.props.item['@id']} class={'foodstuff-' + this.props.item['id']}>
                 <img src={require('./assets/img/1.jpg')} className="img-produit" alt=""/>
                 <div className="ctn-desc-item">
                     <h2>{this.props.item['name']}</h2>

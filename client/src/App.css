@@ -55,7 +55,7 @@ header{
   width: calc(100% - 400px);
   height: auto;
 }
-.bounce{
+.bounce {
   position: absolute;
   animation: bounce 0.35s ease 0s 6 alternate;
 }
@@ -219,6 +219,10 @@ background-repeat: no-repeat; /* Do not repeat the icon image */
   padding-top:20px;
   border-bottom:1px solid #F2F2F2;
   text-align: left;
+}
+.foodstuff-list li.selected {
+  background-color: orangered;
+  color: white;
 }
 
 .hover-list{
