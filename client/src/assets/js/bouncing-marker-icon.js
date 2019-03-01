@@ -1,6 +1,6 @@
 import L from 'leaflet';
 
-const markerIcon = new L.Icon({
+const bouncingMarkerIcon = new L.Icon({
     iconUrl: require('../img/marker-icon.png'),
     iconRetinaUrl: require('../img/marker-icon.png'),
     iconAnchor: 'hi',
@@ -9,6 +9,7 @@ const markerIcon = new L.Icon({
     shadowSize: null,
     shadowAnchor: null,
     iconSize: new L.Point(40, 55),
+    className: 'bounce'
 });
 
-export { markerIcon };
+export { bouncingMarkerIcon };
