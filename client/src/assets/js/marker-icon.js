@@ -3,7 +3,8 @@ import L from 'leaflet';
 const markerIcon = new L.Icon({
     iconUrl: require('../img/marker-icon.png'),
     iconRetinaUrl: require('../img/marker-icon.png'),
-    iconAnchor: 'hi',
+    iconSize: [24,36],
+    iconAnchor: [12,36],
     popupAnchor: null,
     shadowUrl: null,
     shadowSize: null,
