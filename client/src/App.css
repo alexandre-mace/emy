@@ -59,6 +59,10 @@ header{
   position: absolute;
   animation: bounce 0.35s ease 0s 6 alternate;
 }
+.bounce-infinite {
+  position: absolute;
+  animation: bounce 0.35s ease infinite alternate;
+}
 @keyframes bounce{
   from {top: 0px;}
   to   {top: -30px;}

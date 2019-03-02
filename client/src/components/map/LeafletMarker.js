@@ -27,8 +27,13 @@ export default class LeafletMarker extends Component {
     }
 
     render() {
-        this.state.markerIcon.options.className = this.state.markerIcon.options.className + ' marker-' + this.props.marker[0];
-        return (<Marker onClick={this.handleClick} icon={this.state.markerIcon} key={this.props.marker[0]} position={[this.props.marker[1], this.props.marker[2]]}>
+        let renderedMarker = this.state.markerIcon;
+        console.log(this.props.marker[0]);
+        renderedMarker.options.className = 'undefined'
+            ? 'marker-' + this.props.marker[0]
+            : renderedMarker.options.className + ' marker-' + this.props.marker[0];
+        console.log(renderedMarker.options.className);
+        return (<Marker onClick={this.handleClick} icon={renderedMarker} key={this.props.marker[0]} position={[this.props.marker[1], this.props.marker[2]]}>
             </Marker>
         )
     }
