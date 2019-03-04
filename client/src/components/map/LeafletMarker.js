@@ -14,7 +14,7 @@ export default class LeafletMarker extends Component {
         }
     }
     handleClick = event => {
-        if (this.state.markerIcon.options.className && this.state.markerIcon.options.className.includes('bounce')) {
+        if (this.state.bounce === true) {
             this.setState({bounce: false});
             const foodstuff = document.getElementsByClassName('foodstuff-' + this.props.marker[0]);
             foodstuff[0].classList.remove('selected');
