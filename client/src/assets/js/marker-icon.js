@@ -9,6 +9,7 @@ const markerIcon = new L.Icon({
     shadowSize: null,
     shadowAnchor: null,
     iconSize: new L.Point(40, 55),
+    className: ''
 });
 
 export { markerIcon };

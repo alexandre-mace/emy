@@ -59,10 +59,9 @@ export class LeafletMap extends Component<{}, State> {
                     url='http://{s}.tile.openstreetmap.fr/openriverboatmap/{z}/{x}/{y}.png'
                     attribution='map data © [[http://osm.org/copyright|OpenStreetMap contributors]] under ODbL  - tiles OpenRiverboatMap'
                 />
-                {this.state.markers.map((marker) => {
-                    return <LeafletMarker key={marker[0]} marker={marker}></LeafletMarker>
-                    }
-                )}
+                {this.state.markers.map(marker => (
+                    <LeafletMarker key={marker[0]} marker={marker}></LeafletMarker>
+                ))}
             </Map>
         )
     }

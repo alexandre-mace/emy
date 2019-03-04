@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { list, reset } from '../../actions/foodstuff/list';
 import Create from './Create';
 import Modal from 'react-awesome-modal';
-import MapContainer from '../map/MapContainer';
 import ListItem from './ListItem';
 import '../../App.css';
 import Header from '../block/Header';
@@ -104,9 +103,9 @@ class List extends Component {
     }
 
     render() {
-        let mapContainer = '';
+        let map = '';
         if (this.props.retrieved) {
-            mapContainer = <LeafletMap foodstuffs={this.props.retrieved}/>;
+            map = <LeafletMap foodstuffs={this.props.retrieved}/>;
         }
 
         return (
@@ -126,7 +125,7 @@ class List extends Component {
                         </ul>
                         {this.pagination()}
                     </div>
-                    {mapContainer}
+                    {map}
                 </div>
                 <Modal visible={this.state.visibleAddProduct} width="400" className="modal-popup" effect="fadeInUp" onClickAway={() => this.closeModalAddProduct()}>
                     <div className="popup-takeit">

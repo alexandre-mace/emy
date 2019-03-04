@@ -57,7 +57,7 @@ header{
 }
 .bounce {
   position: absolute;
-  animation: bounce 0.35s ease 0s 6 alternate;
+  animation: bounce 0.35s ease 0s 12 alternate;
 }
 .bounce-infinite {
   position: absolute;

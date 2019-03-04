@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Marker } from 'react-leaflet'
 import {markerIcon}  from '../../assets/js/marker-icon.js'
 import {bouncingMarkerIcon} from "../../assets/js/bouncing-marker-icon";
+import L from 'leaflet';
 
 export default class LeafletMarker extends Component {
-
     constructor(props){
         super(props);
         this.state = {
@@ -13,26 +13,43 @@ export default class LeafletMarker extends Component {
             bounce: false
         }
     }
-
     handleClick = event => {
         if (this.state.markerIcon.options.className && this.state.markerIcon.options.className.includes('bounce')) {
-            this.setState({markerIcon: markerIcon});
+            this.setState({bounce: false});
             const foodstuff = document.getElementsByClassName('foodstuff-' + this.props.marker[0]);
             foodstuff[0].classList.remove('selected');
         } else {
-            this.setState({markerIcon: bouncingMarkerIcon});
+            this.setState({bounce: true});
             const foodstuff = document.getElementsByClassName('foodstuff-' + this.props.marker[0]);
             foodstuff[0].classList.add('selected');
         }
     }
-
     render() {
-        let renderedMarker = this.state.markerIcon;
-        console.log(this.props.marker[0]);
-        renderedMarker.options.className = 'undefined'
-            ? 'marker-' + this.props.marker[0]
-            : renderedMarker.options.className + ' marker-' + this.props.marker[0];
-        console.log(renderedMarker.options.className);
+        let renderedMarker = new L.Icon({
+            iconUrl: require('../../assets/img/marker-icon.png'),
+            iconRetinaUrl: require('../../assets/img/marker-icon.png'),
+            iconAnchor: [20,55],
+            popupAnchor: null,
+            shadowUrl: null,
+            shadowSize: null,
+            shadowAnchor: null,
+            iconSize: new L.Point(40, 55),
+            className: ''
+        });
+        if (this.state.bounce === true) {
+            renderedMarker = new L.Icon({
+                iconUrl: require('../../assets/img/marker-icon.png'),
+                iconRetinaUrl: require('../../assets/img/marker-icon.png'),
+                iconAnchor: [20, 55],
+                popupAnchor: null,
+                shadowUrl: null,
+                shadowSize: null,
+                shadowAnchor: null,
+                iconSize: new L.Point(40, 55),
+                className: 'bounce'
+            });
+        }
+        renderedMarker.options.className += ' marker-' + this.props.marker[0];
         return (<Marker onClick={this.handleClick} icon={renderedMarker} key={this.props.marker[0]} position={[this.props.marker[1], this.props.marker[2]]}>
             </Marker>
         )
