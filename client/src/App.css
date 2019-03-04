@@ -389,6 +389,15 @@ color:white !important;
   font-weight: 500;
 }
 
+.selected .take-it-infos{
+  background:white;
+  color:orangered !important;
+}
+
+.foodstuff-list .selected div a:last-child{
+  color:white !important;
+}
+
 
 /* Popup add product */
 .popup-addproduct{
@@ -400,6 +409,10 @@ position: absolute;
 top:0;
 left:0;
 display: none;
+}
+
+.localize-it{
+  width:auto !important;
 }
 
 .popup-addproduct .center-takeit{

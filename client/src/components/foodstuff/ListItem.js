@@ -46,10 +46,10 @@ export default class ListItem extends React.Component {
                         DDP : <span>{this.props.item['expirationDate']}</span>
                     </span>
                     <a className="take-it-infos" value="Open" onClick={() => this.openModal()}>Je prends !</a>
-                    <div>
+                    <a className="localize-it">
                         <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
                         Localiser
-                    </div>
+                    </a>
                 </div>
 
                 <Modal visible={this.state.visible} width="400" className="modal-popup modal-popup2" effect="fadeInUp" onClickAway={() => this.closeModal()}>
