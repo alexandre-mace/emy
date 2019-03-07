@@ -334,11 +334,13 @@ color:white !important;
 .popup-takeit{
   padding:20px;
   text-align: left;
+  width:100% !important;
 }
 
 .popup-takeit h3{
   color:orangered;
   font-size:20px;
+  width:100%;
 }
 
 .close-popup{
@@ -353,11 +355,12 @@ color:white !important;
 
 .side-product-popup{
   display: flex;
-  width:100%;
+  width:100% !important;
   height:auto;
   justify-content: space-between;
   margin-top:24px;
   align-items: center;
+
 }
 
 .side-product-popup img{
