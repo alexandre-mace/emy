@@ -3,13 +3,26 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiProperty;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use App\Controller\CreateImageAction;
 
 /**
- * @ApiResource(attributes={"formats"={"json", "jsonld"}})
  * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
+ * @ApiResource(attributes={"formats"={"json", "jsonld"}}, iri="http://schema.org/MediaObject", collectionOperations={
+ *     "get",
+ *     "post"={
+ *         "method"="POST",
+ *         "path"="/images",
+ *         "controller"=CreateImageAction::class,
+ *         "defaults"={"_api_receive"=false},
+ *     },
+ * })
+ * @Vich\Uploadable
  */
 class Image
 {
@@ -21,26 +34,56 @@ class Image
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
+     * @var File|null
+     * @Assert\NotNull()
      * @Groups({"food_stuff"})
+     * @Vich\UploadableField(mapping="image", fileNameProperty="contentUrl")
      */
-    private $name;
+    public $file;
+
+    /**
+     * @var string|null
+     * @ORM\Column(nullable=true)
+     * @Groups({"food_stuff"})
+     * @ApiProperty(iri="http://schema.org/contentUrl")
+     */
+    public $contentUrl;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    /**
+     * @return null|File
+     */
+    public function getFile()
     {
-        return $this->name;
+        return $this->file;
     }
 
-    public function setName(string $name): self
+    /**
+     * @param null|File $file
+     */
+    public function setFile($file)
     {
-        $this->name = $name;
-
-        return $this;
+        $this->file = $file;
     }
+
+    /**
+     * @return null|string
+     */
+    public function getContentUrl()
+    {
+        return $this->contentUrl;
+    }
+
+    /**
+     * @param null|string $contentUrl
+     */
+    public function setContentUrl($contentUrl)
+    {
+        $this->contentUrl = $contentUrl;
+    }
+
 }

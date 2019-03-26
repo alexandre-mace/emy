@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Marker } from 'react-leaflet'
 import {markerIcon}  from '../../assets/js/marker-icon.js'
-import {bouncingMarkerIcon} from "../../assets/js/bouncing-marker-icon";
 import L from 'leaflet';
 
 export default class LeafletMarker extends Component {

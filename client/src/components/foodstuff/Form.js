@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import Search from '../map/AutoComplete';
+import FieldFileInput from './FieldFileInput';
 
 class Form extends Component {
   static propTypes = {
@@ -94,14 +95,14 @@ class Form extends Component {
           type="text"
           placeholder=""
         />
-
-        <label>Insérer votre image :</label>
-        <Field
-          component={this.renderField}
-          name="image"
-          type="text"
-          placeholder=""
-        />
+        <Field name="image" label="Upload file" type="file" component={FieldFileInput} />
+        {/*<label>Insérer votre image :</label>*/}
+        {/*<Field*/}
+          {/*component={this.renderField}*/}
+          {/*name="image"*/}
+          {/*type="text"*/}
+          {/*placeholder=""*/}
+        {/*/>*/}
 
         <button type="submit" className="btn btn-success btn-form" onClick={this.bindAddressInput}>
           Ajouter le produit !

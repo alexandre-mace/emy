@@ -49,7 +49,7 @@ class FoodStuff
     private $phoneNumber;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="string", length=255)
      * @Groups({"food_stuff"})
      */
     private $availabilities = [];
@@ -113,12 +113,12 @@ class FoodStuff
         return $this;
     }
 
-    public function getAvailabilities(): ?array
+    public function getAvailabilities(): ?string
     {
         return $this->availabilities;
     }
 
-    public function setAvailabilities(array $availabilities): self
+    public function setAvailabilities(string $availabilities): self
     {
         $this->availabilities = $availabilities;
 
