@@ -52,7 +52,7 @@ class FoodStuff
      * @ORM\Column(type="string", length=255)
      * @Groups({"food_stuff"})
      */
-    private $availabilities = [];
+    private $availabilities = '';
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist", "remove"})

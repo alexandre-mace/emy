@@ -16,7 +16,6 @@ export default class ListItem extends React.Component {
         let self = this;
         axios.get(`http://localhost:8080${this.props.item['image']}`)
         .then(function (response) {
-            console.log(self);
             // handle success
 
             self.setState({image: 'http://localhost:8080/medias/' + response.data.contentUrl})
@@ -42,7 +41,6 @@ export default class ListItem extends React.Component {
             visible : false
         });
     }
-
     handleClick = event => {
         let foodstuff = document.getElementsByClassName('foodstuff-' + this.props.item['id'])[0];
         let marker = document.getElementsByClassName('marker-' + this.props.item['id'])[0];
@@ -58,7 +56,6 @@ export default class ListItem extends React.Component {
     }
 
     render() {
-        console.log(this.state.image);
         return(
             <li key={this.props.item['@id']} className={'foodstuff-' + this.props.item['id']} onClick={this.handleClick}>
                 <img src={this.state.image} className="img-produit" alt=""/>
@@ -68,11 +65,11 @@ export default class ListItem extends React.Component {
                         <img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/>
                         DDP : <span>{this.props.item['expirationDate']}</span>
                     </span>
-                    <a className="take-it-infos" value="Open" onClick={() => this.openModal()}>Je prends !</a>
-                    <a className="localize-it">
+                    <button className="take-it-infos" value="Open" onClick={() => this.openModal()}>Je prends !</button>
+                    <button className="localize-it">
                         <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
                         Localiser
-                    </a>
+                    </button>
                 </div>
 
                 <Modal visible={this.state.visible} width="400" className="modal-popup modal-popup2" effect="fadeInUp" onClickAway={() => this.closeModal()}>

@@ -17,10 +17,11 @@ class Search extends Component {
           apiKey={API_KEY}
           language={'fr'}
           coordinates={true}
-          locationBoxStyle={'custom-style'}
+          locationBoxStyle={'form-control'}
           locationListStyle={'custom-style-list'}
-          onChange={(e) => { this.setState({ place: e }) }} 
-          id={'form_address_autocomplete'}
+          onChange={(e) => { this.setState({ place: e }) }}
+          id={'foodstuff_address'}
+          name={'address'}
           required={'required'}
         />
     )

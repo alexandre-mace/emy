@@ -130,7 +130,7 @@ class List extends Component {
                 <Modal visible={this.state.visibleAddProduct} width="400" className="modal-popup" effect="fadeInUp" onClickAway={() => this.closeModalAddProduct()}>
                     <div className="popup-takeit">
                         <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModalAddProduct()}/>
-                        <h3>Ajouter un produit !</h3>
+                        <h3>Ajoutez un produit !</h3>
                         <Create/>
                     </div>
                 </Modal>

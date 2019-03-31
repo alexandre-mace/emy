@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Map, TileLayer } from 'react-leaflet'
 import {GoogleApiWrapper} from 'google-maps-react';
 import LeafletMarker from './LeafletMarker';
 

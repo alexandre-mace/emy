@@ -57,7 +57,7 @@ export class GoogleComponent extends Component {
 
     if (this.props.apiKey) {
 
-      let _fire = fetch(this.state.proxyUrl + 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' +
+      let _fire = fetch(proxyUrl + 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' +
         param + '&' + _lang + _co + '&key=' + this.props.apiKey
       )
 
@@ -101,7 +101,7 @@ export class GoogleComponent extends Component {
 
   getCoordinates(address) {
     if (this.props.apiKey) {
-      let _fire = fetch(this.state.proxyUrl + 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + this.props.apiKey
+      let _fire = fetch(proxyUrl + 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + this.props.apiKey
       )
       return _fire.then((resp) => {
         return resp.json().then((res) => {
@@ -120,7 +120,7 @@ export class GoogleComponent extends Component {
 
         var obj = "latlng=" + location.coords.latitude + "," + location.coords.longitude;
 
-        let _fire = fetch(this.state.proxyUrl + 'https://maps.googleapis.com/maps/api/geocode/json?' + obj + '&key=' + this.props.apiKey
+        let _fire = fetch(proxyUrl + 'https://maps.googleapis.com/maps/api/geocode/json?' + obj + '&key=' + this.props.apiKey
         )
         return _fire.then((resp) => {
           return resp.json().then((res) => {
