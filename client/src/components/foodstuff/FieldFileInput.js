@@ -6,7 +6,8 @@ export default class FieldFileInput  extends Component{
         this.onChange = this.onChange.bind(this)
     }
 
-    onChange(e) {
+    onChange = e => {
+        console.log(e.target);
         const { input: { onChange } } = this.props
         onChange(e.target.files[0])
     }
@@ -15,14 +16,15 @@ export default class FieldFileInput  extends Component{
         const { input: { value } } = this.props
         const {input,label, required, meta, } = this.props  //whatever props you send to the component from redux-form Field
         return(
-            <div><label>{label}</label>
-                <div>
-                    <input
-                        type='file'
-                        accept='.jpg, .png, .jpeg'
-                        onChange={this.onChange}
-                    />
-                </div>
+            <div>
+                <label for="input-file" class="label-file">{label}</label>
+                <input
+                    id="input-file"
+                    type='file'
+                    accept='.jpg, .png, .jpeg'
+                    onChange={this.onChange}
+                />
+                <span id="uploaded-file-name"></span>
             </div>
         )
     }

@@ -15,11 +15,9 @@ class Header extends Component {
                 <img src={logo} className="logo" alt="Logo Emy" />
                 <nav>
                     <ul>
-                        <li><a href="/">Accueil</a></li>
-                        <li><a href="/">À propos</a></li>
+                        <li><a href="/">Les produits</a></li>
+                        <li><a href="/">Qui est Emy ?</a></li>
                         <li><a href="/">Partenaires</a></li>
-                        <li><a href="/">S inscrire</a></li>
-                        <li><a href="/">Se connecter</a></li>
                     </ul>
                 </nav>
             </header>

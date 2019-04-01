@@ -115,7 +115,7 @@ class List extends Component {
                     <div className="foodstuff-list-wrapper">
                         <div className="foodstuff-list-commands">
                             <button type="button" value="Open" onClick={() => this.openModalAddProduct()}>Ajouter un produit </button>
-                            <input type="text" id="filterListInput" onKeyUp={this.filterList} placeholder="Chercher facilement un produit !"/>
+                            <input type="text" id="filterListInput" onKeyUp={this.filterList} placeholder="Chercher facilement un produit"/>
                         </div>
                         <ul className="foodstuff-list" id="myUL">
                             {this.props.retrieved &&

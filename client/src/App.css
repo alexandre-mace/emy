@@ -5,7 +5,10 @@
   height:100%;
   flex:1;
 }
-
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
 /* width */
 .foodstuff-list::-webkit-scrollbar {
   width: 10px;
@@ -333,11 +336,26 @@ color:orangered !important;
 .modal-popup{
   background:white;
 }
+.label-file {
+  cursor: pointer;
+  color: orangered;
+  border: 2px solid orangered;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#input-file {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;}
 
 .popup-takeit{
   padding:20px;
   text-align: left;
   width:100% !important;
+}
+.popup-takeit input[type="file"]  {
+  width: 100%;
 }
 
 .popup-takeit h3{
