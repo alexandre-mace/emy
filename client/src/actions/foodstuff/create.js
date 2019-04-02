@@ -13,51 +13,59 @@ export function success(created) {
     return { type: 'FOODSTUFF_CREATE_SUCCESS', created };
 }
 
-function imageFetch(values) {
-    const body = new FormData();
-    body.append('file', values['image']);
-    fetch('http://localhost:8080/images', { body, method: 'POST' })
-        .then(
-            response => {
-                response.json().then(
-                    response => {
-                        values['image'] = '/images/' + response.id
-                    }
-                )
-            }
-        )
-}
-
-function foodstuffFetch(values, dispatch) {
-    return fetch('/food_stuffs', { method: 'POST', body: JSON.stringify(values) })
-        .then(response => {
-            dispatch(loading(false));
-
-            return response.json();
-        })
-        .then(retrieved => dispatch(success(retrieved)))
-        .catch(e => {
-            dispatch(loading(false));
-
-            if (e instanceof SubmissionError) {
-                dispatch(error(e.errors._error));
-                throw e;
-            }
-            dispatch(error(e.message));
-        });
-}
-
 export function create(values) {
     return dispatch => {
         dispatch(loading(true));
         if(values.hasOwnProperty('image') && values['image'] instanceof File) {
-            imageFetch(values)
+            const body = new FormData();
+            body.append('file', values['image']);
+            return fetch('http://localhost:8080/images', { body, method: 'POST' })
+                .then(
+                    response => {
+                        response.json().then(
+                            response => {
+                                values['image'] = '/images/' + response.id
+                            }
+                        )
+                    }
+                )
                 .then (
                 response => {
-                    foodstuffFetch(values, dispatch);
-                })
+                    return fetch('/food_stuffs', { method: 'POST', body: JSON.stringify(values) })
+                        .then(response => {
+                            dispatch(loading(false));
+
+                            return response.json();
+                        })
+                        .then(retrieved => dispatch(success(retrieved)))
+                        .catch(e => {
+                            dispatch(loading(false));
+
+                            if (e instanceof SubmissionError) {
+                                dispatch(error(e.errors._error));
+                                throw e;
+                            }
+                            dispatch(error(e.message));
+                        });
+                    }
+                )
         } else {
-            foodstuffFetch(values);
+            return fetch('/food_stuffs', { method: 'POST', body: JSON.stringify(values) })
+                .then(response => {
+                    dispatch(loading(false));
+
+                    return response.json();
+                })
+                .then(retrieved => dispatch(success(retrieved)))
+                .catch(e => {
+                    dispatch(loading(false));
+
+                    if (e instanceof SubmissionError) {
+                        dispatch(error(e.errors._error));
+                        throw e;
+                    }
+                    dispatch(error(e.message));
+                });
         }
     };
 }

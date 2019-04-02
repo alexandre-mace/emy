@@ -7,7 +7,7 @@ export default class FieldFileInput  extends Component{
     }
 
     onChange = e => {
-        console.log(e.target);
+        document.getElementById("label-file").textContent = e.target.files[0].name;
         const { input: { onChange } } = this.props
         onChange(e.target.files[0])
     }
@@ -17,7 +17,7 @@ export default class FieldFileInput  extends Component{
         const {input,label, required, meta, } = this.props  //whatever props you send to the component from redux-form Field
         return(
             <div>
-                <label for="input-file" class="label-file">{label}</label>
+                <label id="label-file" htmlFor="input-file" className="label-file">{label}</label>
                 <input
                     id="input-file"
                     type='file'
