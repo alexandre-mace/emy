@@ -44,6 +44,7 @@ export function list(page = '/food_stuffs') {
           );
       })
       .catch(e => {
+        console.log(e.message)
         dispatch(loading(false));
         dispatch(error(e.message));
       });

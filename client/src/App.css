@@ -54,7 +54,7 @@ header{
   position: relative;
   z-index:1;
 }
-#list-map-wrapper div:last-child {
+#list-map-wrapper > div:last-child {
   width: calc(100% - 400px);
   height: auto;
 }
@@ -178,7 +178,7 @@ width:100%;
 margin:0 auto;
 }
 
-.foodstuff-list-commands button{
+#add-product-button{
 width:100%;
 border:0;
 height:60px;
@@ -190,7 +190,7 @@ outline: none;
 cursor: pointer;
 }
 
-.foodstuff-list-commands input{
+.foodstuff-list-commands #filterListInput{
 width:100%;
 display: block;
 background:#F9F9F9;
@@ -215,7 +215,7 @@ background-repeat: no-repeat; /* Do not repeat the icon image */
   margin:0 auto;
 }
 
-.foodstuff-list li{
+.list-item-description{
   width:100%;
   margin:0 auto;
   display: flex;
@@ -313,7 +313,7 @@ border-color:white !important;
 color:orangered !important;
 }
 
-.foodstuff-list li div button:last-child{
+.list-item-description  button:last-child{
   background:transparent !important;
   color:black !important;
 }
@@ -324,7 +324,7 @@ color:orangered !important;
 .localize-it {
   outline: none !important;
 }
-.foodstuff-list li div button:last-child img{
+.list-item-description button:last-child img{
   display: inline-block;
   width:16px;
   height:auto;
@@ -418,7 +418,7 @@ color:orangered !important;
   color:orangered !important;
 }
 
-.foodstuff-list .selected div button:last-child{
+.foodstuff-list .selected .ctn-desc-item button:last-child{
   color:white !important;
 }
 

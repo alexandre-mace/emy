@@ -16,7 +16,20 @@ export class LeafletMap extends Component<{}, State> {
         this.state = {
             foodstuffs: {},
             markers: [],
-            zoom: 13
+            zoom: 13,
+        }
+    }
+
+    componentWillReceiveProps(props) {
+        if (props.foodstuffs['hydra:totalItems'] || props.foodstuffs['hydra:totalItems'] === 0) {
+            if (this.state.markers.length !== props.foodstuffs['hydra:totalItems']) {
+                const markerPromises = this.getMarkers(props.foodstuffs);
+                Promise.all(markerPromises).then(markers => {
+                    this.setState({
+                        markers: markers
+                    });
+                });
+            }
         }
     }
 
@@ -42,7 +55,7 @@ export class LeafletMap extends Component<{}, State> {
 
     }
     componentDidMount() {
-        if (this.props.foodstuffs && this.props.foodstuffs['hydra:member'].length > 0) {
+        if (this.props.foodstuffs && this.props.foodstuffs['hydra:totalItems'] > 0) {
             const markerPromises = this.getMarkers(this.props.foodstuffs);
             Promise.all(markerPromises).then(markers => {
                 this.setState({
@@ -51,6 +64,7 @@ export class LeafletMap extends Component<{}, State> {
             });
         }
     }
+
     render() {
         window.dispatchEvent(new Event('resize'));
         return (
@@ -60,7 +74,7 @@ export class LeafletMap extends Component<{}, State> {
                     attribution='map data © [[http://osm.org/copyright|OpenStreetMap contributors]] under ODbL  - tiles OpenRiverboatMap'
                 />
                 {this.state.markers.map(marker => (
-                    <LeafletMarker key={marker[0]} marker={marker}></LeafletMarker>
+                    <LeafletMarker key={marker[0]} marker={marker} productAdded={this.state.productAdded}></LeafletMarker>
                 ))}
             </Map>
         )

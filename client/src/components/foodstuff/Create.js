@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Form from './Form';
 import { create, reset } from '../../actions/foodstuff/create';
@@ -13,20 +12,28 @@ class Create extends Component {
     create: PropTypes.func.isRequired,
     reset: PropTypes.func.isRequired
   };
+    constructor(){
+        super();
+        this.state = {
+            productAdded: {},
+        }
+    }
 
   componentWillUnmount() {
     this.props.reset();
   }
+  componentDidUpdate() {
+      if (this.props.created && this.props.created !== this.state.productAdded) {
+          this.props.closeModalAddProduct();
+          this.props.handleProductAdded();
+          this.setState({
+              productAdded: this.props.created
+          })
+      }
+  }
 
   render() {
-    if (this.props.created)
       return (
-        <Redirect
-          to={`/`}
-        />
-      );
-
-    return (
       <div>
         {this.props.loading && (
           <div className="alert alert-info" role="status">

@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { list, reset } from '../../actions/foodstuff/list';
-import Create from './Create';
-import Modal from 'react-awesome-modal';
 import ListItem from './ListItem';
 import '../../App.css';
 import Header from '../block/Header';
 import LeafletMap from "../map/LeafletMap";
+import CreateFoodStuffModal from './CreateFoodStuffModal';
 
 class List extends Component {
     static propTypes = {
@@ -23,38 +22,10 @@ class List extends Component {
     constructor(){
         super();
         this.state = {
-            visible: false,
-            visibleAddProduct: false,
             file: null
         }
-
         this.handleChange = this.handleChange.bind(this)
-
-    }
-
-
-    openModal() {
-        this.setState({
-            visible : true
-        });
-    }
-
-    closeModal() {
-        this.setState({
-            visible : false
-        });
-    }
-
-    openModalAddProduct() {
-        this.setState({
-            visibleAddProduct : true
-        });
-    }
-
-    closeModalAddProduct() {
-        this.setState({
-            visibleAddProduct : false
-        });
+        this.handleProductAdded = this.handleProductAdded.bind(this);
     }
 
     componentDidMount() {
@@ -102,38 +73,41 @@ class List extends Component {
         })
     }
 
+    handleProductAdded = () => {
+        this.props.list(
+            this.props.match.params.page &&
+            decodeURIComponent(this.props.match.params.page)
+        );
+        this.setState({
+            productUpdated: true
+        })
+    }
+
     render() {
-        let map = '';
+        let map = 'Loading';
         if (this.props.retrieved) {
             map = <LeafletMap foodstuffs={this.props.retrieved}/>;
         }
-
         return (
             <div>
                 <Header/>
                 <div id="list-map-wrapper">
                     <div className="foodstuff-list-wrapper">
                         <div className="foodstuff-list-commands">
-                            <button type="button" value="Open" onClick={() => this.openModalAddProduct()}>Ajouter un produit </button>
+                            <CreateFoodStuffModal handleProductAdded = {this.handleProductAdded} />
                             <input type="text" id="filterListInput" onKeyUp={this.filterList} placeholder="Chercher facilement un produit"/>
                         </div>
                         <ul className="foodstuff-list" id="myUL">
                             {this.props.retrieved &&
                             this.props.retrieved['hydra:member'].map(item => (
-                                <ListItem item={item} key={item.id}/>
+                                <ListItem item={item} key={item.id} handleProductAdded = {this.handleProductAdded} />
                             ))}
                         </ul>
                         {this.pagination()}
                     </div>
                     {map}
                 </div>
-                <Modal visible={this.state.visibleAddProduct} width="400" className="modal-popup" effect="fadeInUp" onClickAway={() => this.closeModalAddProduct()}>
-                    <div className="popup-takeit">
-                        <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModalAddProduct()}/>
-                        <h3>Ajoutez un produit !</h3>
-                        <Create/>
-                    </div>
-                </Modal>
+
             </div>
         );
     }

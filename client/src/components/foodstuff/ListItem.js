@@ -1,8 +1,17 @@
 import React from 'react';
 import Modal from 'react-awesome-modal';
 import axios from 'axios';
+import { del } from '../../actions/foodstuff/delete';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-export default class ListItem extends React.Component {
+class ListItem extends React.Component {
+    static propTypes = {
+        deleteError: PropTypes.string,
+        deleteLoading: PropTypes.bool.isRequired,
+        deleted: PropTypes.object,
+        del: PropTypes.func.isRequired
+    };
     constructor(){
         super();
         this.state = {
@@ -14,20 +23,22 @@ export default class ListItem extends React.Component {
 
     componentDidMount() {
         let self = this;
-        axios.get(`http://localhost:8080${this.props.item['image']}`)
-        .then(function (response) {
-            // handle success
+        if (this.props.item['image']) {
+            axios.get(`http://localhost:8080${this.props.item['image']}`)
+                .then(function (response) {
+                    // handle success
 
-            self.setState({image: 'http://localhost:8080/medias/' + response.data.contentUrl})
+                    self.setState({image: 'http://localhost:8080/medias/' + response.data.contentUrl})
 
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .then(function () {
-            // always executed
-        });
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .then(function () {
+                    // always executed
+                });
+        }
     }
 
     openModal() {
@@ -55,36 +66,53 @@ export default class ListItem extends React.Component {
         }
     }
 
+    del = () => {
+        this.props.del(this.props.item)
+            .then(response => {
+                this.props.handleProductAdded();
+                this.closeModal();
+            });
+    };
+
     render() {
         return(
-            <li key={this.props.item['@id']} className={'foodstuff-' + this.props.item['id']} onClick={this.handleClick}>
-                <img src={this.state.image} className="img-produit" alt=""/>
-                <div className="ctn-desc-item">
-                    <h2>{this.props.item['name']}</h2>
-                    <span>
+            <li key={this.props.item['@id']} className={'foodstuff-' + this.props.item['id']}>
+                <div className="list-item-description" onClick={this.handleClick}>
+                    <img src={this.state.image} className="img-produit" alt=""/>
+                    <div className="ctn-desc-item">
+                        <h2>{this.props.item['name']}</h2>
+                        <span>
                         <img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/>
                         DDP : <span>{this.props.item['expirationDate']}</span>
                     </span>
-                    <button className="take-it-infos" value="Open" onClick={() => this.openModal()}>Je prends !</button>
-                    <button className="localize-it">
-                        <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
-                        Localiser
-                    </button>
+                        <button className="take-it-infos" value="Open" onClick={() => this.openModal()}>Je prends !</button>
+                        <button className="localize-it">
+                            <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
+                            Localiser
+                        </button>
+                    </div>
                 </div>
 
                 <Modal visible={this.state.visible} width="400" className="modal-popup modal-popup2" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div className="popup-takeit">
                         <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
                         <h3>Planifier le rendez-vous !</h3>
+                        {this.props.deleteError && (
+                            <div className="alert alert-danger" role="alert">
+                                <span className="fa fa-exclamation-triangle" aria-hidden="true" />{' '}
+                                {this.props.deleteError}
+                            </div>
+                        )}
                         <div className="side-product-popup">
                             <img src={require('./assets/img/1.jpg')} className="img-produit" alt=""/>
                             <span>
                                 <h4>{this.props.item['name']}</h4>
                                 <p>
                                     <img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/>
-                                    DDP : <span>{this.props.item['expirationDate']}</span>
+                                    <span>{this.props.item['expirationDate']}</span>
+                                    <span>Tel :{this.props.item['phoneNumber']}</span>
                                 </p>
-                                <button type="button" name="button">{this.props.item['phoneNumber']}</button>
+                                <button onClick={this.del} type="button" name="button">Je m'engage à prendre ce produit</button>
                             </span>
                         </div>
                     </div>
@@ -94,3 +122,17 @@ export default class ListItem extends React.Component {
     }
 }
 
+const mapStateToProps = state => ({
+    deleteError: state.foodstuff.del.error,
+    deleteLoading: state.foodstuff.del.loading,
+    deleted: state.foodstuff.del.deleted
+});
+
+const mapDispatchToProps = dispatch => ({
+    del: item => dispatch(del(item)),
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ListItem);

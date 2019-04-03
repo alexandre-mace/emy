@@ -19,22 +19,16 @@ export function create(values) {
         if(values.hasOwnProperty('image') && values['image'] instanceof File) {
             const body = new FormData();
             body.append('file', values['image']);
-            return fetch('http://localhost:8080/images', { body, method: 'POST' })
-                .then(
-                    response => {
-                        response.json().then(
-                            response => {
-                                values['image'] = '/images/' + response.id
-                            }
-                        )
-                    }
-                )
-                .then (
-                response => {
-                    return fetch('/food_stuffs', { method: 'POST', body: JSON.stringify(values) })
+            fetch('http://localhost:8080/images', { body, method: 'POST' })
+                .then((response) => {
+                    return response.json()
+                })
+                .then((response) => {
+                    values['image'] = '/images/' + response.id;
+
+                    fetch('/food_stuffs', { method: 'POST', body: JSON.stringify(values) })
                         .then(response => {
                             dispatch(loading(false));
-
                             return response.json();
                         })
                         .then(retrieved => dispatch(success(retrieved)))
@@ -47,13 +41,12 @@ export function create(values) {
                             }
                             dispatch(error(e.message));
                         });
-                    }
-                )
+                })
         } else {
             return fetch('/food_stuffs', { method: 'POST', body: JSON.stringify(values) })
+
                 .then(response => {
                     dispatch(loading(false));
-
                     return response.json();
                 })
                 .then(retrieved => dispatch(success(retrieved)))
