@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { list, reset } from '../../actions/foodstuff/list';
-import ListItem from './ListItem';
-import '../../App.css';
+import FoodstuffListItem from './FoodstuffListItem';
+import '../../App.scss';
 import Header from '../block/Header';
 import LeafletMap from "../map/LeafletMap";
 import CreateFoodStuffModal from './CreateFoodStuffModal';
@@ -35,6 +35,7 @@ class List extends Component {
         );
     }
 
+
     componentWillReceiveProps(nextProps) {
         if (this.props.match.params.page !== nextProps.match.params.page)
             nextProps.list(
@@ -51,7 +52,7 @@ class List extends Component {
     filterList(){
         // Declare variables
         var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById('filterListInput');
+        input = document.getElementById('foodstuff-list-search');
         filter = input.value.toUpperCase();
         ul = document.getElementById("myUL");
         li = ul.getElementsByTagName('li');
@@ -91,21 +92,23 @@ class List extends Component {
         return (
             <div>
                 <Header/>
-                <div id="list-map-wrapper">
-                    <div className="foodstuff-list-wrapper">
+                <div id="foodstuff-list-and-map-container">
+                    <div className="foodstuff-list-container">
                         <div className="foodstuff-list-commands">
                             <CreateFoodStuffModal handleProductAdded = {this.handleProductAdded} />
-                            <input type="text" id="filterListInput" onKeyUp={this.filterList} placeholder="Chercher facilement un produit"/>
+                            <input type="text" id="foodstuff-list-search" onKeyUp={this.filterList} placeholder="Chercher facilement un produit"/>
                         </div>
                         <ul className="foodstuff-list" id="myUL">
                             {this.props.retrieved &&
                             this.props.retrieved['hydra:member'].map(item => (
-                                <ListItem item={item} key={item.id} handleProductAdded = {this.handleProductAdded} />
+                                <FoodstuffListItem item={item} key={item.id} handleProductAdded = {this.handleProductAdded} />
                             ))}
                         </ul>
                         {this.pagination()}
                     </div>
-                    {map}
+                    <div id="map-container">
+                        {map}
+                    </div>
                 </div>
 
             </div>

@@ -27,10 +27,10 @@ export default class CreateFoodStuffModal extends React.Component {
         return(
             <div>
                 <button id="add-product-button" type="button" value="Open" onClick={() => this.openModalAddProduct()}>Ajouter un produit </button>
-                <Modal visible={this.state.visible} width="400" className="modal-popup" effect="fadeInUp" onClickAway={() => this.closeModalAddProduct()}>
-                    <div className="popup-takeit">
+                <Modal visible={this.state.visible} width="700" className="modal-popup" effect="fadeInUp" onClickAway={() => this.closeModalAddProduct()}>
+                    <div className="modal-style">
                         <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModalAddProduct()}/>
-                        <h3>Ajoutez un produit !</h3>
+                        <h3 className="modal-style-title">Ajoutez un produit !</h3>
                         <Create handleProductAdded = {this.props.handleProductAdded} closeModalAddProduct = {this.closeModalAddProduct} />
                     </div>
                 </Modal>

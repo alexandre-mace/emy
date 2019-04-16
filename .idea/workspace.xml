@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f205155b-1619-41aa-81a6-592b88da3f4d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/public/medias/Capture d’écran de 2018-09-27 20-24-56.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/config/packages/sensio_framework_extra.yaml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/config/packages/vich_uploader.yaml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/Controller/CreateImageAction.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/Form/ImageType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/components/foodstuff/FieldFileInput.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/components/foodstuff/App.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/App.css" afterPath="$PROJECT_DIR$/client/src/App.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/components/foodstuff/ListItem.js" afterPath="$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/composer.json" afterPath="$PROJECT_DIR$/api/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/composer.lock" afterPath="$PROJECT_DIR$/api/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/config/bundles.php" afterPath="$PROJECT_DIR$/api/config/bundles.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/Entity/FoodStuff.php" afterPath="$PROJECT_DIR$/api/src/Entity/FoodStuff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/Entity/Image.php" afterPath="$PROJECT_DIR$/api/src/Entity/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/symfony.lock" afterPath="$PROJECT_DIR$/api/symfony.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/block/Header.js" afterPath="$PROJECT_DIR$/client/src/components/block/Header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js" afterPath="$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/foodstuff/Form.js" afterPath="$PROJECT_DIR$/client/src/components/foodstuff/Form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/foodstuff/ListItem.js" afterPath="$PROJECT_DIR$/client/src/components/foodstuff/ListItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/map/LeafletMarker.js" afterPath="$PROJECT_DIR$/client/src/components/map/LeafletMarker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/foodstuff/List.js" afterPath="$PROJECT_DIR$/client/src/components/foodstuff/List.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/image/Form.js" afterPath="$PROJECT_DIR$/client/src/components/image/Form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.js" afterPath="$PROJECT_DIR$/client/src/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/yarn.lock" afterPath="$PROJECT_DIR$/client/yarn.lock" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,23 +25,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="List.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/List.js">
+      <file leaf-file-name="App.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/App.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="64" selection-end-column="5" />
+            <state relative-caret-position="1368">
+              <caret line="245" column="10" lean-forward="false" selection-start-line="245" selection-start-column="10" selection-end-line="245" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/create.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataAccess.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/utils/dataAccess.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/ListItem.js">
+      <file leaf-file-name="Signin.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/signin/Signin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+            <state relative-caret-position="566">
+              <caret line="81" column="93" lean-forward="false" selection-start-line="81" selection-start-column="93" selection-end-line="81" selection-end-column="93" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -54,89 +69,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeafletMarker.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/map/LeafletMarker.js">
+      <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sensio_framework_extra.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/config/packages/sensio_framework_extra.yaml">
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/block/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="231">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/actions/image/show.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="786">
-              <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#112#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/actions/image/list.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#112#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoogleComponent.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/map/GoogleComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="103" column="24" lean-forward="false" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
+            <state relative-caret-position="87">
+              <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Image.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/Entity/Image.php">
+      <file leaf-file-name="signin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/routes/signin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
-              <folding>
-                <element signature="e#30#74#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="36">
+              <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateImageAction.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/Controller/CreateImageAction.php">
+      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/routes/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="e#34#110#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="36">
+              <caret line="2" column="56" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vich_uploader.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/config/packages/vich_uploader.yaml">
+      <file leaf-file-name="LoginModal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/login/LoginModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="68" lean-forward="true" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+            <state relative-caret-position="378">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -153,45 +140,49 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>redi</find>
-      <find>!</find>
-      <find>zoom</find>
-      <find>position</find>
-      <find>con</find>
-      <find>Map</find>
-      <find>#map</find>
-      <find>alert</find>
-      <find>console.log(</find>
-      <find>onClick</find>
-      <find>ReactDOM</find>
-      <find>setS</find>
-      <find>leafle</find>
-      <find>foodstuff-list</find>
-      <find>conso</find>
-      <find>a</find>
-      <find>ctn-desc-item</find>
-      <find>bounce</find>
-      <find>Mark</find>
-      <find>Icon</find>
-      <find>../img</find>
-      <find>console</find>
-      <find>proxyUrl</find>
-      <find>getAva</find>
-      <find>MediaObject</find>
-      <find>list</find>
-      <find>pend</find>
-      <find>export</find>
-      <find>thisCo</find>
-      <find>bouncing</find>
+      <find>popup-addproduct</find>
+      <find>form-title</find>
+      <find>form-addproduct</find>
+      <find>input-small</find>
+      <find>form-group</find>
+      <find>file-input</find>
+      <find>placeholder-gif</find>
+      <find>imgInp</find>
+      <find>ctnAutoComplete</find>
+      <find>google-covert</find>
+      <find>style-unordered-list</find>
+      <find>location-box-cover</find>
+      <find>take-it-infos</find>
+      <find>modal</find>
+      <find>form-control-label</find>
+      <find>input-file</find>
+      <find>side-product-popup</find>
+      <find>popup-takeit</find>
+      <find>btn-form</find>
+      <find>ui-datepicker-div</find>
+      <find>ui-datepicker</find>
+      <find>thead</find>
+      <find>label-file</find>
+      <find>form</find>
+      <find>width:700</find>
+      <find>modal-popup</find>
+      <find>take-it</find>
+      <find>modal-take-it-foodstuff-description</find>
+      <find>&lt;p</find>
+      <find>400</find>
     </findStrings>
     <replaceStrings>
       <replace>filterListInput</replace>
       <replace>foodstuff-list-commands</replace>
       <replace>foodstuff-list</replace>
+      <replace>modal</replace>
+      <replace>modal-style</replace>
+      <replace>label-d-none</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/client</dir>
       <dir>$PROJECT_DIR$/client/src</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/client</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -200,35 +191,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/api/config/packages/api_platform.yaml" />
-        <option value="$PROJECT_DIR$/client/src/index.js" />
-        <option value="$PROJECT_DIR$/client/package.json" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/map/GoogleComponent.js" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/map/MapContainer.js" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/AutoComplete.js" />
-        <option value="$PROJECT_DIR$/client/src/components/block/Header.js" />
+        <option value="$PROJECT_DIR$/client/src/helpers/store.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/login/alert.reducer.js" />
+        <option value="$PROJECT_DIR$/client/src/constants/login/index.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/login/authentication.reducer.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/login/users.reducer.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/login/index.js" />
+        <option value="$PROJECT_DIR$/client/src/utils/userService.js" />
+        <option value="$PROJECT_DIR$/client/src/utils/index.js" />
+        <option value="$PROJECT_DIR$/client/src/components/user/LoginPage.js" />
+        <option value="$PROJECT_DIR$/client/src/components/user/index.js" />
+        <option value="$PROJECT_DIR$/client/src/routes/user.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/login/alert.actions.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/login/user.actions.js" />
+        <option value="$PROJECT_DIR$/client/src/utils/user.service.js" />
+        <option value="$PROJECT_DIR$/client/src/helpers/history.js" />
+        <option value="$PROJECT_DIR$/client/src/helpers/index.js" />
+        <option value="$PROJECT_DIR$/client/src/services/index.js" />
+        <option value="$PROJECT_DIR$/client/src/components/login/index.js" />
+        <option value="$PROJECT_DIR$/client/src/routes/login.js" />
+        <option value="$PROJECT_DIR$/client/src/helpers/handle-response.js" />
+        <option value="$PROJECT_DIR$/client/src/services/user.service.js" />
+        <option value="$PROJECT_DIR$/client/src/helpers/auth-header.js" />
+        <option value="$PROJECT_DIR$/client/src/components/login/PrivateRoute.js" />
+        <option value="$PROJECT_DIR$/client/src/components/login/LoginPage.js" />
+        <option value="$PROJECT_DIR$/client/src/services/authentication.service.js" />
         <option value="$PROJECT_DIR$/client/src/components/foodstuff/App.css" />
-        <option value="$PROJECT_DIR$/client/src/components/map/AutoComplete.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/foodstuff/create.js" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/Create.js" />
-        <option value="$PROJECT_DIR$/client/public/index.html" />
-        <option value="$PROJECT_DIR$/client/src/assets/js/bouncing-marker-icon.js" />
-        <option value="$PROJECT_DIR$/client/src/assets/js/marker-icon.js" />
-        <option value="$PROJECT_DIR$/client/src/components/map/MapContainer.js" />
-        <option value="$PROJECT_DIR$/client/src/components/map/MarkersComponents.js" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/List.js" />
-        <option value="$PROJECT_DIR$/client/src/components/map/LeafletMap.js" />
+        <option value="$PROJECT_DIR$/client/src/components/dashboard/DashboardModal.js" />
+        <option value="$PROJECT_DIR$/client/src/routes/dashboard.js" />
+        <option value="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/client/src/components/partner/PartnerPage.js" />
+        <option value="$PROJECT_DIR$/client/src/components/partner/Partner.js" />
+        <option value="$PROJECT_DIR$/client/src/components/helpEmy/HelpEmy.js" />
+        <option value="$PROJECT_DIR$/client/src/routes/helpEmy.js" />
+        <option value="$PROJECT_DIR$/client/src/routes/partner.js" />
+        <option value="$PROJECT_DIR$/client/src/components/whoIsEmy/WhoIsEmy.js" />
+        <option value="$PROJECT_DIR$/client/src/routes/who-is-emy.js" />
         <option value="$PROJECT_DIR$/client/src/App.css" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/FieldFileInput.js" />
-        <option value="$PROJECT_DIR$/api/src/Entity/FoodStuff.php" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/Form.js" />
-        <option value="$PROJECT_DIR$/api/src/Form/ImageType.php" />
-        <option value="$PROJECT_DIR$/api/src/Controller/CreateImageAction.php" />
-        <option value="$PROJECT_DIR$/api/src/Entity/Image.php" />
-        <option value="$PROJECT_DIR$/api/config/packages/vich_uploader.yaml" />
         <option value="$PROJECT_DIR$/client/src/components/foodstuff/ListItem.js" />
-        <option value="$PROJECT_DIR$/client/src/components/map/GoogleComponent.js" />
-        <option value="$PROJECT_DIR$/client/src/components/map/LeafletMarker.js" />
+        <option value="$PROJECT_DIR$/client/src/components/image/Form.js" />
+        <option value="$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js" />
+        <option value="$PROJECT_DIR$/client/src/components/foodstuff/Form.js" />
+        <option value="$PROJECT_DIR$/client/src/components/login/LoginModal.js" />
+        <option value="$PROJECT_DIR$/api/src/Entity/FoodStuff.php" />
+        <option value="$PROJECT_DIR$/client/src/components/foodstuff/List.js" />
+        <option value="$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js" />
+        <option value="$PROJECT_DIR$/client/src/routes/signin.js" />
+        <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/client/src/components/block/Header.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/foodstuff/create.js" />
+        <option value="$PROJECT_DIR$/client/src/App.scss" />
+        <option value="$PROJECT_DIR$/client/src/components/signin/Signin.js" />
       </list>
     </option>
   </component>
@@ -244,10 +257,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="51" />
-    <option name="y" value="40" />
+    <option name="x" value="985" />
+    <option name="y" value="25" />
     <option name="width" value="1869" />
-    <option name="height" value="1040" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -267,6 +280,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -278,71 +292,24 @@
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
               <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
               <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
               <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="medias" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
               <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
@@ -363,7 +330,7 @@
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="image" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="foodstuff" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
@@ -393,7 +360,7 @@
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="foodstuff" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="block" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
@@ -401,14 +368,23 @@
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="map" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
               <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="signin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
@@ -417,11 +393,17 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="utils" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,14 +412,16 @@
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="two.files.diff.last.used.folder" value="$USER_HOME$/Documents/emy/client/src" />
     <property name="two.files.diff.last.used.file" value="$USER_HOME$/Documents/emy/client/src/components/foodstuff/map/GoogleComponent.js" />
-    <property name="SearchEverywhereHistoryKey" value="googl&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/map/GoogleComponent.js&#10;Map&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/map/MapContainer.js" />
+    <property name="SearchEverywhereHistoryKey" value="List&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/List.js&#10;creat&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/create.js&#10;Cre&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/CreateFoodStuffModal.js&#10;Crea&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/create.js&#10;Food&#9;null&#9;null&#10;Create&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/CreateFoodStuffModal.js&#10;Head&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/block/Header.js&#10;Dash&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/Dashboard.js&#10;const&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/constants/user/constants.js&#10;actions&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/user/actions.js&#10;reducer&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/reducers/user/reducer.js&#10;actio&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/user/actions.js&#10;acti&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/user/actions.js&#10;googl&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/map/GoogleComponent.js&#10;Map&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/map/MapContainer.js" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/constants/login" />
+      <recent name="$PROJECT_DIR$/client/src/actions/login" />
+      <recent name="$PROJECT_DIR$/client/src/reducers/login" />
+      <recent name="$PROJECT_DIR$/client/src/actions/alert" />
       <recent name="$PROJECT_DIR$/client/src" />
-      <recent name="$PROJECT_DIR$/client/src/components/foodstuff" />
-      <recent name="$PROJECT_DIR$/client/src/components/map" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -476,20 +460,26 @@
       <workItem from="1552554290780" duration="597000" />
       <workItem from="1553170381245" duration="1208000" />
       <workItem from="1553625780647" duration="13241000" />
+      <workItem from="1555152900158" duration="4931000" />
+      <workItem from="1555249410391" duration="7283000" />
+      <workItem from="1555268431304" duration="4918000" />
+      <workItem from="1555311308906" duration="25441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94695000" />
+    <option name="totallyTimeSpent" value="142546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2616566" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18869995" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -501,7 +491,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -512,230 +501,174 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/components/login/LoginModal.js</url>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/yarn.lock">
+    <entry file="file://$PROJECT_DIR$/client/src/components/login/PrivateRoute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/welcome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4829">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/Show.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/foodstuff/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/block/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/routes/foodstuff.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/routes/image.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#112#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/config/entrypoint.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/foodstuff/create.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="57" column="34" lean-forward="false" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/create.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/assets/img/marker.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/assets/img/marker-icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/react-leaflet/es/context.js.flow">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/leaflet/src/layer/marker/DivIcon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-419">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/leaflet/src/layer/marker/Marker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/leaflet/src/layer/marker/Icon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/leaflet/src/Leaflet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/node_modules/react-leaflet/es/Marker.js.flow">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="55" column="15" lean-forward="false" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/assets/js/bouncing-marker-icon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/map/MarkersComponents.js" />
-    <entry file="file://$PROJECT_DIR$/client/src/components/map/MapContainer.js" />
-    <entry file="file://$PROJECT_DIR$/client/node_modules/leaflet/dist/leaflet-src.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125964">
-          <caret line="7001" column="14" lean-forward="false" selection-start-line="7001" selection-start-column="10" selection-end-line="7001" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/assets/js/marker-icon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="59" column="11" lean-forward="false" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
-          <folding>
-            <marker date="1551948712764" expanded="true" signature="5246:5284" ph="{...}" />
-            <marker date="1551948712764" expanded="true" signature="5669:5671" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/Create.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/FieldFileInput.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/routes/image.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/services/authentication.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/serviceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/routes/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="46" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/routes/foodstuff.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/partner/Partner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/helpEmy/HelpEmy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/whoIsEmy/WhoIsEmy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/routes/who-is-emy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="73" lean-forward="false" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/routes/partner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/routes/helpEmy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="68" lean-forward="false" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -747,124 +680,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/map/LeafletMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/map/AutoComplete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/Entity/FoodStuff.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1848">
-          <caret line="120" column="45" lean-forward="false" selection-start-line="120" selection-start-column="45" selection-end-line="120" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/Form/ImageType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="e#107#128#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/public/medias/Capture d’écran de 2018-09-27 20-24-56.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/Entity/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
-          <folding>
-            <element signature="e#30#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/Controller/CreateImageAction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#34#110#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/image/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/image/show.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="64" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/ListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/config/packages/sensio_framework_extra.yaml">
+    <entry file="file://$PROJECT_DIR$/client/.dockerignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -872,27 +688,266 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/config/packages/vich_uploader.yaml">
+    <entry file="file://$PROJECT_DIR$/client/src/Welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="68" lean-forward="true" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/map/GoogleComponent.js">
+    <entry file="file://$PROJECT_DIR$/client/node_modules/react-google-location/example/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="103" column="24" lean-forward="false" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
+        <state relative-caret-position="36">
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/node_modules/react-leaflet/es/Map.js.flow">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="98" column="21" lean-forward="false" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/map/LeafletMarker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="-154">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/map/LeafletMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="76" column="28" lean-forward="false" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/image/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="101" column="15" lean-forward="false" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/App.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/serviceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/Create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/assets/img/place-localizer.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/assets/img/phone.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/Entity/FoodStuff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="54" column="62" lean-forward="false" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="100" column="30" lean-forward="false" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/login/LoginPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/login/LoginModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/routes/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="56" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/block/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/routes/signin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/utils/dataAccess.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="245" column="10" lean-forward="false" selection-start-line="245" selection-start-column="10" selection-end-line="245" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/signin/Signin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="81" column="93" lean-forward="false" selection-start-line="81" selection-start-column="93" selection-end-line="81" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -77,9 +77,9 @@ class FoodStuff
         return $this;
     }
 
-    public function getExpirationDate(): ?\DateTimeInterface
+    public function getExpirationDate()
     {
-        return $this->expirationDate;
+        return $this->expirationDate->format('d/m/Y');
     }
 
     public function setExpirationDate(\DateTimeInterface $expirationDate): self

@@ -5,7 +5,7 @@ import { del } from '../../actions/foodstuff/delete';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-class ListItem extends React.Component {
+class FoodstuffListItem extends React.Component {
     static propTypes = {
         deleteError: PropTypes.string,
         deleteLoading: PropTypes.bool.isRequired,
@@ -77,41 +77,40 @@ class ListItem extends React.Component {
     render() {
         return(
             <li key={this.props.item['@id']} className={'foodstuff-' + this.props.item['id']}>
-                <div className="list-item-description" onClick={this.handleClick}>
+                <div className="foodstuff-list-item" onClick={this.handleClick}>
                     <img src={this.state.image} className="img-produit" alt=""/>
-                    <div className="ctn-desc-item">
-                        <h2>{this.props.item['name']}</h2>
+                    <div className="foodstuff-list-item-description">
+                        <h2 className="foodstuff-name">{this.props.item['name']}</h2>
                         <span>
                         <img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/>
-                        DDP : <span>{this.props.item['expirationDate']}</span>
-                    </span>
-                        <button className="take-it-infos" value="Open" onClick={() => this.openModal()}>Je prends !</button>
-                        <button className="localize-it">
-                            <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
-                            Localiser
-                        </button>
+                        DDP : <span className="expirationDate">{this.props.item['expirationDate']}</span>
+                        </span>
+                        <div>
+                            <button className="take-it" value="Open" onClick={() => this.openModal()}>Je prends !</button>
+                            <button className="localize-it">
+                                <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
+                                Localiser
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <Modal visible={this.state.visible} width="400" className="modal-popup modal-popup2" effect="fadeInUp" onClickAway={() => this.closeModal()}>
-                    <div className="popup-takeit">
+                <Modal visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
+                    <div className="modal-style">
                         <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
-                        <h3>Planifier le rendez-vous !</h3>
+                        <h3 className="modal-style-title">Planifier le rendez-vous !</h3>
                         {this.props.deleteError && (
                             <div className="alert alert-danger" role="alert">
                                 <span className="fa fa-exclamation-triangle" aria-hidden="true" />{' '}
                                 {this.props.deleteError}
                             </div>
                         )}
-                        <div className="side-product-popup">
+                        <div className="modal-take-it-foodstuff-description">
                             <img src={require('./assets/img/1.jpg')} className="img-produit" alt=""/>
-                            <span>
-                                <h4>{this.props.item['name']}</h4>
-                                <p>
-                                    <img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/>
-                                    <span>{this.props.item['expirationDate']}</span>
-                                    <span>Tel :{this.props.item['phoneNumber']}</span>
-                                </p>
+                            <span className="d-flex flex-column">
+                                <h4 className="modal-take-it-foodstuff-name">{this.props.item['name']}</h4>
+                                <span><img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/> {this.props.item['expirationDate']}</span>
+                                <span>Tel :{this.props.item['phoneNumber']}</span>
                                 <button onClick={this.del} type="button" name="button">Je m'engage à prendre ce produit</button>
                             </span>
                         </div>
@@ -135,4 +134,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ListItem);
+)(FoodstuffListItem);

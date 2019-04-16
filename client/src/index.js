@@ -22,6 +22,12 @@ import foodstuff from './reducers/foodstuff/';
 //import routes
 import foodstuffRoutes from './routes/foodstuff';
 import imageRoutes from './routes/image';
+import loginRoutes from './routes/login';
+import dashboardRoutes from './routes/dashboard';
+import partnerRoutes from './routes/partner';
+import helpEmyRoutes from './routes/helpEmy';
+import whoIsEmyRoutes from './routes/who-is-emy';
+import signinRoutes from './routes/signin';
 
 import Welcome from './Welcome';
 
@@ -43,6 +49,12 @@ ReactDOM.render(
         <Route path="/welcome" component={Welcome} strict={true} exact={true}/>
         { foodstuffRoutes }
         { imageRoutes }
+        { loginRoutes }
+        { dashboardRoutes }
+        { partnerRoutes }
+        { helpEmyRoutes }
+        { whoIsEmyRoutes }
+        { signinRoutes }
         <Route render={() => <h1>Not Found</h1>} />
       </Switch>
     </ConnectedRouter>
