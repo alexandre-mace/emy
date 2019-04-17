@@ -12,7 +12,7 @@ export default class WhoIsEmy extends React.Component {
         return(
             <div>
                 <Header/>
-                <div id="who-is-emy">
+                <div id="who-is-emy" className="content">
                     <h3>Emy, c'est vous</h3>
                 </div>
             </div>

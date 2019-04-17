@@ -38,15 +38,32 @@ button {
     box-shadow: none;
   }
 }
+.btn {
+  background-color: $color-main;
+  border-style: none;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 25px;
+  &:hover {
+    background-color: $color-main;
+    cursor: pointer;
+    color: white;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
 .form-btn {
   border-radius: 5px;
   padding:10px 18px;
-  background:$color-main;
   border:0;
   margin-top:10px;
-  &:hover {
-    background:$color-main;
-  }
+}
+.content {
+  margin: auto;
+  margin-top: 130px;
+  width: 70%;
 }
 /* GENERAL */
 
@@ -103,6 +120,13 @@ header{
   li.selected {
     background-color: $color-main;
     color: white;
+    button.take-it {
+      color: orangered;
+      background-color: white;
+    }
+    button.localize-it {
+      color: white !important;
+    }
   }
   &-item {
     display: flex;
@@ -183,7 +207,7 @@ header{
 
 /* LeafletMap */
 #map-container {
-  width: calc(100% - 400px);
+  width: calc(100% - 35vw);
   height: auto;
   & > * {
     width: 100%;
@@ -243,9 +267,9 @@ header{
 
 /* Signin */
 #signin {
-  width: 60%;
+  width: 40%;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 /* Signin */
 

@@ -28,8 +28,9 @@ import partnerRoutes from './routes/partner';
 import helpEmyRoutes from './routes/helpEmy';
 import whoIsEmyRoutes from './routes/who-is-emy';
 import signinRoutes from './routes/signin';
+import welcomeRoutes from './routes/welcome';
 
-import Welcome from './Welcome';
+import List from './components/foodstuff/List';
 
 const history = createBrowserHistory();
 const store = createStore(
@@ -46,15 +47,16 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route path="/welcome" component={Welcome} strict={true} exact={true}/>
-        { foodstuffRoutes }
-        { imageRoutes }
-        { loginRoutes }
-        { dashboardRoutes }
-        { partnerRoutes }
-        { helpEmyRoutes }
-        { whoIsEmyRoutes }
-        { signinRoutes }
+        <Route path="/" component={List} strict={true} exact={true}/>
+            { foodstuffRoutes }
+            { imageRoutes }
+            { loginRoutes }
+            { dashboardRoutes }
+            { partnerRoutes }
+            { helpEmyRoutes }
+            { whoIsEmyRoutes }
+            { signinRoutes }
+            { welcomeRoutes }
         <Route render={() => <h1>Not Found</h1>} />
       </Switch>
     </ConnectedRouter>

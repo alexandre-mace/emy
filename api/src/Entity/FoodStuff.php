@@ -60,6 +60,18 @@ class FoodStuff
      */
     private $image;
 
+//    /**
+//     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="foodStuffs")
+//     * @ORM\JoinColumn(nullable=false)
+//     */
+//    private $provider;
+//
+//    /**
+//     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="foodStuffs")
+//     * @ORM\JoinColumn(nullable=false)
+//     */
+//    private $owner;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,4 +148,28 @@ class FoodStuff
 
         return $this;
     }
+
+//    public function getProvider(): ?User
+//    {
+//        return $this->provider;
+//    }
+//
+//    public function setProvider(?User $provider): self
+//    {
+//        $this->provider = $provider;
+//
+//        return $this;
+//    }
+//
+//    public function getOwner(): ?User
+//    {
+//        return $this->owner;
+//    }
+//
+//    public function setOwner(?User $owner): self
+//    {
+//        $this->owner = $owner;
+//
+//        return $this;
+//    }
 }

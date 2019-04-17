@@ -12,7 +12,7 @@ export default class Dashboard extends React.Component {
         return(
             <div>
                 <Header/>
-                <div id="partner">
+                <div id="partner" className="content">
                     <h3>Les super partenaires</h3>
                 </div>
             </div>

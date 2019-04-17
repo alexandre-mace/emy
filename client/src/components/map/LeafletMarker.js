@@ -19,6 +19,18 @@ export default class LeafletMarker extends Component {
             foodstuff[0].classList.remove('selected');
         } else {
             this.setState({bounce: true});
+            Array.from(document.getElementsByClassName('foodstuff-list-item')).forEach(function(element) {
+                if (element.parentNode.className.includes('selected')) {
+                    element.parentNode.classList.remove('selected');
+                    const foodstuffId = /[^-]*$/.exec(element.parentNode.className.replace(/ .*/,''))[0];
+                    let marker = document.getElementsByClassName('marker-' + foodstuffId)[0];
+                    if (marker.className.includes('bounce-infinite')) {
+                        marker.classList.remove('bounce-infinite');
+                    } else if (marker.className.includes('bounce')){
+                        marker.classList.remove('bounce');
+                    }
+                }
+            });
             const foodstuff = document.getElementsByClassName('foodstuff-' + this.props.marker[0]);
             foodstuff[0].classList.add('selected');
         }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -35,6 +37,16 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuff", mappedBy="provider")
+     */
+    private $foodStuffs;
+
+    public function __construct()
+    {
+        $this->foodStuffs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -112,5 +124,36 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection|FoodStuff[]
+     */
+    public function getFoodStuffs(): Collection
+    {
+        return $this->foodStuffs;
+    }
+
+    public function addFoodStuff(FoodStuff $foodStuff): self
+    {
+        if (!$this->foodStuffs->contains($foodStuff)) {
+            $this->foodStuffs[] = $foodStuff;
+            $foodStuff->setProvider($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFoodStuff(FoodStuff $foodStuff): self
+    {
+        if ($this->foodStuffs->contains($foodStuff)) {
+            $this->foodStuffs->removeElement($foodStuff);
+            // set the owning side to null (unless already changed)
+            if ($foodStuff->getProvider() === $this) {
+                $foodStuff->setProvider(null);
+            }
+        }
+
+        return $this;
     }
 }

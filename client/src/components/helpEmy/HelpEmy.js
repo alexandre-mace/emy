@@ -12,7 +12,7 @@ export default class HelpEmy extends React.Component {
         return(
             <div>
                 <Header/>
-                <div id="helpEmy">
+                <div id="helpEmy" className="content">
                     <h3>Soutenir Emy</h3>
                 </div>
             </div>

@@ -2,6 +2,7 @@ import logo from '../../assets/img/logo-emy.png';
 import React, { Component } from 'react';
 import { authenticationService } from '../../services';
 import LoginModal from '../login/LoginModal';
+import { Link }from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
@@ -23,20 +24,20 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <a href="/">
+                <Link to="/">
                     <img src={logo} id="logo" alt="Logo Emy" />
-                </a>
+                </Link>
                 {this.state.currentUser &&
-                <a href="/dashboard">Tableau de bord</a>
+                <Link to="/dashboard" className="btn">Votre tableau de bord</Link>
                 }
                 <nav>
 
                     <ul id="header-links">
-                        <li><a href="/qui-est-emy">Qui est Emy ?</a></li>
-                        <li><a href="/partenaires">Partenaires</a></li>
-                        <li><a href="/aider-emy">Aider Emy</a></li>
+                        <li><Link to="/qui-est-emy">Qui est Emy ?</Link></li>
+                        <li><Link to="/partenaires">Partenaires</Link></li>
+                        <li><Link to="/aider-emy">Aider Emy</Link></li>
                         {!this.state.currentUser &&
-                            <li><a href="/rejoindre-emy">Rejoindre Emy</a></li>
+                            <li><Link to="/rejoindre-emy">Rejoindre Emy</Link></li>
                         }
                         {this.state.currentUser ? (
                             <li><button id="logout" onClick={this.logout}>Se déconnecter</button></li>
