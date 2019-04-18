@@ -1,0 +1,316 @@
+/* GENERAL */
+/* variables */
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  height: auto;
+}
+.label-d-none {
+  display: none;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6, p, input, li, nav, ul {
+  padding: 0;
+  margin: 0;
+}
+button {
+  background-color: orangered;
+  border-style: none;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 25px;
+}
+button:hover {
+  background-color: orangered;
+  cursor: pointer;
+  color: white;
+}
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.btn {
+  background-color: orangered;
+  border-style: none;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 25px;
+}
+.btn:hover {
+  background-color: orangered;
+  cursor: pointer;
+  color: white;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.form-btn {
+  border-radius: 5px;
+  padding: 10px 18px;
+  border: 0;
+  margin-top: 10px;
+}
+.content {
+  margin: auto;
+  margin-top: 130px;
+  width: 70%;
+}
+/* GENERAL */
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  -webkit-box-shadow: 0 2px 35px -8px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 0 2px 35px -8px rgba(0, 0, 0, 0.29);
+  box-shadow: 0 2px 35px -8px rgba(0, 0, 0, 0.29);
+  position: relative;
+}
+header #logo {
+  height: 60px;
+}
+header #header-links {
+  display: flex;
+  align-items: center;
+}
+header nav ul li {
+  display: inline-block;
+  margin-right: 30px;
+}
+header nav ul li a {
+  color: black;
+  letter-spacing: 0.5px;
+}
+/* Header */
+/* foodstuff List */
+#foodstuff-list-and-map-container {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+.foodstuff-list-container {
+  width: 35vw;
+}
+#foodstuff-list-search {
+  width: 100%;
+  display: block;
+  background: #f9f9f9 url('components/foodstuff/assets/img/glass.png') 10px 12px/28px no-repeat;
+  border: 0;
+  height: 60px;
+  padding-left: 50px;
+  outline: none;
+}
+.foodstuff-list {
+  list-style: none;
+  height: 100%;
+  overflow: scroll;
+}
+.foodstuff-list li.selected {
+  background-color: orangered;
+  color: white;
+}
+.foodstuff-list li.selected button.take-it {
+  color: orangered;
+  background-color: white;
+}
+.foodstuff-list li.selected button.localize-it {
+  color: white !important;
+}
+.foodstuff-list-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 0 25px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+.foodstuff-list-item img {
+  width: 100px;
+  margin-left: 20px;
+}
+.foodstuff-list-item-description {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.foodstuff-list-item-description .foodstuff-name {
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+.foodstuff-list-item-description .img-calendar {
+  width: 14px;
+  position: relative;
+  margin-right: 4px;
+}
+.foodstuff-list-item-description .take-it {
+  margin-top: 20px;
+}
+.foodstuff-list-item-description .localize-it {
+  background: transparent;
+  color: black !important;
+}
+.foodstuff-list-item-description .localize-it img {
+  display: inline-block;
+  width: 16px;
+  height: auto;
+  position: relative;
+  top: -1px;
+}
+.modal-take-it-foodstuff-description {
+  display: flex;
+  margin-top: 24px;
+  align-items: center;
+  color: black;
+}
+.modal-take-it-foodstuff-description > img {
+  height: 200px;
+  margin-right: 20px;
+}
+.modal-take-it-foodstuff-description .img-calendar {
+  height: 25px;
+}
+.modal-take-it-foodstuff-description .modal-take-it-foodstuff-name {
+  color: orangered;
+}
+/* custom scroll bar */
+.foodstuff-list::-webkit-scrollbar {
+  width: 10px;
+}
+.foodstuff-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.foodstuff-list::-webkit-scrollbar-thumb {
+  background: orangered;
+}
+.foodstuff-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* foodstuff List */
+/* CreateFoodStuffModal */
+#add-product-button {
+  width: 100%;
+  border-radius: 0;
+  height: 60px;
+}
+/* CreateFoodStuffModal */
+/* LeafletMap */
+#map-container {
+  width: calc(100% - 35vw);
+  height: auto;
+}
+#map-container > * {
+  width: 100%;
+  height: 100%;
+}
+.leaflet-container {
+  height: 100%;
+}
+.bounce {
+  position: absolute;
+  animation: bounce 0.35s ease 0s 12 alternate;
+}
+.bounce-infinite {
+  position: absolute;
+  animation: bounce 0.35s ease infinite alternate;
+}
+@keyframes bounce {
+  from {
+    top: 0;
+  }
+  to {
+    top: -30px;
+  }
+}
+/* LeafletMap */
+/* FieldFileInput */
+.label-file {
+  cursor: pointer;
+  color: orangered;
+  border: 2px solid orangered;
+  border-radius: 5px;
+  padding: 10px;
+}
+#input-file {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+}
+/* FieldFileInput */
+/* Modal */
+.modal-style {
+  padding: 20px;
+}
+.modal-style-title {
+  color: orangered;
+  font-size: 20px;
+}
+.modal-style form {
+  margin-top: 20px;
+}
+.close-popup {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+/* Modal */
+/* Signin */
+#signin {
+  width: 40%;
+  margin: auto;
+  margin-top: 130px;
+}
+/* Signin */
+/* Google adress auto complete */
+.google-covert {
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  z-index: 1000;
+  background: white;
+}
+.google-covert > .custom-style-list:first-child {
+  display: none;
+}
+.style-unordered-list {
+  list-style: none;
+}
+.style-unordered-list li {
+  padding: 2px 10px;
+  cursor: pointer;
+  list-style-type: none;
+  transition: 50ms;
+}
+.style-unordered-list li:hover {
+  background: orangered;
+  color: white;
+}
+.style-unordered-list li:first-child {
+  padding-top: 8px;
+}
+.style-unordered-list li:last-child {
+  padding-bottom: 6px;
+}
+.location-box-cover > input {
+  width: 100%;
+  display: block;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+/* Google adress auto complete */

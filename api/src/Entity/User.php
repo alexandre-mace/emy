@@ -38,10 +38,10 @@ class User implements UserInterface
      */
     private $password;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuff", mappedBy="provider")
-     */
-    private $foodStuffs;
+//    /**
+//     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuff", mappedBy="provider")
+//     */
+//    private $foodStuffs;
 
     public function __construct()
     {
@@ -126,34 +126,34 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    /**
-     * @return Collection|FoodStuff[]
-     */
-    public function getFoodStuffs(): Collection
-    {
-        return $this->foodStuffs;
-    }
-
-    public function addFoodStuff(FoodStuff $foodStuff): self
-    {
-        if (!$this->foodStuffs->contains($foodStuff)) {
-            $this->foodStuffs[] = $foodStuff;
-            $foodStuff->setProvider($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFoodStuff(FoodStuff $foodStuff): self
-    {
-        if ($this->foodStuffs->contains($foodStuff)) {
-            $this->foodStuffs->removeElement($foodStuff);
-            // set the owning side to null (unless already changed)
-            if ($foodStuff->getProvider() === $this) {
-                $foodStuff->setProvider(null);
-            }
-        }
-
-        return $this;
-    }
+//    /**
+//     * @return Collection|FoodStuff[]
+//     */
+//    public function getFoodStuffs(): Collection
+//    {
+//        return $this->foodStuffs;
+//    }
+//
+//    public function addFoodStuff(FoodStuff $foodStuff): self
+//    {
+//        if (!$this->foodStuffs->contains($foodStuff)) {
+//            $this->foodStuffs[] = $foodStuff;
+//            $foodStuff->setProvider($this);
+//        }
+//
+//        return $this;
+//    }
+//
+//    public function removeFoodStuff(FoodStuff $foodStuff): self
+//    {
+//        if ($this->foodStuffs->contains($foodStuff)) {
+//            $this->foodStuffs->removeElement($foodStuff);
+//            // set the owning side to null (unless already changed)
+//            if ($foodStuff->getProvider() === $this) {
+//                $foodStuff->setProvider(null);
+//            }
+//        }
+//
+//        return $this;
+//    }
 }
