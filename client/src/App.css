@@ -61,7 +61,7 @@ button:focus {
 .content {
   margin: auto;
   margin-top: 130px;
-  width: 70%;
+  width: 85%;
 }
 /* GENERAL */
 /* Header */
@@ -314,3 +314,106 @@ header nav ul li a {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 /* Google adress auto complete */
+/* Dashboard */
+#dashboard table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+#dashboard table * {
+  position: relative;
+}
+#dashboard table td, #dashboard table th {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+#dashboard table thead tr {
+  height: 60px;
+  background: orangered;
+  color: white;
+  font-size: 16px;
+}
+#dashboard table tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #E3F1D5;
+}
+#dashboard table tbody tr:last-child {
+  border: 0;
+}
+#dashboard table td, #dashboard table th {
+  text-align: left;
+}
+#dashboard table td.l, #dashboard table th.l {
+  text-align: right;
+}
+#dashboard table td.c, #dashboard table th.c {
+  text-align: center;
+}
+#dashboard table td.r, #dashboard table th.r {
+  text-align: center;
+}
+
+@media screen and (max-width: 35.5em) {
+  #dashboard table {
+    display: block;
+  }
+  #dashboard table > *, #dashboard table tr, #dashboard table td, #dashboard table th {
+    display: block;
+  }
+  #dashboard table thead {
+    display: none;
+  }
+  #dashboard table tbody tr {
+    height: auto;
+    padding: 8px 0;
+  }
+  #dashboard table tbody tr td {
+    padding-left: 45%;
+    margin-bottom: 12px;
+  }
+  #dashboard table tbody tr td:last-child {
+    margin-bottom: 0;
+  }
+  #dashboard table tbody tr td:before {
+    position: absolute;
+    font-weight: 700;
+    width: 40%;
+    left: 10px;
+    top: 0;
+  }
+  #dashboard table tbody tr td:nth-child(1):before {
+    content: "Code";
+  }
+  #dashboard table tbody tr td:nth-child(2):before {
+    content: "Stock";
+  }
+  #dashboard table tbody tr td:nth-child(3):before {
+    content: "Cap";
+  }
+  #dashboard table tbody tr td:nth-child(4):before {
+    content: "Inch";
+  }
+  #dashboard table tbody tr td:nth-child(5):before {
+    content: "Box Type";
+  }
+}
+.dashboard-main-section {
+  display: flex;
+  justify-content: space-between;
+}
+.product-taken, .product-given {
+  width: 100%;
+}
+.product-taken img, .product-given img {
+  background-color: orangered;
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* Dashboard */
