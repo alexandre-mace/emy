@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { list, reset } from '../../actions/foodstuff/list';
-import ListItem from './ListItem';
+import FoodstuffListItem from './FoodstuffListItem';
 import '../../App.css';
 import Header from '../block/Header';
 import LeafletMap from "../map/LeafletMap";
 import CreateFoodStuffModal from './CreateFoodStuffModal';
+import LoginModal from "../login/LoginModal";
 
 class List extends Component {
     static propTypes = {
@@ -22,10 +23,13 @@ class List extends Component {
     constructor(){
         super();
         this.state = {
-            file: null
+            file: null,
+            loginModalActive: false
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleProductAdded = this.handleProductAdded.bind(this);
+        this.openLoginModal = this.openLoginModal.bind(this);
+        this.closeLoginModal = this.closeLoginModal.bind(this);
     }
 
     componentDidMount() {
@@ -34,6 +38,7 @@ class List extends Component {
             decodeURIComponent(this.props.match.params.page)
         );
     }
+
 
     componentWillReceiveProps(nextProps) {
         if (this.props.match.params.page !== nextProps.match.params.page)
@@ -51,7 +56,7 @@ class List extends Component {
     filterList(){
         // Declare variables
         var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById('filterListInput');
+        input = document.getElementById('foodstuff-list-search');
         filter = input.value.toUpperCase();
         ul = document.getElementById("myUL");
         li = ul.getElementsByTagName('li');
@@ -83,6 +88,18 @@ class List extends Component {
         })
     }
 
+    openLoginModal = () => {
+        this.setState({
+            loginModalActive : true
+        });
+    }
+
+    closeLoginModal = () => {
+        this.setState({
+            loginModalActive : false
+        });
+    }
+
     render() {
         let map = 'Loading';
         if (this.props.retrieved) {
@@ -90,22 +107,26 @@ class List extends Component {
         }
         return (
             <div>
-                <Header/>
-                <div id="list-map-wrapper">
-                    <div className="foodstuff-list-wrapper">
+                <Header openModal={this.openLoginModal} />
+                <LoginModal visible={this.state.loginModalActive} closeModal={this.closeLoginModal} />
+                <div id="foodstuff-list-and-map-container">
+                    <div className="foodstuff-list-container">
                         <div className="foodstuff-list-commands">
-                            <CreateFoodStuffModal handleProductAdded = {this.handleProductAdded} />
-                            <input type="text" id="filterListInput" onKeyUp={this.filterList} placeholder="Chercher facilement un produit"/>
+                            <CreateFoodStuffModal openModal={this.openLoginModal} handleProductAdded = {this.handleProductAdded} />
+                            <input type="text" id="foodstuff-list-search" onKeyUp={this.filterList} placeholder="Chercher facilement un produit"/>
                         </div>
                         <ul className="foodstuff-list" id="myUL">
                             {this.props.retrieved &&
                             this.props.retrieved['hydra:member'].map(item => (
-                                <ListItem item={item} key={item.id} handleProductAdded = {this.handleProductAdded} />
+                                <FoodstuffListItem item={item} key={item.id} handleProductAdded = {this.handleProductAdded} />
                             ))}
                         </ul>
+
                         {this.pagination()}
                     </div>
-                    {map}
+                    <div id="map-container">
+                        {map}
+                    </div>
                 </div>
 
             </div>

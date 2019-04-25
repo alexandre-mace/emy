@@ -18,7 +18,7 @@ export function success(retrieved) {
   return { type: 'FOODSTUFF_LIST_SUCCESS', retrieved };
 }
 
-export function list(page = '/food_stuffs') {
+export function list(page = '/food_stuffs?isAwaiting=false&hasBeenGiven=false') {
   return dispatch => {
     dispatch(loading(true));
     dispatch(error(''));

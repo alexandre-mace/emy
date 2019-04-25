@@ -25,7 +25,7 @@ class Form extends Component {
             <div className={`form-group`}>
                 <label
                     htmlFor={`foodstuff_${data.input.name}`}
-                    className="form-control-label"
+                    className="label-d-none"
                 >
                     {data.input.name}
                 </label>
@@ -91,7 +91,7 @@ class Form extends Component {
                 />
                 <Field name="image" label="Ajouter une photo du produit" type="file" component={FieldFileInput} />
 
-                <button type="submit" className="btn btn-success btn-form" onClick={this.bindAddress}>
+                <button type="submit" className="btn btn-success form-btn" onClick={this.bindAddress}>
                     Ajouter le produit !
                 </button>
             </form>

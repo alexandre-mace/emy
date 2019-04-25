@@ -20,7 +20,7 @@ class UserSubscriber implements EventSubscriber
     {
         return array(
             'prePersist',
-            'preUpdate'
+//            'preUpdate'
         );
     }
 

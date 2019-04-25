@@ -13,7 +13,7 @@ use App\Controller\CreateImageAction;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
- * @ApiResource(attributes={"formats"={"json", "jsonld"}}, iri="http://schema.org/MediaObject", collectionOperations={
+ * @ApiResource(attributes={"formats"={"jsonld"}}, iri="http://schema.org/MediaObject", collectionOperations={
  *     "get",
  *     "post"={
  *         "method"="POST",
@@ -30,6 +30,7 @@ class Image
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"food_stuff"})
      */
     private $id;
 

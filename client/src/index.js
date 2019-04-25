@@ -22,8 +22,15 @@ import foodstuff from './reducers/foodstuff/';
 //import routes
 import foodstuffRoutes from './routes/foodstuff';
 import imageRoutes from './routes/image';
+import dashboardRoutes from './routes/dashboard';
+import partnerRoutes from './routes/partner';
+import helpEmyRoutes from './routes/helpEmy';
+import whoIsEmyRoutes from './routes/who-is-emy';
+import signinRoutes from './routes/signin';
+import welcomeRoutes from './routes/welcome';
+import donorRoutes from './routes/donors';
 
-import Welcome from './Welcome';
+import List from './components/foodstuff/List';
 
 const history = createBrowserHistory();
 const store = createStore(
@@ -40,10 +47,17 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route path="/welcome" component={Welcome} strict={true} exact={true}/>
-        { foodstuffRoutes }
-        { imageRoutes }
-        <Route render={() => <h1>Not Found</h1>} />
+        <Route path="/" component={List} strict={true} exact={true}/>
+            { foodstuffRoutes }
+            { imageRoutes }
+            { dashboardRoutes }
+            { partnerRoutes }
+            { helpEmyRoutes }
+            { whoIsEmyRoutes }
+            { signinRoutes }
+            { donorRoutes }
+            { welcomeRoutes }
+          <Route render={() => <h1>Not Found</h1>} />
       </Switch>
     </ConnectedRouter>
   </Provider>,
