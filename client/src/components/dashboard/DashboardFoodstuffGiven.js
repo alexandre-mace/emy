@@ -1,17 +1,14 @@
 import React from 'react';
 import Header from '../block/Header'
 import { authenticationService } from '../../services';
-import FoodstuffsToConfirmTable from './FoodstuffsToConfirmTable';
+import FoodstuffsGivenTable from './FoodstuffsGivenTable';
 import UserRank from "./UserRank";
-import {getAwaiting} from "../../actions/foodstuff/getAwaiting";
-import {getToConfirm} from "../../actions/foodstuff/getToConfirm";
 import {getGiven} from "../../actions/foodstuff/getGiven";
-import {getReceived} from "../../actions/foodstuff/getReceived";
 import {getOne} from "../../actions/user/getOne";
 import Loader from "../block/Loader";
 import DashboardHeader from "./DashboardHeader";
 
-export default class Dashboard extends React.Component {
+export default class DashboardFoodstuffGiven extends React.Component {
     _isMounted = false;
 
     constructor(){
@@ -19,7 +16,7 @@ export default class Dashboard extends React.Component {
         this.state = {
             refresh: null,
             user: null,
-            foodstuffsToConfirm: null,
+            foodstuffsGiven: null
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -32,9 +29,6 @@ export default class Dashboard extends React.Component {
 
     static triggerAllFetches(user) {
         return Promise.all([
-            getToConfirm(user),
-            getAwaiting(user),
-            getReceived(user),
             getGiven(user)
         ])
     }
@@ -45,11 +39,11 @@ export default class Dashboard extends React.Component {
                 if (localStorageUser) {
                     getOne(localStorageUser['@id'])
                         .then(user => {
-                            Dashboard.triggerAllFetches(user)
+                            DashboardFoodstuffGiven.triggerAllFetches(user)
                                 .then(values => {
                                     this.setState({
                                         user: user,
-                                        foodstuffsToConfirm: values[0]
+                                        foodstuffsGiven: values[0]
                                     })
                                 })
                         })
@@ -64,11 +58,11 @@ export default class Dashboard extends React.Component {
         if (this.state.refresh === true && this.state.user) {
             getOne(this.state.user['@id'])
                 .then(user => {
-                    Dashboard.triggerAllFetches(user)
+                    DashboardFoodstuffGiven.triggerAllFetches(user)
                         .then(values => {
                             this.setState({
                                 user: user,
-                                foodstuffsToConfirm: values[0],
+                                foodstuffsGiven: values[0],
                                 refresh: false
                             })
                         })
@@ -84,7 +78,7 @@ export default class Dashboard extends React.Component {
                     <DashboardHeader/>
                     {this.state.user ? (
                         <div className="row">
-                            <FoodstuffsToConfirmTable foodstuffsToConfirm={this.state.foodstuffsToConfirm} handleChange={this.handleChange} />
+                            <FoodstuffsGivenTable foodstuffsGiven={this.state.foodstuffsGiven}/>
                         </div>
                     ) : (
                         <div className="row mt-5">

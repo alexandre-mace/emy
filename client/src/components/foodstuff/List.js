@@ -8,6 +8,7 @@ import '../../App.css';
 import Header from '../block/Header';
 import LeafletMap from "../map/LeafletMap";
 import CreateFoodStuffModal from './CreateFoodStuffModal';
+import LoginModal from "../login/LoginModal";
 
 class List extends Component {
     static propTypes = {
@@ -22,10 +23,13 @@ class List extends Component {
     constructor(){
         super();
         this.state = {
-            file: null
+            file: null,
+            loginModalActive: false
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleProductAdded = this.handleProductAdded.bind(this);
+        this.openLoginModal = this.openLoginModal.bind(this);
+        this.closeLoginModal = this.closeLoginModal.bind(this);
     }
 
     componentDidMount() {
@@ -84,6 +88,18 @@ class List extends Component {
         })
     }
 
+    openLoginModal = () => {
+        this.setState({
+            loginModalActive : true
+        });
+    }
+
+    closeLoginModal = () => {
+        this.setState({
+            loginModalActive : false
+        });
+    }
+
     render() {
         let map = 'Loading';
         if (this.props.retrieved) {
@@ -91,11 +107,12 @@ class List extends Component {
         }
         return (
             <div>
-                <Header/>
+                <Header openModal={this.openLoginModal} />
+                <LoginModal visible={this.state.loginModalActive} closeModal={this.closeLoginModal} />
                 <div id="foodstuff-list-and-map-container">
                     <div className="foodstuff-list-container">
                         <div className="foodstuff-list-commands">
-                            <CreateFoodStuffModal handleProductAdded = {this.handleProductAdded} />
+                            <CreateFoodStuffModal openModal={this.openLoginModal} handleProductAdded = {this.handleProductAdded} />
                             <input type="text" id="foodstuff-list-search" onKeyUp={this.filterList} placeholder="Chercher facilement un produit"/>
                         </div>
                         <ul className="foodstuff-list" id="myUL">
@@ -104,6 +121,7 @@ class List extends Component {
                                 <FoodstuffListItem item={item} key={item.id} handleProductAdded = {this.handleProductAdded} />
                             ))}
                         </ul>
+
                         {this.pagination()}
                     </div>
                     <div id="map-container">

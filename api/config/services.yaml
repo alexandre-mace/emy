@@ -28,3 +28,17 @@ services:
     App\EventSubscriber\UserSubscriber:
         tags:
             - { name: doctrine.event_subscriber, connection: default }
+
+    App\EventSubscriber\FoodStuffSubscriber:
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+
+    foodstuff.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { providerProperty: ~ } ]
+        tags:  [ 'api_platform.filter' ]
+        # The following are mandatory only if a _defaults section is defined
+        # You may want to isolate filters in a dedicated file to avoid adding them
+        autowire: false
+        autoconfigure: false
+        public: false

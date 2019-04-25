@@ -33,7 +33,7 @@ function login(email, password) {
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     currentUserSubject.next(user);
 
-                    return token;
+                    return user;
                     }
                 )
 

@@ -2,16 +2,20 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ApiResource
  * @ORM\Table(name="app_user")
+ * @ApiFilter(OrderFilter::class, properties={"points"}, arguments={"orderParameterName"="order"})
  */
 class User implements UserInterface
 {
@@ -19,11 +23,13 @@ class User implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"food_stuff:read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups({"food_stuff:read"})
      */
     private $email;
 
@@ -38,14 +44,46 @@ class User implements UserInterface
      */
     private $password;
 
-//    /**
-//     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuff", mappedBy="provider")
-//     */
-//    private $foodStuffs;
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuff", mappedBy="provider")
+     */
+    private $foodStuffsProvided;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuff", mappedBy="owner")
+     */
+    private $foodStuffsOwned;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuff", mappedBy="askingToOwn")
+     */
+    private $askingToOwnFoodstuffs;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups({"food_stuff:read"})
+     */
+    private $firstName;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lastName;
+
+    /**
+     * @ORM\Column(type="integer", options={"default": 0})
+     */
+    private $points = 0;
+
+    /**
+     * @ORM\Column(type="string", length=255, options={"default": "iron"})
+     */
+    private $grade = 'bronze';
 
     public function __construct()
     {
         $this->foodStuffs = new ArrayCollection();
+        $this->askingToOwnFoodstuffs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -126,34 +164,143 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-//    /**
-//     * @return Collection|FoodStuff[]
-//     */
-//    public function getFoodStuffs(): Collection
-//    {
-//        return $this->foodStuffs;
-//    }
-//
-//    public function addFoodStuff(FoodStuff $foodStuff): self
-//    {
-//        if (!$this->foodStuffs->contains($foodStuff)) {
-//            $this->foodStuffs[] = $foodStuff;
-//            $foodStuff->setProvider($this);
-//        }
-//
-//        return $this;
-//    }
-//
-//    public function removeFoodStuff(FoodStuff $foodStuff): self
-//    {
-//        if ($this->foodStuffs->contains($foodStuff)) {
-//            $this->foodStuffs->removeElement($foodStuff);
-//            // set the owning side to null (unless already changed)
-//            if ($foodStuff->getProvider() === $this) {
-//                $foodStuff->setProvider(null);
-//            }
-//        }
-//
-//        return $this;
-//    }
+    /**
+     * @return Collection|FoodStuff[]
+     */
+    public function getFoodStuffsProvided()
+    {
+        return $this->foodStuffsProvided;
+    }
+
+    public function addFoodStuffProvided(FoodStuff $foodStuff): self
+    {
+        if (!$this->foodStuffsProvided->contains($foodStuff)) {
+            $this->foodStuffsProvided[] = $foodStuff;
+            $foodStuff->setProvider($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFoodStuffProvided(FoodStuff $foodStuff): self
+    {
+        if ($this->foodStuffsProvided->contains($foodStuff)) {
+            $this->foodStuffsProvided->removeElement($foodStuff);
+            // set the owning side to null (unless already changed)
+            if ($foodStuff->getProvider() === $this) {
+                $foodStuff->setProvider(null);
+            }
+        }
+
+        return $this;
+    }
+    /**
+     * @return Collection|FoodStuff[]
+     */
+    public function getFoodStuffsOwned()
+    {
+        return $this->foodStuffsOwned;
+    }
+
+    public function addFoodStuffOwned(FoodStuff $foodStuff): self
+    {
+        if (!$this->foodStuffsOwned->contains($foodStuff)) {
+            $this->foodStuffsOwned[] = $foodStuff;
+            $foodStuff->setOwner($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFoodStuffOwned(FoodStuff $foodStuff): self
+    {
+        if ($this->foodStuffsOwned->contains($foodStuff)) {
+            $this->foodStuffsOwned->removeElement($foodStuff);
+            // set the owning side to null (unless already changed)
+            if ($foodStuff->getOwner() === $this) {
+                $foodStuff->setOwner(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FoodStuff[]
+     */
+    public function getAskingToOwnFoodstuffs(): Collection
+    {
+        return $this->askingToOwnFoodstuffs;
+    }
+
+    public function addAskingToOwnFoodstuff(FoodStuff $askingToOwnFoodstuff): self
+    {
+        if (!$this->askingToOwnFoodstuffs->contains($askingToOwnFoodstuff)) {
+            $this->askingToOwnFoodstuffs[] = $askingToOwnFoodstuff;
+            $askingToOwnFoodstuff->setAskingToOwn($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAskingToOwnFoodstuff(FoodStuff $askingToOwnFoodstuff): self
+    {
+        if ($this->askingToOwnFoodstuffs->contains($askingToOwnFoodstuff)) {
+            $this->askingToOwnFoodstuffs->removeElement($askingToOwnFoodstuff);
+            // set the owning side to null (unless already changed)
+            if ($askingToOwnFoodstuff->getAskingToOwn() === $this) {
+                $askingToOwnFoodstuff->setAskingToOwn(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getPoints(): ?int
+    {
+        return $this->points;
+    }
+
+    public function setPoints(int $points): self
+    {
+        $this->points = $points;
+
+        return $this;
+    }
+
+    public function getGrade(): ?string
+    {
+        return $this->grade;
+    }
+
+    public function setGrade(string $grade): self
+    {
+        $this->grade = $grade;
+
+        return $this;
+    }
 }

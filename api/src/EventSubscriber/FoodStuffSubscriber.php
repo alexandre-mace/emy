@@ -27,17 +27,22 @@ class FoodStuffSubscriber implements EventSubscriber
     public function getSubscribedEvents()
     {
         return array(
-//            'prePersist',
-//            'preUpdate'
+            'prePersist',
+            'preUpdate'
         );
     }
 
     public function prePersist(LifecycleEventArgs $args)
     {
-        $this->assign($args);
+        $this->adjustNewRank($args);
     }
 
-    public function assign(LifecycleEventArgs $args)
+    public function preUpdate(LifecycleEventArgs $args)
+    {
+        $this->adjustNewRank($args);
+    }
+
+    public function adjustNewRank(LifecycleEventArgs $args)
     {
         $entity = $args->getObject();
 
@@ -45,11 +50,21 @@ class FoodStuffSubscriber implements EventSubscriber
             return;
         }
 
-        $user = $this->security->getUser();
+        $user = $entity->getProvider();
 
         if ($user instanceof User) {
-            $entity->setProvider($user);
-            $entity->setOwner($user);
+            $user->setPoints($user->getPoints() + 10);
+            if ($user->getPoints() >= 30) {
+                if ($user->getPoints() >= 200) {
+                    $user->setGrade('platine');
+                    return;
+                }
+                if ($user->getPoints() >= 100) {
+                    $user->setGrade('or');
+                    return;
+                }
+                $user->setGrade('argent');
+            }
         }
     }
 }

@@ -1,16 +1,14 @@
 import React from 'react';
 import Modal from 'react-awesome-modal';
 import axios from 'axios';
-import { del } from '../../actions/foodstuff/delete';
+import { update } from '../../actions/foodstuff/update';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { authenticationService } from '../../services';
 
 class FoodstuffListItem extends React.Component {
     static propTypes = {
-        deleteError: PropTypes.string,
-        deleteLoading: PropTypes.bool.isRequired,
-        deleted: PropTypes.object,
-        del: PropTypes.func.isRequired
+        update: PropTypes.func.isRequired
     };
     constructor(){
         super();
@@ -78,8 +76,8 @@ class FoodstuffListItem extends React.Component {
         }
     }
 
-    del = () => {
-        this.props.del(this.props.item)
+    askingToOwn = () => {
+        this.props.update(this.props.item, { isAwaiting: true, askingToOwn: authenticationService.currentUser.source.value['@id'] })
             .then(response => {
                 this.props.handleProductAdded();
                 this.closeModal();
@@ -95,7 +93,7 @@ class FoodstuffListItem extends React.Component {
                         <h2 className="foodstuff-name">{this.props.item['name']}</h2>
                         <span>
                         <img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/>
-                        DDP : <span className="expirationDate">{this.props.item['expirationDate']}</span>
+                        <span className="expirationDate">Date limite de consommation {this.props.item['expirationDate']}</span>
                         </span>
                         <div>
                             <button className="take-it" value="Open" onClick={() => this.openModal()}>Je prends !</button>
@@ -107,7 +105,7 @@ class FoodstuffListItem extends React.Component {
                     </div>
                 </div>
 
-                <Modal visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
+                <Modal width="600" visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div className="modal-style">
                         <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
                         <h3 className="modal-style-title">Planifier le rendez-vous !</h3>
@@ -118,13 +116,16 @@ class FoodstuffListItem extends React.Component {
                             </div>
                         )}
                         <div className="modal-take-it-foodstuff-description">
-                            <img src={require('./assets/img/1.jpg')} className="img-produit" alt=""/>
-                            <span className="d-flex flex-column">
+                            <div>
+                                <img src={require('./assets/img/1.jpg')} className="foodstuff-img" alt=""/>
+                            </div>
+                            <div className="d-flex flex-column">
                                 <h4 className="modal-take-it-foodstuff-name">{this.props.item['name']}</h4>
+                                <p>Disponibilités : {this.props.item.availabilities}</p>
                                 <span><img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/> {this.props.item['expirationDate']}</span>
                                 <span>Tel :{this.props.item['phoneNumber']}</span>
-                                <button onClick={this.del} type="button" name="button">Je m'engage à prendre ce produit</button>
-                            </span>
+                                <button onClick={this.askingToOwn} type="button" name="button">Je m'engage à prendre ce produit</button>
+                            </div>
                         </div>
                     </div>
                 </Modal>
@@ -134,13 +135,10 @@ class FoodstuffListItem extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    deleteError: state.foodstuff.del.error,
-    deleteLoading: state.foodstuff.del.loading,
-    deleted: state.foodstuff.del.deleted
 });
 
 const mapDispatchToProps = dispatch => ({
-    del: item => dispatch(del(item)),
+    update: (item, values) => dispatch(update(item, values)),
 });
 
 export default connect(
