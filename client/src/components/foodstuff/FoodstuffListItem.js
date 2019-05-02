@@ -79,7 +79,7 @@ class FoodstuffListItem extends React.Component {
     askingToOwn = () => {
         this.props.update(this.props.item, { isAwaiting: true, askingToOwn: authenticationService.currentUser.source.value['@id'] })
             .then(response => {
-                this.props.handleProductAdded();
+                this.props.handleProductTaken();
                 this.closeModal();
             });
     };

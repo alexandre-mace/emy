@@ -9,8 +9,13 @@ import Header from '../block/Header';
 import LeafletMap from "../map/LeafletMap";
 import CreateFoodStuffModal from './CreateFoodStuffModal';
 import LoginModal from "../login/LoginModal";
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/slide.css';
+import filterList from "../../utils/filterList";
 
 class List extends Component {
+
     static propTypes = {
         retrieved: PropTypes.object,
         loading: PropTypes.bool.isRequired,
@@ -24,10 +29,12 @@ class List extends Component {
         super();
         this.state = {
             file: null,
-            loginModalActive: false
+            loginModalActive: false,
+            foodstuffCreated: false
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleProductAdded = this.handleProductAdded.bind(this);
+        this.handleProductTaken = this.handleProductTaken.bind(this);
         this.openLoginModal = this.openLoginModal.bind(this);
         this.closeLoginModal = this.closeLoginModal.bind(this);
     }
@@ -52,25 +59,7 @@ class List extends Component {
         this.props.reset(this.props.eventSource);
     }
 
-    // Search in list
-    filterList(){
-        // Declare variables
-        var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById('foodstuff-list-search');
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("myUL");
-        li = ul.getElementsByTagName('li');
-  
-        for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName("h2")[0];
-            txtValue = a.textContent || a.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-            }
-        }
-    }
+
   
     handleChange(event) {
         this.setState({
@@ -79,12 +68,34 @@ class List extends Component {
     }
 
     handleProductAdded = () => {
+        Alert.success('Génial, votre produit vient tout juste d\'être ajouté :D !', {
+            position: 'bottom-right',
+            effect: 'slide',
+            timeout: 5000,
+            offset: 10
+        });
         this.props.list(
             this.props.match.params.page &&
             decodeURIComponent(this.props.match.params.page)
         );
         this.setState({
-            productUpdated: true
+            foodstuffCreated: true
+        })
+    }
+
+    handleProductTaken = () => {
+        Alert.success('Génial, vous venez de demander un produit, le propriétaire en sera notifié !', {
+            position: 'bottom-right',
+            effect: 'slide',
+            timeout: 5000,
+            offset: 10
+        });
+        this.props.list(
+            this.props.match.params.page &&
+            decodeURIComponent(this.props.match.params.page)
+        );
+        this.setState({
+            foodstuffCreated: true
         })
     }
 
@@ -99,7 +110,6 @@ class List extends Component {
             loginModalActive : false
         });
     }
-
     render() {
         let map = 'Loading';
         if (this.props.retrieved) {
@@ -107,22 +117,22 @@ class List extends Component {
         }
         return (
             <div>
+                <Alert stack={{limit: 3}} />
                 <Header openModal={this.openLoginModal} />
                 <LoginModal visible={this.state.loginModalActive} closeModal={this.closeLoginModal} />
                 <div id="foodstuff-list-and-map-container">
                     <div className="foodstuff-list-container">
                         <div className="foodstuff-list-commands">
                             <CreateFoodStuffModal openModal={this.openLoginModal} handleProductAdded = {this.handleProductAdded} />
-                            <input type="text" id="foodstuff-list-search" onKeyUp={this.filterList} placeholder="Chercher facilement un produit"/>
+                            <input type="text" id="foodstuff-list-search" onKeyUp={filterList} placeholder="Chercher facilement un produit"/>
                         </div>
                         <ul className="foodstuff-list" id="myUL">
                             {this.props.retrieved &&
                             this.props.retrieved['hydra:member'].map(item => (
-                                <FoodstuffListItem item={item} key={item.id} handleProductAdded = {this.handleProductAdded} />
+                                <FoodstuffListItem item={item} key={item.id} handleProductTaken = {this.handleProductTaken} />
                             ))}
+                            {this.pagination()}
                         </ul>
-
-                        {this.pagination()}
                     </div>
                     <div id="map-container">
                         {map}

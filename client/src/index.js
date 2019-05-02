@@ -14,6 +14,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import * as serviceWorker from './serviceWorker';
+
 // Import your reducers and routes here
 // import reducers
 import image from './reducers/image/';
@@ -32,6 +33,7 @@ import donorRoutes from './routes/donors';
 
 import List from './components/foodstuff/List';
 
+
 const history = createBrowserHistory();
 const store = createStore(
   combineReducers({
@@ -44,7 +46,7 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <Provider store={store}>
+    <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
         <Route path="/" component={List} strict={true} exact={true}/>
@@ -60,7 +62,8 @@ ReactDOM.render(
           <Route render={() => <h1>Not Found</h1>} />
       </Switch>
     </ConnectedRouter>
-  </Provider>,
+  </Provider>
+  ,
   document.getElementById('root')
 );
 

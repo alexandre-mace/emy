@@ -532,3 +532,53 @@ header nav ul li a {
   margin-right: 2rem;
 }
 /* Dashboard Header */
+/* FlashMessage */
+/*#flashMessage {*/
+  /*background-color: white;*/
+  /*color: orangered;*/
+  /*font-weight: bold;*/
+  /*font-size: 1.2rem;*/
+  /*line-height: 3;*/
+/*}*/
+/* FlashMessage */
+/*.flashMessage-enter {*/
+  /*height: 0;*/
+/*}*/
+
+/*.flashMessage-enter.flashMessage-enter-active {*/
+  /*height: 100px;*/
+  /*transition: height 1000ms ease-in;*/
+/*}*/
+
+/*.flashMessage-leave {*/
+  /*max-height: 400px;*/
+/*}*/
+
+/*.flashMessage-leave.flashMessage-leave-active {*/
+  /*max-height: 0;*/
+  /*transition: max-height 1s ease-in;*/
+/*}*/
+/*.flashMessage-appear {*/
+  /*max-height: 0;*/
+/*}*/
+
+/*.flashMessage-appear.flashMessage-appear-active {*/
+  /*max-height: 400px;*/
+  /*transition: max-height 1s ease-in*/
+/*}*/
+.flashMessage {
+  margin: 15px;
+  padding: 20px 35px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 40px;
+  z-index: 10;
+  background: white;
+}
+.flashMessage button {
+  margin-left: 1rem;
+}
+.s-alert-success {
+  background-color: orangered !important;
+  color: white !important;
+  font-size: 1.3rem !important;
+}

@@ -7,7 +7,6 @@ import { authenticationService } from '../../services';
 export default class LoginModal extends React.Component {
     constructor(props){
         super(props);
-        console.log('constructor');
         this.state = {
             visible: this.props.visible
         }
