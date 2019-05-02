@@ -117,7 +117,7 @@ class FoodstuffListItem extends React.Component {
                         )}
                         <div className="modal-take-it-foodstuff-description">
                             <div>
-                                <img src={require('./assets/img/1.jpg')} className="foodstuff-img" alt=""/>
+                                <img src={this.state.image} className="foodstuff-img" alt=""/>
                             </div>
                             <div className="d-flex flex-column">
                                 <h4 className="modal-take-it-foodstuff-name">{this.props.item['name']}</h4>
