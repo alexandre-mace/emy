@@ -80,8 +80,8 @@ export default class Dashboard extends React.Component {
         return(
             <div>
                 <Header/>
-                <div id="dashboard" className="content container">
-                    <DashboardHeader/>
+                <DashboardHeader/>
+                <div id="dashboard" className="container">
                     {this.state.user ? (
                         <div className="row">
                             <FoodstuffsToConfirmTable foodstuffsToConfirm={this.state.foodstuffsToConfirm} handleChange={this.handleChange} />

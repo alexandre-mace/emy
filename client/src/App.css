@@ -525,8 +525,9 @@ header nav ul li a {
 /* Loader */
 /* Dashboard Header */
 #dashboard-header {
-  font-size: 1.6rem;
-  color: orangered;
+  color: white;
+  background:orangered;
+  font-size: 1.2rem;
 }
 #dashboard-header #dashboard-header-links li {
   margin-right: 2rem;

@@ -74,19 +74,13 @@ export default class DashboardFoodstuffGiven extends React.Component {
         return(
             <div>
                 <Header/>
-                <div id="dashboard" className="content container">
-                    <DashboardHeader/>
-                    {this.state.user ? (
+                <DashboardHeader/>
+                <div id="dashboard" className="container">
+                    {this.state.user &&
                         <div className="row">
                             <FoodstuffsGivenTable foodstuffsGiven={this.state.foodstuffsGiven}/>
                         </div>
-                    ) : (
-                        <div className="row mt-5">
-                            <div className="col">
-                                <Loader />
-                            </div>
-                        </div>
-                    )}
+                    }
                 </div>
             </div>
         );

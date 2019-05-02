@@ -57,24 +57,23 @@ export default class DashboardHeader extends React.Component {
 
     render() {
         return(
-            <div id="dashboard-header" className="row mb-5">
-                <div className="col d-flex justify-content-between">
-                    <ul id="dashboard-header-links" className="d-flex">
-                        <li><Link to="/dashboard">Acceuil</Link></li>
-                        <li><Link to="/dashboard/foodstuffs-awaiting">En attente</Link></li>
-                        <li><Link to="/dashboard/foodstuffs-received">Vous avez reçu</Link></li>
-                        <li><Link to="/dashboard/foodstuffs-given">Vous avez donné</Link></li>
-                    </ul>
-                    {this.state.user ? (
-                        <UserRank user={this.state.user}/>
-                    ) : (
-                        <div className="row mt-5">
-                            <div className="col">
-                                <Loader />
-                            </div>
+            <div id="dashboard-header" className="mb-5 py-3">
+                <div className="container">
+                    <div className="row">
+                        <div className="col d-flex justify-content-between">
+                        <ul id="dashboard-header-links" className="d-flex">
+                            <li><Link to="/dashboard">À confirmer</Link></li>
+                            <li><Link to="/dashboard/foodstuffs-awaiting">En attente</Link></li>
+                            <li><Link to="/dashboard/foodstuffs-received">Vous avez reçu</Link></li>
+                            <li><Link to="/dashboard/foodstuffs-given">Vous avez donné</Link></li>
+                        </ul>
+                            {this.state.user &&
+                                <UserRank user={this.state.user}/>
+                            }
                         </div>
-                    )}
+                    </div>
                 </div>
+               
             </div>
         );
     }
