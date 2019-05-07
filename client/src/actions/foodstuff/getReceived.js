@@ -6,7 +6,6 @@ import { ENTRYPOINT } from '../../config/entrypoint';
 export function getReceived(user) {
     return fetch(`${ENTRYPOINT}/food_stuffs?owner=${user['@id']}&hasBeenGiven=true`)
         .then(response => response.json())
-        .then(foodstuffsReceived => foodstuffsReceived)
         .catch(e => {
             throw e;
         });

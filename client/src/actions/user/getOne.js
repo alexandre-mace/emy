@@ -6,7 +6,6 @@ import { ENTRYPOINT } from '../../config/entrypoint';
 export function getOne(userId) {
     return fetch(`${ENTRYPOINT}${userId}`)
         .then(response => response.json())
-        .then(user => user)
         .catch(e => {
             throw e;
         });
