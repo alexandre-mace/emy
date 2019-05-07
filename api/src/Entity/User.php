@@ -10,11 +10,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ApiResource
  * @ORM\Table(name="app_user")
+ * @ApiFilter(SearchFilter::class, properties={"email": "exact"})
  * @ApiFilter(OrderFilter::class, properties={"points"}, arguments={"orderParameterName"="order"})
  */
 class User implements UserInterface

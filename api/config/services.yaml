@@ -42,3 +42,20 @@ services:
         autowire: false
         autoconfigure: false
         public: false
+
+    app.filter.or_search_filter:
+        class: App\Filter\OrSearchFilter
+        parent: "api_platform.doctrine.orm.search_filter"
+        autowire: false
+        autoconfigure: false
+        public: false
+
+    app.filter.customer:
+        parent: app.filter.or_search_filter
+        arguments:
+            - { name: "partial", vatNumber: "partial" }
+        tags:
+            - { name: "api_platform.filter", id: "customer.search" }
+        autowire: false
+        autoconfigure: false
+        public: false
