@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../block/Header'
 import {list} from "../../actions/user/list";
 import Loader from "../block/Loader";
 
@@ -33,39 +32,35 @@ export default class Donors extends React.Component {
         ;
 
         return(
-            <div>
-                <Header/>
-                <div id="dashboard" className="content container">
-                    {this.state.donors ? (
-                        <div className="row">
-                            <div className="col-12">
-                                <div>
-                                    <h3>Les donateurs</h3>
-                                    <table>
-                                        <thead>
-                                        <tr>
-                                            <th>Prénom</th>
-                                            <th>Points</th>
-                                            <th>Grade</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {donorTableRows}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>                    ) : (
-                        <div className="row mt-5">
-                            <div className="col">
-                                <Loader />
+            <div id="dashboard" className="content container">
+                {this.state.donors ? (
+                    <div className="row">
+                        <div className="col-12">
+                            <div>
+                                <h3 className="page-title">Les donateurs</h3>
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Prénom</th>
+                                        <th>Points</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {donorTableRows}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    )}
+                    </div>                    ) : (
+                    <div className="row mt-5">
+                        <div className="col">
+                            <Loader />
+                        </div>
+                    </div>
+                )}
 
-                </div>
             </div>
-
         );
     }
 }

@@ -8,26 +8,17 @@ export default class LoginModal extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            visible: this.props.visible
         }
     }
 
-    componentDidUpdate() {
-        if (this.props.visible !== this.state.visible)
-        {
-            this.setState({
-                visible: this.props.visible,
-            });
-        }
-    }
     render() {
         return(
             <div>
-                <Modal visible={this.state.visible} width="400" className="modal-popup" effect="fadeInUp" onClickAway={this.props.closeModal}>
+                <Modal visible={this.props.visible} width="600" className="modal-popup" effect="fadeInUp" onClickAway={this.props.closeModal}>
                     <div className="modal-style">
                         <img src={require('../foodstuff/assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={this.props.closeModal}/>
                         <h3 className="modal-style-title">Se connecter</h3>
-                        <p>Veuillez remplir le formulaire pour vous authentifier</p>
+                        <p>Connectez-vous pour ajouter des produits et accéder à votre tableau de bord.</p>
                         <Formik
                             initialValues={{
                                 email: '',
@@ -44,6 +35,7 @@ export default class LoginModal extends React.Component {
                                         user => {
                                             setSubmitting(false);
                                             this.props.closeModal();
+                                            this.props.handleLogin();
                                         },
                                         error => {
                                             setSubmitting(false);
@@ -64,10 +56,13 @@ export default class LoginModal extends React.Component {
                                         <ErrorMessage name="password" component="div" className="invalid-feedback" />
                                     </div>
                                     <div className="form-group">
-                                        <button type="submit" className="form-btn" disabled={isSubmitting}>Se connecter</button>
-                                        {isSubmitting &&
-                                        <img className="ml-2" alt="loading gif" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                                        }
+                                        {isSubmitting ? (
+                                            <div className="d-flex">
+                                                <img className="mx-auto" alt="loading gif" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                            </div>
+                                        ) : (
+                                            <button type="submit" className="form-btn w-100" disabled={isSubmitting}>SE CONNECTER</button>
+                                        )}
                                     </div>
                                     {status &&
                                     <div className={'alert alert-danger'}>{status}</div>

@@ -8,8 +8,9 @@ const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('
 export const authenticationService = {
     login,
     logout,
-    currentUser: currentUserSubject.asObservable(),
-    get currentUserValue () { return currentUserSubject.value }
+    currentUserObservable: currentUserSubject.asObservable(),
+    currentUser: JSON.parse(localStorage.getItem('currentUser')),
+    get currentUserValue () { return JSON.parse(localStorage.getItem('currentUser')) }
 };
 
 function login(email, password) {
@@ -22,18 +23,14 @@ function login(email, password) {
     return fetch(`${ENTRYPOINT}/login_check`, requestOptions)
         .then(handleResponse)
         .then(token => {
-            fetch(`${ENTRYPOINT}/users`)
-                .then((response) => {
-                    return response.json()
-                })
-                .then(users => {
-                    const user = users['hydra:member'].find(x => x.email === email);
-                    user.token = token;
+            return fetch(`${ENTRYPOINT}/users?email=${email}`)
+                .then(user => {return user.json()})
+                .then(user => {
+                    const storedUser = user['hydra:member'][0];
+                    storedUser.token = token;
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify(user));
-                    currentUserSubject.next(user);
-
-                    return user;
+                    localStorage.setItem('currentUser', JSON.stringify(storedUser));
+                    return storedUser;
                     }
                 )
 

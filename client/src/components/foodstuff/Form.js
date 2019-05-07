@@ -91,8 +91,8 @@ class Form extends Component {
                 />
                 <Field name="image" label="Ajouter une photo du produit" type="file" component={FieldFileInput} />
 
-                <button type="submit" className="btn btn-success form-btn" onClick={this.bindAddress}>
-                    Ajouter le produit !
+                <button type="submit" className="btn btn-success form-btn w-100" onClick={this.bindAddress}>
+                    AJOUTER LE PRODUIT
                 </button>
             </form>
         );

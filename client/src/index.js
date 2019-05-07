@@ -32,7 +32,7 @@ import welcomeRoutes from './routes/welcome';
 import donorRoutes from './routes/donors';
 
 import List from './components/foodstuff/List';
-
+import Layout from "./components/block/Layout";
 
 const history = createBrowserHistory();
 const store = createStore(
@@ -47,24 +47,26 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Switch>
-        <Route path="/" component={List} strict={true} exact={true}/>
-            { foodstuffRoutes }
-            { imageRoutes }
-            { dashboardRoutes }
-            { partnerRoutes }
-            { helpEmyRoutes }
-            { whoIsEmyRoutes }
-            { signinRoutes }
-            { donorRoutes }
-            { welcomeRoutes }
-          <Route render={() => <h1>Not Found</h1>} />
-      </Switch>
-    </ConnectedRouter>
-  </Provider>
-  ,
-  document.getElementById('root')
+        <ConnectedRouter history={history}>
+            <Layout>
+                <Switch>
+                    <Route path="/" component={List} strict={true} exact={true}/>
+                    { foodstuffRoutes }
+                    { imageRoutes }
+                    { dashboardRoutes }
+                    { partnerRoutes }
+                    { helpEmyRoutes }
+                    { whoIsEmyRoutes }
+                    { signinRoutes }
+                    { donorRoutes }
+                    { welcomeRoutes }
+                    <Route render={() => <h1>Not Found</h1>} />
+                </Switch>
+            </Layout>
+        </ConnectedRouter>
+    </Provider>
+    ,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

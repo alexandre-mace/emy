@@ -77,7 +77,7 @@ class FoodstuffListItem extends React.Component {
     }
 
     askingToOwn = () => {
-        this.props.update(this.props.item, { isAwaiting: true, askingToOwn: authenticationService.currentUser.source.value['@id'] })
+        this.props.update(this.props.item, { isAwaiting: true, askingToOwn: authenticationService.currentUserValue['@id'] })
             .then(response => {
                 this.props.handleProductTaken();
                 this.closeModal();
@@ -105,7 +105,7 @@ class FoodstuffListItem extends React.Component {
                     </div>
                 </div>
 
-                <Modal width="600" visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
+                <Modal width="800" visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div className="modal-style">
                         <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
                         <h3 className="modal-style-title">Planifier le rendez-vous !</h3>
@@ -116,15 +116,15 @@ class FoodstuffListItem extends React.Component {
                             </div>
                         )}
                         <div className="modal-take-it-foodstuff-description">
-                            <div>
+                            <div className="m-4">
                                 <img src={this.state.image} className="foodstuff-img" alt=""/>
                             </div>
-                            <div className="d-flex flex-column">
+                            <div className="d-flex flex-column m-4">
                                 <h4 className="modal-take-it-foodstuff-name">{this.props.item['name']}</h4>
                                 <p>Disponibilités : {this.props.item.availabilities}</p>
                                 <span><img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/> {this.props.item['expirationDate']}</span>
                                 <span>Tel :{this.props.item['phoneNumber']}</span>
-                                <button onClick={this.askingToOwn} type="button" name="button">Je m'engage à prendre ce produit</button>
+                                <button className="btn form-btn" onClick={this.askingToOwn} type="submit" name="button">Je m'engage à prendre ce produit</button>
                             </div>
                         </div>
                     </div>

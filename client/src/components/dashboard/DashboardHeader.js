@@ -1,22 +1,15 @@
 import React from 'react';
-import Header from '../block/Header'
-import { authenticationService } from '../../services';
 import UserRank from "./UserRank";
 import {getOne} from "../../actions/user/getOne";
-import Loader from "../block/Loader";
 import { Link }from 'react-router-dom';
 
 export default class DashboardHeader extends React.Component {
-    _isMounted = false;
-
     constructor(){
         super();
         this.state = {
             refresh: null,
             user: null,
-            foodstuffsToConfirm: null,
         }
-        this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange = () => {
@@ -26,25 +19,19 @@ export default class DashboardHeader extends React.Component {
     }
 
     componentDidMount = () => {
-        this._isMounted = true;
-        authenticationService.currentUser.subscribe(localStorageUser => {
-            if (this._isMounted) {
-                if (localStorageUser) {
-                    getOne(localStorageUser['@id'])
-                        .then(user => {
-                            this.setState({
-                                user: user,
-                            })
+        const currentUser = localStorage.getItem('currentUser');
+        if (currentUser) {
+                getOne(JSON.parse(currentUser)['@id'])
+                    .then(user => {
+                        this.setState({
+                            user: user,
                         })
-                }
+                    })
             }
-        });
-    }
-    componentWillUnmount() {
-        this._isMounted = false;
-    }
+    };
+
     componentDidUpdate() {
-        if (this.state.refresh === true && this.state.user) {
+        if (this.state.refresh && this.state.user) {
             getOne(this.state.user['@id'])
                 .then(user => {
                     this.setState({
@@ -62,10 +49,8 @@ export default class DashboardHeader extends React.Component {
                     <div className="row">
                         <div className="col d-flex justify-content-between">
                         <ul id="dashboard-header-links" className="d-flex">
-                            <li><Link to="/dashboard">À confirmer</Link></li>
-                            <li><Link to="/dashboard/foodstuffs-awaiting">En attente</Link></li>
-                            <li><Link to="/dashboard/foodstuffs-received">Vous avez reçu</Link></li>
-                            <li><Link to="/dashboard/foodstuffs-given">Vous avez donné</Link></li>
+                            <li><Link to="/dashboard/foodstuffs-to-confirm">À confirmer</Link></li>
+                            <li><Link to="/dashboard">Tous</Link></li>
                         </ul>
                             {this.state.user &&
                                 <UserRank user={this.state.user}/>
@@ -73,7 +58,7 @@ export default class DashboardHeader extends React.Component {
                         </div>
                     </div>
                 </div>
-               
+
             </div>
         );
     }

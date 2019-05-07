@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { authenticationService } from '../../services';
-import LoginModal from '../login/LoginModal';
 import { Link }from 'react-router-dom';
 
 class Header extends Component {
-    _isMounted = false;
-
     constructor(props) {
         super(props)
         this.state = {
@@ -15,20 +12,24 @@ class Header extends Component {
     }
 
     componentDidMount() {
-        this._isMounted = true;
-        authenticationService.currentUser.subscribe(x => {
-            if (this._isMounted) {
-                this.setState({currentUser: x})
-            }
-        });
+        if (authenticationService.currentUserValue) {
+            this.setState({currentUser: authenticationService.currentUserValue})
+        }
+    };
+
+    componentDidUpdate() {
+        if (authenticationService.currentUserValue && this.state.currentUser && authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) {
+            this.setState({currentUser: authenticationService.currentUserValue})
+        } else if (!authenticationService.currentUserValue && this.state.currentUser ) {
+            this.setState({currentUser: authenticationService.currentUserValue})
+        } else if (authenticationService.currentUserValue && !this.state.currentUser) {
+            this.setState({currentUser: authenticationService.currentUserValue})
+        }
     }
 
-    componentWillUnmount() {
-        this._isMounted = false;
-    }
-
-    logout() {
+    handleLogout = () => {
         authenticationService.logout();
+        this.props.handleLogout();
     }
 
     render() {
@@ -57,9 +58,9 @@ class Header extends Component {
                             <li><Link to="/rejoindre-emy">Rejoindre Emy</Link></li>
                         }
                         {this.state.currentUser ? (
-                            <li><button id="logout" onClick={this.logout}>Se déconnecter</button></li>
+                            <li><button id="logout" onClick={this.handleLogout}>Se déconnecter</button></li>
                             ) : (
-                            <li><button id="login" type="button" value="Open" onClick={this.props.openModal}>Se connecter</button></li>
+                            <li><button id="login" type="button" value="Open" onClick={this.props.openLoginModal}>Se connecter</button></li>
                         )}
                     </ul>
                 </nav>

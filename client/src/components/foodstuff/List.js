@@ -5,14 +5,13 @@ import PropTypes from 'prop-types';
 import { list, reset } from '../../actions/foodstuff/list';
 import FoodstuffListItem from './FoodstuffListItem';
 import '../../App.css';
-import Header from '../block/Header';
 import LeafletMap from "../map/LeafletMap";
 import CreateFoodStuffModal from './CreateFoodStuffModal';
-import LoginModal from "../login/LoginModal";
 import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import filterList from "../../utils/filterList";
+import Loader from "../block/Loader";
 
 class List extends Component {
 
@@ -29,14 +28,11 @@ class List extends Component {
         super();
         this.state = {
             file: null,
-            loginModalActive: false,
-            foodstuffCreated: false
+            foodstuffCreated: false,
         }
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
         this.handleProductAdded = this.handleProductAdded.bind(this);
         this.handleProductTaken = this.handleProductTaken.bind(this);
-        this.openLoginModal = this.openLoginModal.bind(this);
-        this.closeLoginModal = this.closeLoginModal.bind(this);
     }
 
     componentDidMount() {
@@ -45,7 +41,6 @@ class List extends Component {
             decodeURIComponent(this.props.match.params.page)
         );
     }
-
 
     componentWillReceiveProps(nextProps) {
         if (this.props.match.params.page !== nextProps.match.params.page)
@@ -58,8 +53,6 @@ class List extends Component {
     componentWillUnmount() {
         this.props.reset(this.props.eventSource);
     }
-
-
   
     handleChange(event) {
         this.setState({
@@ -68,7 +61,7 @@ class List extends Component {
     }
 
     handleProductAdded = () => {
-        Alert.success('Génial, votre produit vient tout juste d\'être ajouté :D !', {
+        Alert.success('Génial, votre produit vient tout juste d\'être ajouté !', {
             position: 'bottom-right',
             effect: 'slide',
             timeout: 5000,
@@ -99,31 +92,12 @@ class List extends Component {
         })
     }
 
-    openLoginModal = () => {
-        this.setState({
-            loginModalActive : true
-        });
-    }
-
-    closeLoginModal = () => {
-        this.setState({
-            loginModalActive : false
-        });
-    }
     render() {
-        let map = 'Loading';
-        if (this.props.retrieved) {
-            map = <LeafletMap foodstuffs={this.props.retrieved}/>;
-        }
         return (
-            <div>
-                <Alert stack={{limit: 3}} />
-                <Header openModal={this.openLoginModal} />
-                <LoginModal visible={this.state.loginModalActive} closeModal={this.closeLoginModal} />
                 <div id="foodstuff-list-and-map-container">
                     <div className="foodstuff-list-container">
                         <div className="foodstuff-list-commands">
-                            <CreateFoodStuffModal openModal={this.openLoginModal} handleProductAdded = {this.handleProductAdded} />
+                            <CreateFoodStuffModal handleProductAdded = {this.handleProductAdded} />
                             <input type="text" id="foodstuff-list-search" onKeyUp={filterList} placeholder="Chercher facilement un produit"/>
                         </div>
                         <ul className="foodstuff-list" id="myUL">
@@ -135,11 +109,17 @@ class List extends Component {
                         </ul>
                     </div>
                     <div id="map-container">
-                        {map}
+                        {this.props.retrieved ? (
+                            <LeafletMap foodstuffs={this.props.retrieved}/>
+                        ) : (
+                            <div className="row mt-5">
+                                <div className="col">
+                                    <Loader />
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
-
-            </div>
         );
     }
 
