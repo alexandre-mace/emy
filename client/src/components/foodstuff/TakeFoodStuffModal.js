@@ -3,9 +3,15 @@ import Modal from 'react-awesome-modal';
 import { authenticationService } from '../../services';
 import {LayoutContext} from "../block/Layout";
 import {ENTRYPOINT} from "../../config/entrypoint";
+import PropTypes from 'prop-types';
+import { update } from '../../actions/foodstuff/update';
+import { connect } from 'react-redux';
 
-export default class TakeFoodStuffModal extends React.Component {
+class TakeFoodStuffModal extends React.Component {
     static contextType = LayoutContext;
+    static propTypes = {
+        update: PropTypes.func.isRequired
+    };
     constructor(){
         super();
         this.state = {
@@ -40,6 +46,14 @@ export default class TakeFoodStuffModal extends React.Component {
         }
     }
 
+    askingToOwn = () => {
+        this.props.update(this.props.foodstuff, { isAwaiting: true, askingToOwn: authenticationService.currentUserValue['@id'] })
+            .then(() => {
+                this.props.handleProductTaken();
+                this.closeModal();
+            });
+    };
+
     render() {
         return(
             <>
@@ -71,4 +85,16 @@ export default class TakeFoodStuffModal extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+});
+
+const mapDispatchToProps = dispatch => ({
+    update: (item, values) => dispatch(update(item, values)),
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(TakeFoodStuffModal);
 
