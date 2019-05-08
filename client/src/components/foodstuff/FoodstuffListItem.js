@@ -1,11 +1,12 @@
 import React from 'react';
 import Modal from 'react-awesome-modal';
-import axios from 'axios';
 import { update } from '../../actions/foodstuff/update';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { authenticationService } from '../../services';
 import {LayoutContext} from "../block/Layout";
+import {getOne} from "../../actions/image/getOne";
+import {ENTRYPOINT} from "../../config/entrypoint";
 
 class FoodstuffListItem extends React.Component {
     static propTypes = {
@@ -23,22 +24,13 @@ class FoodstuffListItem extends React.Component {
     }
 
     componentDidMount() {
-        let self = this;
-        if (this.props.item['image']) {
-            axios.get(`http://localhost:8080${this.props.item['image']}`)
-                .then(function (response) {
-                    // handle success
-
-                    self.setState({image: 'http://localhost:8080/medias/' + response.data.contentUrl})
-
+        if (this.props.item.image) {
+            getOne(this.props.item.image)
+                .then(image => {
+                    this.setState({
+                        image: image.contentUrl
+                    })
                 })
-                .catch(function (error) {
-                    // handle error
-                    console.log(error);
-                })
-                .then(function () {
-                    // always executed
-                });
         }
         if (authenticationService.currentUserValue) {
             this.setState({currentUser: authenticationService.currentUserValue})
@@ -104,7 +96,7 @@ class FoodstuffListItem extends React.Component {
         return(
             <li key={this.props.item['@id']} className={'foodstuff-' + this.props.item['id']}>
                 <div className="foodstuff-list-item" onClick={this.handleClick}>
-                    <img src={this.state.image} className="img-produit" alt=""/>
+                    <img src={ENTRYPOINT + '/medias/' + this.state.image} className="img-produit" alt=""/>
                     <div className="foodstuff-list-item-description">
                         <h2 className="foodstuff-name">{this.props.item['name']}</h2>
                         <span>
