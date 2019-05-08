@@ -114,7 +114,7 @@ header nav ul li a {
 /* foodstuff List */
 #foodstuff-list-and-map-container {
   display: flex;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 100px);
 }
 .foodstuff-list-container {
   width: 35vw;
@@ -130,7 +130,7 @@ header nav ul li a {
 }
 .foodstuff-list {
   list-style: none;
-  height: 100%;
+  height: calc(100% - 120px);
   overflow: scroll;
 }
 .foodstuff-list li.selected {

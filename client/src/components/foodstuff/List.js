@@ -96,7 +96,7 @@ class List extends Component {
                             this.props.retrieved['hydra:member'].map(item => (
                                 <FoodstuffListItem item={item} key={item.id} handleProductTaken = {this.handleProductTaken} />
                             ))}
-                            {this.pagination()}
+                            {/*{this.pagination()}*/}
                         </ul>
                     </div>
                     <div id="map-container">
