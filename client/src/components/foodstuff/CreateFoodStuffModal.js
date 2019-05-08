@@ -49,7 +49,7 @@ export default class CreateFoodStuffModal extends React.Component {
                 {this.state.currentUser ? (
                     <button id="add-product-button" type="button" value="Open" onClick={() => this.openModalAddProduct()}>Ajouter un produit </button>
                 ) : (
-                    <button id="add-product-button" type="button" value="Open" onClick={this.context.openLoginModal}>Connectez vous pour ajouter un produit </button>
+                    <button id="add-product-button" type="button" value="Open" onClick={this.context.openLoginModal}>Ajouter un produit </button>
                 )}
                 <Modal visible={this.state.visible} width="700" className="modal-popup" effect="fadeInUp" onClickAway={() => this.closeModalAddProduct()}>
                     <div className="modal-style">

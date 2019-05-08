@@ -37,7 +37,7 @@ class Header extends Component {
             <header>
                 <Link to="/">
                     <h2>
-                        Emy
+                        emy
                         {this.state.currentUser &&
                          <span> - Hello {this.state.currentUser.firstName}</span>
                         }

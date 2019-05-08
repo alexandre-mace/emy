@@ -5,17 +5,20 @@ import { update } from '../../actions/foodstuff/update';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { authenticationService } from '../../services';
+import {LayoutContext} from "../block/Layout";
 
 class FoodstuffListItem extends React.Component {
     static propTypes = {
         update: PropTypes.func.isRequired
     };
+    static contextType = LayoutContext;
     constructor(){
         super();
         this.state = {
             visible: false,
             selected: false,
-            image: ''
+            image: '',
+            currentUser: null
         }
     }
 
@@ -36,6 +39,19 @@ class FoodstuffListItem extends React.Component {
                 .then(function () {
                     // always executed
                 });
+        }
+        if (authenticationService.currentUserValue) {
+            this.setState({currentUser: authenticationService.currentUserValue})
+        }
+    }
+
+    componentDidUpdate() {
+        if (authenticationService.currentUserValue && this.state.currentUser && authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) {
+            this.setState({currentUser: authenticationService.currentUserValue})
+        } else if (!authenticationService.currentUserValue && this.state.currentUser ) {
+            this.setState({currentUser: authenticationService.currentUserValue})
+        } else if (authenticationService.currentUserValue && !this.state.currentUser) {
+            this.setState({currentUser: authenticationService.currentUserValue})
         }
     }
 
@@ -96,7 +112,11 @@ class FoodstuffListItem extends React.Component {
                         <span className="expirationDate">Date limite de consommation {this.props.item['expirationDate']}</span>
                         </span>
                         <div>
-                            <button className="take-it" value="Open" onClick={() => this.openModal()}>Je prends !</button>
+                            {this.state.currentUser ? (
+                                <button className="take-it" value="Open" onClick={() => this.openModal()}>Je prends !</button>
+                            ) : (
+                                <button className="take-it" value="Open" onClick={this.context.openLoginModal}>Je prends !</button>
+                            )}
                             <button className="localize-it">
                                 <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
                                 Localiser
