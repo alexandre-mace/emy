@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Partner extends React.Component {
+export default class Partners extends React.Component {
     constructor(){
         super();
         this.state = {

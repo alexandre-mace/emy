@@ -32,7 +32,7 @@ export default class LoginModal extends React.Component {
                                 setStatus();
                                 authenticationService.login(email, password)
                                     .then(
-                                        user => {
+                                        () => {
                                             setSubmitting(false);
                                             this.props.closeModal();
                                             this.props.handleLogin();

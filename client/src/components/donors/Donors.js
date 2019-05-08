@@ -1,6 +1,6 @@
 import React from 'react';
 import {list} from "../../actions/user/list";
-import Loader from "../block/Loader";
+import Loader from "../utils/Loader";
 
 export default class Donors extends React.Component {
 

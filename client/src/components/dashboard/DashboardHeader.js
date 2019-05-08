@@ -58,7 +58,6 @@ export default class DashboardHeader extends React.Component {
                         </div>
                     </div>
                 </div>
-
             </div>
         );
     }

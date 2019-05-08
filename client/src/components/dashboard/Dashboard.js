@@ -5,7 +5,7 @@ import {getToConfirm} from "../../actions/foodstuff/getToConfirm";
 import {getGiven} from "../../actions/foodstuff/getGiven";
 import {getReceived} from "../../actions/foodstuff/getReceived";
 import {getOne} from "../../actions/user/getOne";
-import Loader from "../block/Loader";
+import Loader from "../utils/Loader";
 import DashboardHeader from "./DashboardHeader";
 
 export default class Dashboard extends React.Component {

@@ -36,9 +36,7 @@ export default class CreateFoodStuffModal extends React.Component {
     componentDidUpdate() {
         if (authenticationService.currentUserValue && this.state.currentUser && authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) {
             this.setState({currentUser: authenticationService.currentUserValue})
-        } else if (!authenticationService.currentUserValue && this.state.currentUser ) {
-            this.setState({currentUser: authenticationService.currentUserValue})
-        } else if (authenticationService.currentUserValue && !this.state.currentUser) {
+        } else if ((!authenticationService.currentUserValue && this.state.currentUser) || (authenticationService.currentUserValue && !this.state.currentUser)) {
             this.setState({currentUser: authenticationService.currentUserValue})
         }
     }

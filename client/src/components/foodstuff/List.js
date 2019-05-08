@@ -11,10 +11,9 @@ import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import filterList from "../../utils/filterList";
-import Loader from "../block/Loader";
+import Loader from "../utils/Loader";
 
 class List extends Component {
-
     static propTypes = {
         retrieved: PropTypes.object,
         loading: PropTypes.bool.isRequired,
@@ -27,10 +26,8 @@ class List extends Component {
     constructor(){
         super();
         this.state = {
-            file: null,
-            foodstuffCreated: false,
+            foodstuffListUpdated: false,
         }
-        this.handleChange = this.handleChange.bind(this);
         this.handleProductAdded = this.handleProductAdded.bind(this);
         this.handleProductTaken = this.handleProductTaken.bind(this);
     }
@@ -53,12 +50,6 @@ class List extends Component {
     componentWillUnmount() {
         this.props.reset(this.props.eventSource);
     }
-  
-    handleChange(event) {
-        this.setState({
-            file: URL.createObjectURL(event.target.files[0])
-        })
-    }
 
     handleProductAdded = () => {
         Alert.success('Génial, votre produit vient tout juste d\'être ajouté !', {
@@ -72,7 +63,7 @@ class List extends Component {
             decodeURIComponent(this.props.match.params.page)
         );
         this.setState({
-            foodstuffCreated: true
+            foodstuffListUpdated: true
         })
     }
 
@@ -88,9 +79,9 @@ class List extends Component {
             decodeURIComponent(this.props.match.params.page)
         );
         this.setState({
-            foodstuffCreated: true
+            foodstuffListUpdated: true
         })
-    }
+    };
 
     render() {
         return (

@@ -20,9 +20,7 @@ class Header extends Component {
     componentDidUpdate() {
         if (authenticationService.currentUserValue && this.state.currentUser && authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) {
             this.setState({currentUser: authenticationService.currentUserValue})
-        } else if (!authenticationService.currentUserValue && this.state.currentUser ) {
-            this.setState({currentUser: authenticationService.currentUserValue})
-        } else if (authenticationService.currentUserValue && !this.state.currentUser) {
+        } else if ((!authenticationService.currentUserValue && this.state.currentUser) || (authenticationService.currentUserValue && !this.state.currentUser)) {
             this.setState({currentUser: authenticationService.currentUserValue})
         }
     }
@@ -54,13 +52,13 @@ class Header extends Component {
                         <li><Link to="/partenaires">Partenaires</Link></li>
                         <li><Link to="/donateurs">Les donateurs</Link></li>
                         <li><Link to="/aider-emy">Aider Emy</Link></li>
-                        {!this.state.currentUser &&
-                            <li><Link to="/rejoindre-emy">Rejoindre Emy</Link></li>
-                        }
                         {this.state.currentUser ? (
                             <li><button id="logout" onClick={this.handleLogout}>Se déconnecter</button></li>
                             ) : (
-                            <li><button id="login" type="button" value="Open" onClick={this.props.openLoginModal}>Se connecter</button></li>
+                            <>
+                                <li><Link to="/rejoindre-emy">Rejoindre Emy</Link></li>
+                                <li><button id="login" type="button" value="Open" onClick={this.props.openLoginModal}>Se connecter</button></li>
+                            </>
                         )}
                     </ul>
                 </nav>

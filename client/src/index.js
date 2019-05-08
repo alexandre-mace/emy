@@ -24,7 +24,7 @@ import foodstuff from './reducers/foodstuff/';
 import foodstuffRoutes from './routes/foodstuff';
 import imageRoutes from './routes/image';
 import dashboardRoutes from './routes/dashboard';
-import partnerRoutes from './routes/partner';
+import partnerRoutes from './routes/partners';
 import helpEmyRoutes from './routes/helpEmy';
 import whoIsEmyRoutes from './routes/who-is-emy';
 import signinRoutes from './routes/signin';

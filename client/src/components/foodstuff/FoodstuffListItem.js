@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from 'react-awesome-modal';
 import { update } from '../../actions/foodstuff/update';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -7,6 +6,7 @@ import { authenticationService } from '../../services';
 import {LayoutContext} from "../block/Layout";
 import {getOne} from "../../actions/image/getOne";
 import {ENTRYPOINT} from "../../config/entrypoint";
+import TakeFoodStuffModal from "./TakeFoodStuffModal";
 
 class FoodstuffListItem extends React.Component {
     static propTypes = {
@@ -16,10 +16,8 @@ class FoodstuffListItem extends React.Component {
     constructor(){
         super();
         this.state = {
-            visible: false,
             selected: false,
             image: '',
-            currentUser: null
         }
     }
 
@@ -32,33 +30,9 @@ class FoodstuffListItem extends React.Component {
                     })
                 })
         }
-        if (authenticationService.currentUserValue) {
-            this.setState({currentUser: authenticationService.currentUserValue})
-        }
     }
 
-    componentDidUpdate() {
-        if (authenticationService.currentUserValue && this.state.currentUser && authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) {
-            this.setState({currentUser: authenticationService.currentUserValue})
-        } else if (!authenticationService.currentUserValue && this.state.currentUser ) {
-            this.setState({currentUser: authenticationService.currentUserValue})
-        } else if (authenticationService.currentUserValue && !this.state.currentUser) {
-            this.setState({currentUser: authenticationService.currentUserValue})
-        }
-    }
-
-    openModal() {
-        this.setState({
-            visible : true
-        });
-    }
-    
-    closeModal() {
-        this.setState({
-            visible : false
-        });
-    }
-    handleClick = event => {
+    handleClick = () => {
         let foodstuff = document.getElementsByClassName('foodstuff-' + this.props.item['id'])[0];
         let marker = document.getElementsByClassName('marker-' + this.props.item['id'])[0];
         if (foodstuff.className.includes('selected')) {
@@ -86,7 +60,7 @@ class FoodstuffListItem extends React.Component {
 
     askingToOwn = () => {
         this.props.update(this.props.item, { isAwaiting: true, askingToOwn: authenticationService.currentUserValue['@id'] })
-            .then(response => {
+            .then(() => {
                 this.props.handleProductTaken();
                 this.closeModal();
             });
@@ -96,7 +70,9 @@ class FoodstuffListItem extends React.Component {
         return(
             <li key={this.props.item['@id']} className={'foodstuff-' + this.props.item['id']}>
                 <div className="foodstuff-list-item" onClick={this.handleClick}>
-                    <img src={ENTRYPOINT + '/medias/' + this.state.image} className="img-produit" alt=""/>
+                    {this.state.image &&
+                        <img src={ENTRYPOINT + '/medias/' + this.state.image} className="foodstuff-list-item-image" alt=""/>
+                    }
                     <div className="foodstuff-list-item-description">
                         <h2 className="foodstuff-name">{this.props.item['name']}</h2>
                         <span>
@@ -104,11 +80,7 @@ class FoodstuffListItem extends React.Component {
                         <span className="expirationDate">Date limite de consommation {this.props.item['expirationDate']}</span>
                         </span>
                         <div>
-                            {this.state.currentUser ? (
-                                <button className="take-it" value="Open" onClick={() => this.openModal()}>Je prends !</button>
-                            ) : (
-                                <button className="take-it" value="Open" onClick={this.context.openLoginModal}>Je prends !</button>
-                            )}
+                            <TakeFoodStuffModal image={this.state.image} foodstuff={this.props.item}/>
                             <button className="localize-it">
                                 <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
                                 Localiser
@@ -116,31 +88,6 @@ class FoodstuffListItem extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                <Modal width="800" visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
-                    <div className="modal-style">
-                        <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
-                        <h3 className="modal-style-title">Planifier le rendez-vous !</h3>
-                        {this.props.deleteError && (
-                            <div className="alert alert-danger" role="alert">
-                                <span className="fa fa-exclamation-triangle" aria-hidden="true" />{' '}
-                                {this.props.deleteError}
-                            </div>
-                        )}
-                        <div className="modal-take-it-foodstuff-description">
-                            <div className="m-4">
-                                <img src={this.state.image} className="foodstuff-img" alt=""/>
-                            </div>
-                            <div className="d-flex flex-column m-4">
-                                <h4 className="modal-take-it-foodstuff-name">{this.props.item['name']}</h4>
-                                <p>Disponibilités : {this.props.item.availabilities}</p>
-                                <span><img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/> {this.props.item['expirationDate']}</span>
-                                <span>Tel :{this.props.item['phoneNumber']}</span>
-                                <button className="btn form-btn" onClick={this.askingToOwn} type="submit" name="button">Je m'engage à prendre ce produit</button>
-                            </div>
-                        </div>
-                    </div>
-                </Modal>
             </li>
         );
     }
