@@ -14,28 +14,28 @@ export default class Partners extends React.Component {
                     <div className="col-12">
                         <h3 className="page-title">Les super partenaires</h3>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 mb-5">
                         <img src="https://thumbs.gfycat.com/BiodegradableGiganticBass-poster.jpg" alt=""/>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 mb-5">
                         <img src="https://thumbs.gfycat.com/BiodegradableGiganticBass-poster.jpg" alt=""/>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 mb-5">
                         <img src="https://thumbs.gfycat.com/BiodegradableGiganticBass-poster.jpg" alt=""/>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 mb-5">
                         <img src="https://thumbs.gfycat.com/BiodegradableGiganticBass-poster.jpg" alt=""/>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 mb-5">
                         <img src="https://thumbs.gfycat.com/BiodegradableGiganticBass-poster.jpg" alt=""/>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 mb-5">
                         <img src="https://thumbs.gfycat.com/BiodegradableGiganticBass-poster.jpg" alt=""/>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 mb-5">
                         <img src="https://thumbs.gfycat.com/BiodegradableGiganticBass-poster.jpg" alt=""/>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 mb-5">
                         <img src="https://thumbs.gfycat.com/BiodegradableGiganticBass-poster.jpg" alt=""/>
                     </div>
                 </div>

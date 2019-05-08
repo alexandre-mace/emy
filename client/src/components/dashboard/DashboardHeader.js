@@ -44,21 +44,31 @@ export default class DashboardHeader extends React.Component {
 
     render() {
         return(
-            <div id="dashboard-header" className="mb-5 py-3">
-                <div className="container">
-                    <div className="row">
-                        <div className="col d-flex justify-content-between">
-                        <ul id="dashboard-header-links" className="d-flex">
-                            <li><Link to="/dashboard/foodstuffs-to-confirm">À confirmer</Link></li>
-                            <li><Link to="/dashboard">Tous</Link></li>
-                        </ul>
-                            {this.state.user &&
-                                <UserRank user={this.state.user}/>
-                            }
+            <>
+                <div id="dashboard-header" className="mb-4 py-3">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col d-flex justify-content-center">
+
+                                {this.state.user &&
+                                    <UserRank user={this.state.user}/>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div className="container mb-5">
+                    <div className="row">
+                        <div className="col d-flex">
+                            <ul id="dashboard-header-links" className="d-flex w-100">
+                                <li><Link to="/dashboard">Tous</Link></li>
+                                <li><Link to="/dashboard/foodstuffs-to-confirm">À confirmer</Link></li>
+                                <li className="ml-auto"><Link to="/dashboard/foodstuffs-to-confirm" className="mr-0">Gérer mes produits ajoutés</Link></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </>
         );
     }
 }

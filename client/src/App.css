@@ -548,8 +548,14 @@ header nav ul li a {
   background:orangered;
   font-size: 1.2rem;
 }
-#dashboard-header #dashboard-header-links li {
+#dashboard-header-links li a {
+  display: block;
   margin-right: 2rem;
+  background: white;
+  border-radius: 6px;
+  color: orangered;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 15px 30px;
 }
 /* Dashboard Header */
 /* FlashMessage */

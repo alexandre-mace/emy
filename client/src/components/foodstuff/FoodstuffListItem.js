@@ -1,17 +1,11 @@
 import React from 'react';
-import { update } from '../../actions/foodstuff/update';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { authenticationService } from '../../services';
 import {LayoutContext} from "../block/Layout";
 import {getOne} from "../../actions/image/getOne";
 import {ENTRYPOINT} from "../../config/entrypoint";
 import TakeFoodStuffModal from "./TakeFoodStuffModal";
 
 class FoodstuffListItem extends React.Component {
-    static propTypes = {
-        update: PropTypes.func.isRequired
-    };
     static contextType = LayoutContext;
     constructor(){
         super();
@@ -58,14 +52,6 @@ class FoodstuffListItem extends React.Component {
         }
     }
 
-    askingToOwn = () => {
-        this.props.update(this.props.item, { isAwaiting: true, askingToOwn: authenticationService.currentUserValue['@id'] })
-            .then(() => {
-                this.props.handleProductTaken();
-                this.closeModal();
-            });
-    };
-
     render() {
         return(
             <li key={this.props.item['@id']} className={'foodstuff-' + this.props.item['id']}>
@@ -80,7 +66,7 @@ class FoodstuffListItem extends React.Component {
                         <span className="expirationDate">Date limite de consommation {this.props.item['expirationDate']}</span>
                         </span>
                         <div>
-                            <TakeFoodStuffModal image={this.state.image} foodstuff={this.props.item}/>
+                            <TakeFoodStuffModal image={this.state.image} foodstuff={this.props.item} handleProductTaken={this.props.handleProductTaken}/>
                             <button className="localize-it">
                                 <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
                                 Localiser
@@ -97,7 +83,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    update: (item, values) => dispatch(update(item, values)),
 });
 
 export default connect(
