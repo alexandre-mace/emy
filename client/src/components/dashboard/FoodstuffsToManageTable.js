@@ -1,9 +1,22 @@
 import React from 'react';
 import { ENTRYPOINT } from '../../config/entrypoint';
 import {fetch} from "../../utils/dataAccess";
+import UpdateAvailabilitiesModal from "./UpdateAvailabilitiesModal";
 
-export default class FoodstuffsToConfirmTable extends React.Component {
-    hasBeenTaken = (event) => {
+export default class FoodstuffsToManageTable extends React.Component {
+
+    delete = (event) => {
+        let foodstuff = JSON.parse(event.target.value);
+        fetch(foodstuff['@id'], {
+            method: 'DELETE',
+            headers: new Headers({ 'Content-Type': 'application/ld+json' }),
+        })
+            .then(response => {
+                this.props.handleChange();
+            })
+    };
+
+    updateAvailabilities = (event) => {
         let foodstuff = JSON.parse(event.target.value);
         fetch(foodstuff['@id'], {
             method: 'PUT',
@@ -16,8 +29,8 @@ export default class FoodstuffsToConfirmTable extends React.Component {
     };
 
     render() {
-        const confirmTableRows = this.props.foodstuffsToConfirm &&
-            this.props.foodstuffsToConfirm['hydra:member'].map(foodstuff => (
+        const manageTableRows = this.props.foodstuffsToManage &&
+            this.props.foodstuffsToManage['hydra:member'].map(foodstuff => (
                 <tr key={foodstuff['@id']}>
                     <td>
                         {foodstuff.image &&
@@ -26,28 +39,31 @@ export default class FoodstuffsToConfirmTable extends React.Component {
                     </td>
                     <td>{foodstuff.name}</td>
                     <td>{foodstuff.expirationDate}</td>
-                    <td>{foodstuff.owner.firstName}</td>
+                    <td>{foodstuff.availabilities}
+                         <br/>
+                        <UpdateAvailabilitiesModal foodstuff={foodstuff} refreshTable={this.props.handleChange}/>
+                     </td>
                     <td>
-                        <button className="form-btn" onClick={this.hasBeenTaken} value={JSON.stringify(foodstuff)} type="button" name="button">Je confirme que ce produit a été pris</button>
+                        <button className="form-btn" onClick={this.delete} value={JSON.stringify(foodstuff)} type="button" name="button">Supprimer le produit</button>
                     </td>
                 </tr>
             ))
         ;
         return(
             <div className="col-12">
-                <div className="product-to-confirm">
+                <div className="">
                     <table>
                         <thead>
                         <tr>
                             <th>Image</th>
                             <th>Nom</th>
                             <th>Date de péremption</th>
-                            <th>Il/Elle a besoin de vous</th>
-                            <th>Confirmer la demande</th>
+                            <th>Modifier les disponibilitées</th>
+                            <th>Supprimer le produit</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {confirmTableRows}
+                        {manageTableRows}
                         </tbody>
                     </table>
                 </div>

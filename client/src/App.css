@@ -1,4 +1,6 @@
 /* GENERAL */
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700');
+
 html {
   font-size: 18px;
 }
@@ -74,6 +76,18 @@ button:focus {
   border: 0;
   margin: 20px 0;
   color:white;
+}
+.btn-edit{
+  background:white;
+  margin:initial;
+}
+.btn-edit:hover{
+  background:initial;
+}
+.btn-edit img{
+  width:20px !important;
+  height:auto !important;
+  display: block !important;
 }
 .content {
   margin-top: 100px;
@@ -286,10 +300,10 @@ header nav ul li a {
   margin-top: 20px;
 }
 .close-popup {
-  position: absolute;
+  position: absolute !important;
   top: 20px;
   right: 20px;
-  width: 20px;
+  width: 20px !important;
   cursor: pointer;
 }
 /* Modal */

@@ -72,7 +72,7 @@ export default class Dashboard extends React.Component {
                 <DashboardHeader/>
                 <div id="dashboard" className="container">
                         <div className="row">
-                            <ReactPlaceholder showLoadingAnimation customPlaceholder={tablePlaceholderTemplate} ready={this.state.user}>
+                            <ReactPlaceholder showLoadingAnimation customPlaceholder={tablePlaceholderTemplate} ready={this.state.user !== null}>
                                 <FoodstuffsTable foodstuffs={this.state.foodstuffs} handleChange={this.handleChange} />
                             </ReactPlaceholder>
                         </div>   

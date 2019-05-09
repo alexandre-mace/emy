@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextRow, RectShape, MediaBlock} from 'react-placeholder/lib/placeholders';
+import {MediaBlock} from 'react-placeholder/lib/placeholders';
 
 export default(
     <div className='w-100 foodstuff-item-placeholder mt-4'>
