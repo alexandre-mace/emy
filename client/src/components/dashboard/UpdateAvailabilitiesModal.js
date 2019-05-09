@@ -54,15 +54,10 @@ class UpdateAvailabilitiesModal extends React.Component {
                     <img src={require('../../assets/img/edit.png')} />
                 </button>
                 <Modal width="800" visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
-                    <div className="modal-style">
+                    <div className="d-flex flex-column p-5">
                         <img src={require('../../assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
-                        <div className="modal-take-it-foodstuff-description">
-                            <div className="d-flex flex-column m-4">
-                                <h4 className="modal-take-it-foodstuff-name">{this.props.foodstuff['name']}</h4>
-                                <input type="text" value={this.state.value} onChange={this.handleChange}/>
-                                <button className="btn form-btn" onClick={this.updateAvailabilities} type="submit" name="button">Modifier</button>
-                            </div>
-                        </div>
+                        <textarea type="text" value={this.state.value} onChange={this.handleChange}/>
+                        <button className="btn form-btn" onClick={this.updateAvailabilities} type="submit" name="button">Modifier</button>
                     </div>
                 </Modal>
             </>
