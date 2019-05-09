@@ -634,7 +634,7 @@ header nav ul li a {
   animation-duration: 1s;
   opacity: 0;
   visibility: hidden;
-  z-index: 0;
+  z-index: -10;
 }
 @keyframes fadeOut {
   from {opacity: 1;visibility: visible}
