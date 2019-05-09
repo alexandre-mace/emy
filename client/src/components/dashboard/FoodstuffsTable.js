@@ -51,11 +51,11 @@ export default class FoodstuffsTable extends React.Component {
                                 case foodstuff.provider['@id'] === JSON.parse(localStorage.getItem('currentUser'))['@id'] && foodstuff.isAwaiting:
                                     return <button className="form-btn" onClick={this.hasBeenTaken} value={JSON.stringify(foodstuff)} type="button" name="button">Je confirme que ce produit a été pris</button>;
                                 case foodstuff.askingToOwn['@id'] === JSON.parse(localStorage.getItem('currentUser'))['@id'] && foodstuff.isAwaiting:
-                                    return <span>en attente</span>;
+                                    return <span>En attente</span>;
                                 case foodstuff.provider['@id'] === JSON.parse(localStorage.getItem('currentUser'))['@id'] && foodstuff.hasBeenGiven:
-                                    return <span>donné</span>;
+                                    return <span>Donné</span>;
                                 case foodstuff.owner['@id'] === JSON.parse(localStorage.getItem('currentUser'))['@id'] && foodstuff.hasBeenGiven:
-                                    return <span>reçu</span>;
+                                    return <span>Reçu</span>;
                                 default:
                                     return null;
                             }
@@ -77,7 +77,7 @@ export default class FoodstuffsTable extends React.Component {
                     </tr>
                     </thead>
                     <tbody>
-                    {confirmTableRows}
+                        {confirmTableRows}
                     </tbody>
                 </table>
             </div>

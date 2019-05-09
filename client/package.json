@@ -30,6 +30,7 @@
     "react-google-location": "git@github.com:sebcnst/react-google-location.git",
     "react-leaflet": "^2.2.1",
     "react-load-script": "^0.0.6",
+    "react-placeholder": "^3.0.2",
     "react-places-autocomplete": "^7.2.1",
     "react-redux": "^5.1.0",
     "react-router-dom": "^4.3.1",

@@ -1,6 +1,8 @@
 import React from 'react';
 import {list} from "../../actions/user/list";
-import Loader from "../utils/Loader";
+import ReactPlaceholder from 'react-placeholder';
+import "react-placeholder/lib/reactPlaceholder.css";
+import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate';
 
 export default class Donors extends React.Component {
 
@@ -33,33 +35,27 @@ export default class Donors extends React.Component {
 
         return(
             <div id="dashboard" className="content container">
-                {this.state.donors ? (
                     <div className="row">
                         <div className="col-12">
                             <div>
                                 <h3 className="page-title">Les donateurs</h3>
-                                <table>
-                                    <thead>
-                                    <tr>
-                                        <th>Prénom</th>
-                                        <th>Points</th>
-                                        <th>Grade</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {donorTableRows}
-                                    </tbody>
-                                </table>
+                                <ReactPlaceholder showLoadingAnimation customPlaceholder={tablePlaceholderTemplate} ready={this.state.donors}>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>Prénom</th>
+                                            <th>Points</th>
+                                            <th>Grade</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {donorTableRows}
+                                        </tbody>
+                                    </table>
+                                </ReactPlaceholder>             
                             </div>
                         </div>
-                    </div>                    ) : (
-                    <div className="row mt-5">
-                        <div className="col">
-                            <Loader />
-                        </div>
-                    </div>
-                )}
-
+                    </div>  
             </div>
         );
     }

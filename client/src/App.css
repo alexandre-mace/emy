@@ -119,6 +119,12 @@ header nav ul li a {
 .foodstuff-list-container {
   width: 35vw;
 }
+
+.foodstuff-item-placeholder .round-shape{
+  width:60px !important;
+  height:50px !important;
+}
+
 #foodstuff-list-search {
   width: 100%;
   display: block;

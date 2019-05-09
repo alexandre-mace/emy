@@ -4,6 +4,9 @@ import FoodstuffsToConfirmTable from './FoodstuffsToConfirmTable';
 import {getToConfirm} from "../../actions/foodstuff/getToConfirm";
 import {getOne} from "../../actions/user/getOne";
 import DashboardHeader from "./DashboardHeader";
+import ReactPlaceholder from 'react-placeholder';
+import "react-placeholder/lib/reactPlaceholder.css";
+import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate';
 
 export default class DashboardFoodstuffToConfirm extends React.Component {
     constructor(){
@@ -62,11 +65,11 @@ export default class DashboardFoodstuffToConfirm extends React.Component {
             <>
                 <DashboardHeader/>
                 <div id="dashboard" className="container">
-                    {this.state.user &&
                         <div className="row">
-                            <FoodstuffsToConfirmTable foodstuffsToConfirm={this.state.foodstuffsToConfirm} />
+                            <ReactPlaceholder showLoadingAnimation customPlaceholder={tablePlaceholderTemplate} ready={this.state.user}>
+                                <FoodstuffsToConfirmTable foodstuffsToConfirm={this.state.foodstuffsToConfirm} />
+                            </ReactPlaceholder>
                         </div>
-                    }
                 </div>
             </>
         );

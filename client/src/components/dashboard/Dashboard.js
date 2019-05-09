@@ -5,8 +5,10 @@ import {getToConfirm} from "../../actions/foodstuff/getToConfirm";
 import {getGiven} from "../../actions/foodstuff/getGiven";
 import {getReceived} from "../../actions/foodstuff/getReceived";
 import {getOne} from "../../actions/user/getOne";
-import Loader from "../utils/Loader";
 import DashboardHeader from "./DashboardHeader";
+import ReactPlaceholder from 'react-placeholder';
+import "react-placeholder/lib/reactPlaceholder.css";
+import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate';
 
 export default class Dashboard extends React.Component {
     constructor(){
@@ -69,17 +71,11 @@ export default class Dashboard extends React.Component {
             <>
                 <DashboardHeader/>
                 <div id="dashboard" className="container">
-                    {this.state.user ? (
                         <div className="row">
-                            <FoodstuffsTable foodstuffs={this.state.foodstuffs} handleChange={this.handleChange} />
-                        </div>
-                    ) : (
-                        <div className="row mt-5">
-                            <div className="col">
-                                <Loader />
-                            </div>
-                        </div>
-                    )}
+                            <ReactPlaceholder showLoadingAnimation customPlaceholder={tablePlaceholderTemplate} ready={this.state.user}>
+                                <FoodstuffsTable foodstuffs={this.state.foodstuffs} handleChange={this.handleChange} />
+                            </ReactPlaceholder>
+                        </div>   
                 </div>
             </>
         );

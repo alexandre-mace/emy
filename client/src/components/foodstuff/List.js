@@ -12,6 +12,9 @@ import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import filterList from "../../utils/filterList";
 import Loader from "../utils/Loader";
+import foodstuffListPlaceholderTemplate from "../block/foodstuffListPlaceholderTemplate";
+import ReactPlaceholder from 'react-placeholder';
+import "react-placeholder/lib/reactPlaceholder.css";
 
 class List extends Component {
     static propTypes = {
@@ -92,10 +95,16 @@ class List extends Component {
                             <input type="text" id="foodstuff-list-search" onKeyUp={filterList} placeholder="Chercher facilement un produit"/>
                         </div>
                         <ul className="foodstuff-list" id="myUL">
-                            {this.props.retrieved &&
-                            this.props.retrieved['hydra:member'].map(item => (
-                                <FoodstuffListItem item={item} key={item.id} handleProductTaken = {this.handleProductTaken} />
-                            ))}
+                            <ReactPlaceholder showLoadingAnimation customPlaceholder={foodstuffListPlaceholderTemplate} ready={this.props.retrieved !== null}>
+                                <>
+                                {this.props.retrieved &&
+                                    this.props.retrieved['hydra:member'].map(item => (
+                                        <FoodstuffListItem item={item} key={item.id} handleProductTaken = {this.handleProductTaken} />
+                                    ))
+                                }
+                                </>
+                            </ReactPlaceholder>
+
                             {/*{this.pagination()}*/}
                         </ul>
                     </div>
@@ -103,8 +112,8 @@ class List extends Component {
                         {this.props.retrieved ? (
                             <LeafletMap foodstuffs={this.props.retrieved}/>
                         ) : (
-                            <div className="row mt-5">
-                                <div className="col">
+                            <div className="d-flex">
+                                <div className="m-auto">
                                     <Loader />
                                 </div>
                             </div>
