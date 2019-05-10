@@ -6,7 +6,7 @@ export default(
         <RectShape color='orangered' style={{width: '100%', height: 80, marginBottom: 30}}/>
         
         {[...Array(6)].map((x, i) =>
-        <TextRow color='#D6D6D6' style={{height: 33}} key={i}/>
+        <TextRow color='#EDEDED' style={{height: 33}} key={i}/>
         )}
     </div>
 );

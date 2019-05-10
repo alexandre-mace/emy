@@ -38,7 +38,10 @@ export default class Donors extends React.Component {
                     <div className="row">
                         <div className="col-12">
                             <div>
-                                <h3 className="page-title">Les donateurs</h3>
+                                <h3 className="page-title">Contributeurs</h3>
+                                <p className="mb-5">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
                                 <ReactPlaceholder showLoadingAnimation customPlaceholder={tablePlaceholderTemplate} ready={this.state.donors}>
                                     <table>
                                         <thead>

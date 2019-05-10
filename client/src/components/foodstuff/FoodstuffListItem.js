@@ -63,9 +63,9 @@ class FoodstuffListItem extends React.Component {
                         <h2 className="foodstuff-name">{this.props.item['name']}</h2>
                         <span>
                         <img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/>
-                        <span className="expirationDate">Date limite de consommation {this.props.item['expirationDate']}</span>
+                        <span className="expirationDate">DDP : {this.props.item['expirationDate']}</span>
                         </span>
-                        <div>
+                        <div className="foodstuff-list-item-button">
                             <TakeFoodStuffModal image={this.state.image} foodstuff={this.props.item} handleProductTaken={this.props.handleProductTaken}/>
                             <button className="localize-it">
                                 <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
