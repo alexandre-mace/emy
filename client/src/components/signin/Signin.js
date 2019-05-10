@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { SubmissionError } from 'redux-form';
 import { fetch } from '../../utils/dataAccess';
 import { authenticationService } from '../../services';
+import { TextField } from 'formik-material-ui';
 
 export default class Signin extends React.Component {
     render() {
@@ -59,28 +60,23 @@ export default class Signin extends React.Component {
                             render={({ errors, status, touched, isSubmitting }) => (
                                 <Form>
                                     <div className="form-group">
-                                        <label htmlFor="firstName">Prénom</label>
-                                        <Field name="firstName" type="text" className={'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')} />
+                                        <Field component={TextField} label="Prénom" margin="normal" fullWidth name="firstName" type="text" />
                                         <ErrorMessage name="firstName" component="div" className="invalid-feedback" />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="lastName">Nom</label>
-                                        <Field name="lastName" type="text" className={'form-control' + (errors.lastName && touched.lastName ? ' is-invalid' : '')} />
+                                        <Field component={TextField} label="Nom" margin="normal" fullWidth name="lastName" type="text" />
                                         <ErrorMessage name="lastName" component="div" className="invalid-feedback" />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="email">Email</label>
-                                        <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
+                                        <Field component={TextField} label="Email" margin="normal" fullWidth name="email" type="text" />
                                         <ErrorMessage name="email" component="div" className="invalid-feedback" />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="password">Mot de passe</label>
-                                        <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
+                                        <Field component={TextField} label="Mot de passe" margin="normal" fullWidth name="password" type="password" />
                                         <ErrorMessage name="password" component="div" className="invalid-feedback" />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="confirmPassword">Confirmez le mot de passe</label>
-                                        <Field name="confirmPassword" type="password" className={'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')} />
+                                        <Field component={TextField} label="Confirmez le mot de passe" margin="normal" fullWidth name="confirmPassword" type="password" />
                                         <ErrorMessage name="confirmPassword" component="div" className="invalid-feedback" />
                                     </div>
                                     <div className="form-group">
