@@ -169,7 +169,7 @@ header nav ul li button,.btnDashboard{
   height: calc(100vh - 100px);
 }
 .foodstuff-list-container {
-  width: 35vw;
+  width: 500px;
 }
 
 .foodstuff-item-placeholder .round-shape{
@@ -225,6 +225,13 @@ header nav ul li button,.btnDashboard{
   font-size: 18px;
   font-weight: 500;
 }
+.foodstuff-list-item-description .calendar-alt {
+  width: 13px;
+  position: relative;
+  margin-right: 6px;
+  top:1px;
+}
+
 .foodstuff-list-item-description .img-calendar {
   width: 13px;
   position: relative;
@@ -269,7 +276,7 @@ header nav ul li button,.btnDashboard{
   height: 200px;
   margin-right: 20px;
 }
-.modal-take-it-foodstuff-description .img-calendar {
+.modal-take-it-foodstuff-description .calendar-alt {
   height: 25px;
 }
 .modal-take-it-foodstuff-description .modal-take-it-foodstuff-name {
@@ -298,7 +305,7 @@ header nav ul li button,.btnDashboard{
 /* CreateFoodStuffModal */
 /* LeafletMap */
 #map-container {
-  width: calc(100% - 35vw);
+  width: calc(100% - 500px);
   height: auto;
 }
 #map-container > * {
@@ -353,6 +360,14 @@ header nav ul li button,.btnDashboard{
 }
 .modal-style form {
   margin-top: 20px;
+}
+.modal-style form label{
+  font-size:14px;
+  font-weight: 500;
+}
+
+.modal-style form input{
+  font-size:14px;
 }
 .close-popup {
   position: absolute !important;

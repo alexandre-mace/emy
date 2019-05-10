@@ -4,6 +4,11 @@ import {LayoutContext} from "../block/Layout";
 import {getOne} from "../../actions/image/getOne";
 import {ENTRYPOINT} from "../../config/entrypoint";
 import TakeFoodStuffModal from "./TakeFoodStuffModal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
 
 class FoodstuffListItem extends React.Component {
     static contextType = LayoutContext;
@@ -61,15 +66,15 @@ class FoodstuffListItem extends React.Component {
                     }
                     <div className="foodstuff-list-item-description">
                         <h2 className="foodstuff-name">{this.props.item['name']}</h2>
-                        <span>
-                        <img src={require('./assets/img/calendar.png')} className="img-calendar" alt=""/>
+                        <span>                  
+                        <FontAwesomeIcon icon="calendar-alt" className="calendar-alt" />
                         <span className="expirationDate">DDP : {this.props.item['expirationDate']}</span>
                         </span>
                         <div className="foodstuff-list-item-button">
                             <TakeFoodStuffModal image={this.state.image} foodstuff={this.props.item} handleProductTaken={this.props.handleProductTaken}/>
                             <button className="localize-it">
-                                <img src={require('./assets/img/place-localizer.png')} className="img-calendar" alt=""/>
-                                Localiser
+                                <FontAwesomeIcon icon="map-marker-alt" className="img-calendar" />
+                                 Localiser
                             </button>
                         </div>
                     </div>
