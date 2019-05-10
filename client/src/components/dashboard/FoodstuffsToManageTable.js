@@ -44,7 +44,7 @@ export default class FoodstuffsToManageTable extends React.Component {
                         <UpdateAvailabilitiesModal foodstuff={foodstuff} refreshTable={this.props.handleChange}/>
                      </td>
                     <td>
-                        <button className="form-btn" onClick={this.delete} value={JSON.stringify(foodstuff)} type="button" name="button">Supprimer le produit</button>
+                        <button className="form-btn" onClick={this.delete} value={JSON.stringify(foodstuff)} type="button" name="button">Supprimer</button>
                     </td>
                 </tr>
             ))

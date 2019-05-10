@@ -35,22 +35,25 @@ class Header extends Component {
             <header>
                 <Link to="/">
                     <h2>
-                        emy
+                        Emy<span className="black">.</span>
                         {this.state.currentUser &&
-                         <span> - Hello {this.state.currentUser.firstName}</span>
+                         <span> 
+                            <img src={require('../../assets/img/hello.png')} />
+                            Hello {this.state.currentUser.firstName}
+                         </span>
                         }
                     </h2>
                 </Link>
 
                 {this.state.currentUser &&
-                    <Link to="/dashboard" className="btn">Votre tableau de bord</Link>
+                    <Link to="/dashboard" className="btn btnDashboard">Tableau de bord</Link>
                 }
                 <nav>
 
                     <ul id="header-links">
                         <li><Link to="/qui-est-emy">Qui est Emy ?</Link></li>
                         <li><Link to="/partenaires">Partenaires</Link></li>
-                        <li><Link to="/donateurs">Les donateurs</Link></li>
+                        <li><Link to="/donateurs">Contributeurs <img src={require('../../assets/img/love.png')} /></Link></li>
                         <li><Link to="/aider-emy">Aider Emy</Link></li>
                         {this.state.currentUser ? (
                             <li><button id="logout" onClick={this.handleLogout}>Se déconnecter</button></li>

@@ -1,5 +1,5 @@
 /* GENERAL */
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700');
 
 html {
   font-size: 18px;
@@ -23,7 +23,7 @@ img {
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   background:#F8F8F8;
 }
 h1, h2, h3, h4, h5, h6, p, input, li, nav, ul {
@@ -58,8 +58,9 @@ button:focus {
   background-color: orangered;
   border-style: none;
   color: white;
-  padding: 13px 20px;
+  padding: 10px 16px;
   border-radius: 25px;
+  letter-spacing: .2px;
 }
 .btn:hover {
   background-color: orangered;
@@ -92,6 +93,7 @@ button:focus {
 .content {
   margin-top: 100px;
 }
+
 /* GENERAL */
 /* Header */
 header {
@@ -115,14 +117,50 @@ header #header-links {
 }
 header nav ul > li {
   display: inline-block;
-  margin-right: 30px;
+  margin-right: 20px;
+}
+header h2{
+  font-size:28px;
+  font-weight: 600;
+}
+header h2 .black{
+  color:black;
+}
+header h2 span:last-child{
+  font-size:20px;
+  color:black;
+}
+header h2 span img{
+  display: inline-block;
+  width:28px;
+  height:auto;
+  margin-left:20px;
+  margin-right:8px;
+  position: relative;
+  top:-2px;
 }
 ul li {
   list-style: none;
 }
 header nav ul li a {
   color: black;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
+  font-size:16px;
+  font-weight: 500;
+}
+header nav ul li a img{
+  display: inline-block;
+  width:20px;
+  height:auto;
+  margin-left:2px;
+  position: relative;
+  top:-1px;
+}
+header nav ul li button,.btnDashboard{
+  letter-spacing: 0.2px;
+  font-size:16px;
+  font-weight: 500;
+  padding: 10px 16px;
 }
 /* Header */
 /* foodstuff List */
@@ -147,6 +185,7 @@ header nav ul li a {
   height: 60px;
   padding-left: 50px;
   outline: none;
+  border-bottom:1px solid #E8E8E8;
 }
 .foodstuff-list {
   list-style: none;
@@ -184,18 +223,34 @@ header nav ul li a {
 .foodstuff-list-item-description .foodstuff-name {
   padding-bottom: 5px;
   font-size: 18px;
+  font-weight: 500;
 }
 .foodstuff-list-item-description .img-calendar {
-  width: 14px;
+  width: 13px;
   position: relative;
-  margin-right: 4px;
+  margin-right: 6px;
+  top:-1px;
+}
+.foodstuff-list-item-button{
+  display: flex;
+  justify-content: space-between;
+  margin-top:20px;
 }
 .foodstuff-list-item-description .take-it {
-  margin-top: 20px;
+  padding:8px 16px !important;
+  padding-bottom:9px !important;
+  font-size:14px;
+  font-weight: 500;
+}
+.foodstuff-list-item-description .expirationDate{
+  font-size:14px;
+  font-weight: 500;
 }
 .foodstuff-list-item-description .localize-it {
   background: transparent;
   color: black !important;
+  font-size:14px;
+  font-weight: 400;
 }
 .foodstuff-list-item-description .localize-it img {
   display: inline-block;
@@ -386,6 +441,7 @@ header nav ul li a {
 #dashboard table * {
   position: relative;
   text-align: center;
+  font-size:14px;
 }
 
 #dashboard table td, #dashboard table th {
@@ -443,24 +499,24 @@ header nav ul li a {
   #dashboard table tbody tr td:before {
     position: absolute;
     font-weight: 700;
-    width: 40%;
+    width: 30%;
     left: 10px;
     top: 0;
   }
   #dashboard table tbody tr td:nth-child(1):before {
-    content: "Code";
+    content: "Image";
   }
   #dashboard table tbody tr td:nth-child(2):before {
-    content: "Stock";
+    content: "Nom";
   }
   #dashboard table tbody tr td:nth-child(3):before {
-    content: "Cap";
+    content: "DDP";
   }
   #dashboard table tbody tr td:nth-child(4):before {
-    content: "Inch";
+    content: "Contact";
   }
   #dashboard table tbody tr td:nth-child(5):before {
-    content: "Box Type";
+    content: "Status";
   }
 }
 /* Dashboard */
@@ -568,6 +624,10 @@ header nav ul li a {
   background:orangered;
   font-size: 1.2rem;
 }
+#dashboard-header p{
+  font-size:18px;
+  font-weight: 600;
+}
 #dashboard-header-links li a {
   display: block;
   margin-right: 2rem;
@@ -576,6 +636,8 @@ header nav ul li a {
   color: orangered;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   padding: 15px 30px;
+  font-size:14px; 
+  font-weight: 600;
 }
 .fullscreenLoader {
   position: absolute;
