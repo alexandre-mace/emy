@@ -9,6 +9,7 @@
     "connected-react-router": "^5.0.1",
     "font-awesome": "^4.7.0",
     "formik": "^1.5.2",
+    "formik-material-ui": "^0.0.16",
     "google-map-react": "^1.1.2",
     "google-maps-react": "^2.0.2",
     "jest-junit": "^5.2.0",

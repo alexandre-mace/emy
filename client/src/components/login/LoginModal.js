@@ -3,6 +3,7 @@ import Modal from 'react-awesome-modal';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { authenticationService } from '../../services';
+import { TextField } from 'formik-material-ui';
 
 export default class LoginModal extends React.Component {
     constructor(props){
@@ -46,14 +47,10 @@ export default class LoginModal extends React.Component {
                             render={({ errors, status, touched, isSubmitting }) => (
                                 <Form>
                                     <div className="form-group">
-                                        <label htmlFor="email">Email</label>
-                                        <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
-                                        <ErrorMessage name="email" component="div" className="invalid-feedback" />
+                                        <Field component={TextField} name="email" margin='normal' type="text" label="Votre email" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="password">Mot de passe</label>
-                                        <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
-                                        <ErrorMessage name="password" component="div" className="invalid-feedback" />
+                                        <Field component={TextField} name="password" margin='normal' type="password" label="Votre mot de passe" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
                                     </div>
                                     <div className="form-group">
                                         {isSubmitting ? (
