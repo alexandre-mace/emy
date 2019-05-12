@@ -8,7 +8,11 @@ class Header extends Component {
         this.state = {
             place: null,
             currentUser: null,
+            activeBurgerMenu: false,
         };
+        this.hideBurgerMenu = this.toggleClassBurgerMenu.bind(this);
+        this.toggleClassBurgerMenu = this.toggleClassBurgerMenu.bind(this);
+
     }
 
     componentDidMount() {
@@ -30,6 +34,13 @@ class Header extends Component {
         this.props.handleLogout();
     }
 
+    toggleClassBurgerMenu(){
+        this.setState({
+            activeBurgerMenu: !this.state.activeBurgerMenu
+        });
+    }
+    
+
     render() {
         return (
             <header>
@@ -48,13 +59,12 @@ class Header extends Component {
                 {this.state.currentUser &&
                     <Link to="/dashboard" className="btn btnDashboard">Tableau de bord</Link>
                 }
-                <nav>
-
+                <nav className={this.state.activeBurgerMenu ? 'nav-display': null}>
                     <ul id="header-links">
-                        <li><Link to="/qui-est-emy">Qui est Emy ?</Link></li>
-                        <li><Link to="/partenaires">Partenaires</Link></li>
-                        <li><Link to="/donateurs">Contributeurs <img src={require('../../assets/img/love.png')} /></Link></li>
-                        <li><Link to="/aider-emy">Aider Emy</Link></li>
+                        <li><Link to="/qui-est-emy" onClick={this.hideBurgerMenu}>Qui est Emy ?</Link></li>
+                        <li><Link to="/partenaires" onClick={this.hideBurgerMenu}>Partenaires</Link></li>
+                        <li><Link to="/donateurs" onClick={this.hideBurgerMenu}>Contributeurs <img src={require('../../assets/img/love.png')} /></Link></li>
+                        <li><Link to="/aider-emy" onClick={this.hideBurgerMenu}>Aider Emy</Link></li>
                         {this.state.currentUser ? (
                             <li><button id="logout" onClick={this.handleLogout}>Se déconnecter</button></li>
                             ) : (
@@ -65,6 +75,13 @@ class Header extends Component {
                         )}
                     </ul>
                 </nav>
+
+                <div className="burger-menu" onClick={this.toggleClassBurgerMenu}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
             </header>
         )
     }
