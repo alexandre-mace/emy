@@ -534,7 +534,25 @@ header nav ul li button,.btnDashboard{
     content: "Status";
   }
 }
+
+.img-manage{
+  width:auto !important;
+  height:20px !important;
+  display: block;
+  height:auto;
+}
+
+.btn-edit-color{
+  background:#f6be36;
+}
+
+.btn-delete-color{
+  background:#e50d36;
+  margin-left:8px;
+}
+
 /* Dashboard */
+
 /* HelpEmy */
 .page-title {
   margin-bottom: 2rem;
@@ -860,6 +878,7 @@ header nav ul li button,.btnDashboard{
 
   .btnDashboard{
     font-size:13px;
+    z-index:9999;
   }
 }
 
