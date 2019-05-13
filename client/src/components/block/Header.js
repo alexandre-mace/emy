@@ -38,7 +38,7 @@ class Header extends Component {
                         Emy<span className="black">.</span>
                         {this.state.currentUser &&
                          <span> 
-                            <img src={require('../../assets/img/hello.png')} />
+                            <img alt="icon bonjour" src={require('../../assets/img/hello.png')} />
                             Hello {this.state.currentUser.firstName}
                          </span>
                         }
@@ -53,7 +53,7 @@ class Header extends Component {
                     <ul id="header-links">
                         <li><Link to="/qui-est-emy">Qui est Emy ?</Link></li>
                         <li><Link to="/partenaires">Partenaires</Link></li>
-                        <li><Link to="/donateurs">Contributeurs <img src={require('../../assets/img/love.png')} /></Link></li>
+                        <li><Link to="/donateurs">Contributeurs <img alt="icon coeur" src={require('../../assets/img/love.png')} /></Link></li>
                         <li><Link to="/aider-emy">Aider Emy</Link></li>
                         {this.state.currentUser ? (
                             <li><button id="logout" onClick={this.handleLogout}>Se déconnecter</button></li>

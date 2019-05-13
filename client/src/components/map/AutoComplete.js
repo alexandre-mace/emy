@@ -13,6 +13,7 @@ class Search extends Component {
 
   render() {
     return (
+        <>
         <GoogleComponent
           apiKey={API_KEY}
           language={'fr'}
@@ -20,10 +21,12 @@ class Search extends Component {
           locationBoxStyle={'form-control'}
           locationListStyle={'custom-style-list'}
           onChange={(e) => { this.setState({ place: e }) }}
+          label={this.props.label}
           id={'foodstuff_address'}
           name={'address'}
           required={'required'}
         />
+        </>
     )
   } 
 }

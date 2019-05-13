@@ -77,7 +77,7 @@ export class GoogleComponent extends Component {
           else {
             child.push(React.createElement("li",
               { className: this.state.liStyle },
-              "NO Result Found"));
+              "Pas de résultat trouvé"));
           }
           let collection = React.createElement("ul", { className: 'style-unordered-list' },
             child
@@ -186,8 +186,10 @@ export class GoogleComponent extends Component {
           onChange: (e) => this.arrangeValue(e.target.value),
           value: this.state.place,
           title: this.state.place
-        }
-        ),
+        }),
+          <label htmlFor="foodstuff_address">Adresse à laquelle le produit peut être récupéré</label>
+          ,
+
         this.state.collectionShow ?
           React.createElement("div", { className: "google-covert" },
             this.state.currentLocation, this.state.collection

@@ -1,14 +1,10 @@
 import React from 'react';
 import Modal from 'react-awesome-modal';
-import { authenticationService } from '../../services';
-import {LayoutContext} from "../block/Layout";
-import {ENTRYPOINT} from "../../config/entrypoint";
 import PropTypes from 'prop-types';
 import { update } from '../../actions/foodstuff/update';
 import { connect } from 'react-redux';
 
 class UpdateAvailabilitiesModal extends React.Component {
-    static contextType = LayoutContext;
     static propTypes = {
         update: PropTypes.func.isRequired
     };
@@ -47,11 +43,10 @@ class UpdateAvailabilitiesModal extends React.Component {
     };
 
     render() {
-        console.log(this.props.foodstuff)
         return(
             <>
                 <button className="form-btn btn-edit" onClick={this.openModal} value={JSON.stringify(this.props.foodstuff)} type="button" name="button">
-                    <img src={require('../../assets/img/edit.png')} />
+                    <img alt="modifier" src={require('../../assets/img/edit.png')} />
                 </button>
                 <Modal width="800" visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div className="d-flex flex-column p-5">

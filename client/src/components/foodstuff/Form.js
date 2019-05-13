@@ -3,6 +3,8 @@ import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import Search from '../map/AutoComplete';
 import FieldFileInput from '../utils/FieldFileInput';
+import TextField from '@material-ui/core/TextField';
+import CustomDatePicker from "../utils/CustomDatePicker";
 
 class Form extends Component {
     static propTypes = {
@@ -29,13 +31,17 @@ class Form extends Component {
                 >
                     {data.input.name}
                 </label>
-                <input
+                <TextField
                     {...data.input}
                     type={data.type}
                     step={data.step}
                     required={data.required}
-                    placeholder={data.placeholder}
+                    label={data.label}
                     id={`foodstuff_${data.input.name}`}
+                    placeholder={data.placeholder}
+                    multiline={data.multiline}
+                    margin={data.margin}
+                    rows={data.rows}
                 />
                 {isInvalid && <div className="invalid-feedback">{data.meta.error}</div>}
             </div>
@@ -43,52 +49,50 @@ class Form extends Component {
     };
     bindAddress = () => {
         this._reactInternalFiber._debugOwner.stateNode.props.values['address'] = document.getElementById("foodstuff_address").value;
+        this._reactInternalFiber._debugOwner.stateNode.props.values['expirationDate'] = document.getElementById("foodstuff_expirationDate").value.replace(/\//g, "-");
     }
 
     render() {
-
         return (
             <form onSubmit={this.props.handleSubmit}>
-                <label>Nom du produit :</label>
                 <Field
                     component={this.renderField}
                     name="name"
                     type="text"
-                    placeholder=""
+                    label="Nom du produit"
                     required={true}
                 />
-
-                <label>Date de péremption :</label>
-                <Field
-                    component={this.renderField}
-                    name="expirationDate"
-                    type="date"
-                    placeholder=""
-                    required={true}
-                />
-                <label>Adresse à laquelle le produit peut être récupéré :</label>
+                <div className="form-group mt-4">
+                    <Field
+                        component={CustomDatePicker}
+                        name="expirationDate"
+                        required={true}
+                        id="foodstuff_expirationDate"
+                        type="date"
+                    />
+                </div>
                 <Field
                     name="address"
-                    label="address"
+                    label="Adresse à laquelle le produit peut être récupéré"
                     type="text"
                     component={Search}
                 />
-                <label className="label-phone">Numéro de téléphone :</label>
                 <Field
                     component={this.renderField}
                     name="phoneNumber"
                     type="text"
-                    placeholder=""
+                    label="Numéro de téléphone"
                     required={true}
                 />
-
-                <label>Vos disponibilités :</label>
                 <Field
                     component={this.renderField}
                     name="availabilities"
                     type="text"
-                    placeholder=""
+                    label="Vos disponibilités"
+                    multiline
+                    rows="3"
                 />
+                <div className="py-4"></div>
                 <Field name="image" label="Ajouter une photo du produit" type="file" component={FieldFileInput} />
 
                 <button type="submit" className="btn btn-success form-btn w-100" onClick={this.bindAddress}>
