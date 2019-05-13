@@ -44,7 +44,12 @@ export default class FoodstuffsToManageTable extends React.Component {
                         <UpdateAvailabilitiesModal foodstuff={foodstuff} refreshTable={this.props.handleChange}/>
                      </td>
                     <td>
-                        <button className="form-btn" onClick={this.delete} value={JSON.stringify(foodstuff)} type="button" name="button">Supprimer</button>
+                        <button className="form-btn btn-edit-color" type="button" name="button">
+                           <img src={require('../../assets/img/edit-white.png')} className="img-manage" />
+                        </button>
+                        <button className="form-btn btn-delete-color" onClick={this.delete} value={JSON.stringify(foodstuff)} type="button" name="button">
+                             <img src={require('../../assets/img/trash.png')} className="img-manage" />
+                        </button>
                     </td>
                 </tr>
             ))

@@ -537,7 +537,25 @@ header nav ul li button,.btnDashboard{
     content: "Status";
   }
 }
+
+.img-manage{
+  width:auto !important;
+  height:20px !important;
+  display: block;
+  height:auto;
+}
+
+.btn-edit-color{
+  background:#f6be36;
+}
+
+.btn-delete-color{
+  background:#e50d36;
+  margin-left:8px;
+}
+
 /* Dashboard */
+
 /* HelpEmy */
 .page-title {
   margin-bottom: 2rem;
@@ -665,7 +683,7 @@ header nav ul li button,.btnDashboard{
   height:100vh;
   top: 0;
   left: 0;
-  z-index: 2000;
+  z-index: 99999;
 }
 .fullscreenLoader-text {
   font-size: 1.8rem;
@@ -675,7 +693,7 @@ header nav ul li button,.btnDashboard{
   margin: auto;
 }
 .MuiDialog-root {
-  z-index: 20000 !important;
+  z-index: 200000 !important;
 }
 
 .MuiInput-underline:after {
@@ -787,6 +805,173 @@ header nav ul li button,.btnDashboard{
 .location-box-cover ::-moz-placeholder { text-align: right; color: #DDD; font-size: 13px; font-weight: 200; }
 .location-box-cover :-ms-input-placeholder { text-align: right; color: #DDD; font-size: 13px; font-weight: 200; }
 
+/* Display none before responsive */
+.burger-menu{
+  display:none;
+  position: relative;
+  z-index:9999;
+  width:30px;
+  height:auto;
+}
+
+.burger-menu span{
+  width:30px;
+  height:3px;
+  display: block;
+  background:#1B1B1B;
+  margin-bottom:6px;
+}
+
+.burger-menu span:last-child{
+  margin-bottom:0;
+}
+
+
+/* Media screen responsive */
+@media screen and (max-width: 1240px){
+  header nav ul li a,header nav ul li button, .btnDashboard{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1120px){
+  .burger-menu{
+    display: block;
+  }
+
+  header nav{
+    width:100%;
+    height:100vh;
+    display:none;
+    background:white;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:9998;
+  }
+
+  header .nav-display{
+    display: flex;
+  }
+
+  header h2{
+    z-index:9999;
+    position: relative;
+  }
+
+  header #header-links{
+    margin:auto;
+    display: block;
+  }
+
+  header nav ul li{
+    display: block;
+    text-align: center;
+    margin-bottom:16px;
+    margin-right:0 !important;
+  }
+
+  header nav ul li a{
+    font-size:16px;
+  }
+}
+
+@media screen and (max-width: 1180px){
+  .foodstuff-list-container{
+    width: 400px;
+  }
+
+  #map-container{
+    width: calc(100% - 400px);
+  }
+}
+
+
+@media screen and (max-width:980px){
+  header{
+    height:70px;
+  }
+  #foodstuff-list-and-map-container{
+    display: block;
+    height:auto;
+  }
+
+  .foodstuff-list-container{
+    width:100%;
+    height:auto;
+  }
+
+  #map-container{
+    width:100%;
+    height:500px;
+  }
+
+  header h2{
+    font-size:20px;
+  }
+
+  header h2 span:last-child{
+    font-size:16px;
+  }
+
+  .btnDashboard{
+    font-size:13px;
+    z-index:9999;
+  }
+}
+
+@media screen and (max-width: 700px){
+  header h2 span:last-child{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 460px){
+  #add-product-button,#foodstuff-list-search{
+    font-size:14px;
+  }
+  #foodstuff-list-search{
+    background:  #f9f9f9 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfjAhcTIiUZ3HCEAAACQUlEQVRIx5WVz0tUURTHP/dZ0whFMlNJkRNGGgkRLqLAZVmDIzS1rxZRUa3KRf9NIIKrIC0csdq2cGFgUYRGAxUh+s51JisdhXdazLN8b96bH+du3n3fez73nHPPfc8QsGJy/wVv2JynkwMIS8yaqd+vu9ZpxnS3vSPfRcPDXbaPi8k4L7P9YDPehOmPpb9ry3cU6wDcs+YFnQBs6ktn2lvQVdPh9JLVLInqEpNPvYnB24ws+QGPl7qD2uoxd8zXZLknJnf3raiobNn70RvIbamIisoHTUTtf6+6Q5w7gHvTj+JRjVRM+pUfr39GdrSaRs152GFRUdksHW8AyLgboqLuteB7x8sB6EzHl/qA1FdTAHDyIQDnAJwCja0AoGdCAHMYwFts7O8sAHAiHEEKQG1jgCcA7AoDLIBJNRFBGoCtMGAJwOlpDPB6AfgcBswCkG2iiFkAMx8u4hSAZhv1wcoRhgC8yZDwrV1+iIq6Y/UB8kRUVFzdUyO5D/y7cDfe3b3u34WHEaImZF5UVCpyK8b9RrWNZU26IheUumXFj2LUZkKhH/WDr46yDAZ1/4tkB/S531IVU2DafFJrUnqSLDmC92+dK+lXNQBY7mmboC+2CL/YG41wth8OLab6GSGqpYUR+vj5b97O5P9ETHBtMblviKvmNKdIsMlH8957li6YCsglJnckE0qkKZNB+bPjb7Fhcy0CohGmRcRlJgKJXGwREEaYuZYBIUTZaR2QniHPhj9p9SS2zQ7YOSnL07WDfwG87lROXTYlXgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOS0wMi0yM1QxODozNDozNyswMTowMPnDlaMAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTktMDItMjNUMTg6MzQ6MzcrMDE6MDCIni0fAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==) 10px 21px/19px no-repeat;
+  }
+  .foodstuff-list-item-image{
+    width: 80px;
+  }
+  .foodstuff-list-item-description .take-it,.foodstuff-list-item-description .localize-it{
+    padding:8px 14px !important;
+  }
+  .foodstuff-list-item-description .foodstuff-name{
+    font-size:16px;
+    padding-bottom: 0;
+  }
+  .foodstuff-list-item-button{
+    margin-top:13px;
+  }
+  .foodstuff-list-item-description .expirationDate{
+    font-size:13px;
+  }
+
+  .foodstuff-list-item-description .calendar-alt{
+    width:11px;
+    top:2px;
+  }
+
+}
+
+@media screen and (max-width: 360px){
+  .btnDashboard{
+    font-size:12px;
+    padding:8px 14px;
+  }
+  .foodstuff-list-item-image{
+    width:60px;
+  }
+}
+
+@media screen and (max-width: 330px){
+  .foodstuff-list-item-description .take-it, .foodstuff-list-item-description .localize-it{
+    padding: 5px 8px !important;
+  }
+}
 .location-box-cover .form-control:focus {
   box-shadow: none;
   border: none;
