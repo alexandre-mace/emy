@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from "./Header";
-import LoginModal from "../login/LoginModal";
+import Header from "./Header.jsx";
+import LoginModal from "../login/LoginModal.jsx";
 import Alert from 'react-s-alert';
 import { authenticationService } from '../../services';
-import Loader from "../utils/Loader";
+import Loader from "../utils/Loader.jsx";
 
 export const LayoutContext = React.createContext();
 

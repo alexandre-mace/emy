@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Map, TileLayer } from 'react-leaflet'
 import {GoogleApiWrapper} from 'google-maps-react';
-import LeafletMarker from './LeafletMarker';
+import LeafletMarker from './LeafletMarker.jsx';
 
 type State = {
     lat: number,

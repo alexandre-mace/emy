@@ -1,12 +1,12 @@
 import React from 'react';
 import { authenticationService } from '../../services';
-import FoodstuffsToConfirmTable from './FoodstuffsToConfirmTable';
+import FoodstuffsToConfirmTable from './FoodstuffsToConfirmTable.jsx';
 import {getToConfirm} from "../../actions/foodstuff/getToConfirm";
 import {getOne} from "../../actions/user/getOne";
-import DashboardHeader from "./DashboardHeader";
+import DashboardHeader from "./DashboardHeader.jsx";
 import ReactPlaceholder from 'react-placeholder';
 import "react-placeholder/lib/reactPlaceholder.css";
-import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate';
+import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate.jsx';
 
 export default class DashboardFoodstuffToConfirm extends React.Component {
     constructor(){

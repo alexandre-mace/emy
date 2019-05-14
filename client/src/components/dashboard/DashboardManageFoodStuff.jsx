@@ -1,12 +1,12 @@
 import React from 'react';
 import { authenticationService } from '../../services';
-import FoodstuffsToManageTable from './FoodstuffsToManageTable';
+import FoodstuffsToManageTable from './FoodstuffsToManageTable.jsx';
 import {getToManage} from "../../actions/foodstuff/getToManage";
 import {getOne} from "../../actions/user/getOne";
-import DashboardHeader from "./DashboardHeader";
+import DashboardHeader from "./DashboardHeader.jsx";
 import ReactPlaceholder from 'react-placeholder';
 import "react-placeholder/lib/reactPlaceholder.css";
-import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate';
+import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate.jsx';
 
 export default class DashboardFoodstuffToManage extends React.Component {
     constructor(){

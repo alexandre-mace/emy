@@ -31,7 +31,7 @@ import signinRoutes from './routes/signin';
 import welcomeRoutes from './routes/welcome';
 import donorRoutes from './routes/donors';
 
-import List from './components/foodstuff/List';
+import List from './components/foodstuff/List.jsx';
 import Layout from "./components/block/Layout";
 
 const history = createBrowserHistory();

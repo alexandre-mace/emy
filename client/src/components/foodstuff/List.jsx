@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { list, reset } from '../../actions/foodstuff/list';
-import FoodstuffListItem from './FoodstuffListItem';
+import FoodstuffListItem from './FoodstuffListItem.jsx';
 import '../../App.css';
-import LeafletMap from "../map/LeafletMap";
-import CreateFoodStuffModal from './CreateFoodStuffModal';
+import LeafletMap from "../map/LeafletMap.jsx";
+import CreateFoodStuffModal from './CreateFoodStuffModal.jsx';
 import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import filterList from "../../utils/filterList";
-import Loader from "../utils/Loader";
-import foodstuffListPlaceholderTemplate from "../block/foodstuffListPlaceholderTemplate";
+import Loader from "../utils/Loader.jsx";
+import foodstuffListPlaceholderTemplate from "../block/foodstuffListPlaceholderTemplate.jsx";
 import ReactPlaceholder from 'react-placeholder';
 import "react-placeholder/lib/reactPlaceholder.css";
 
@@ -97,14 +97,13 @@ class List extends Component {
                         <ul className="foodstuff-list" id="myUL">
                             <ReactPlaceholder showLoadingAnimation customPlaceholder={foodstuffListPlaceholderTemplate} ready={this.props.retrieved !== null}>
                                 <>
-                                {this.props.retrieved &&
-                                    this.props.retrieved['hydra:member'].map(item => (
-                                        <FoodstuffListItem item={item} key={item.id} handleProductTaken = {this.handleProductTaken} />
-                                    ))
-                                }
+                                    {this.props.retrieved &&
+                                        this.props.retrieved['hydra:member'].map(item => (
+                                            <FoodstuffListItem item={item} key={item.id} handleProductTaken = {this.handleProductTaken} />
+                                        ))
+                                    }
                                 </>
                             </ReactPlaceholder>
-
                             {/*{this.pagination()}*/}
                         </ul>
                     </div>

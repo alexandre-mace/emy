@@ -1,5 +1,5 @@
 import React from 'react';
-import UserRank from "./UserRank";
+import UserRank from "./UserRank.jsx";
 import {getOne} from "../../actions/user/getOne";
 import { Link }from 'react-router-dom';
 
