@@ -3,5 +3,5 @@ import { Route } from 'react-router-dom';
 import Donors from "../components/donors/Donors";
 
 export default [
-    <Route path="/donateurs" component={Donors} exact key="donors"/>
+    <Route path="/les-contributeurs" component={Donors} exact key="donors"/>
 ];

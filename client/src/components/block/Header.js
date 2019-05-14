@@ -57,13 +57,13 @@ class Header extends Component {
                 </Link>
 
                 {this.state.currentUser &&
-                    <Link to="/dashboard" className="btn btnDashboard">Tableau de bord</Link>
+                    <Link to="/tableau-de-bord" className="btn btnDashboard">Tableau de bord</Link>
                 }
                 <nav className={this.state.activeBurgerMenu ? 'nav-display': null}>
                     <ul id="header-links">
                         <li><Link to="/qui-est-emy" onClick={this.hideBurgerMenu}>Qui est Emy ?</Link></li>
-                        <li><Link to="/partenaires" onClick={this.hideBurgerMenu}>Partenaires</Link></li>
-                        <li><Link to="/donateurs" onClick={this.hideBurgerMenu}>Contributeurs <img alt="icon coeur" src={require('../../assets/img/love.png')} /></Link></li>
+                        <li><Link to="/nos-partenaires" onClick={this.hideBurgerMenu}>Nos Partenaires</Link></li>
+                        <li><Link to="/les-contributeurs" onClick={this.hideBurgerMenu}>Les contributeurs <img alt="icon coeur" src={require('../../assets/img/love.png')} /></Link></li>
                         <li><Link to="/aider-emy" onClick={this.hideBurgerMenu}>Aider Emy</Link></li>
                         {this.state.currentUser ? (
                             <li><button id="logout" onClick={this.handleLogout}>Se déconnecter</button></li>

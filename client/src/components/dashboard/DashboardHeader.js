@@ -61,9 +61,9 @@ export default class DashboardHeader extends React.Component {
                     <div className="row">
                         <div className="col d-flex">
                             <ul id="dashboard-header-links" className="d-flex w-100">
-                                <li><Link to="/dashboard">Tous</Link></li>
-                                <li><Link to="/dashboard/foodstuffs-to-confirm">À confirmer</Link></li>
-                                <li className="ml-auto"><Link to="/dashboard/foodstuffs-to-manage" className="mr-0">Gérer mes produits ajoutés</Link></li>
+                                <li><Link to="/tableau-de-bord">Tous</Link></li>
+                                <li><Link to="/tableau-de-bord/produits-a-confirmer">À confirmer</Link></li>
+                                <li className="ml-auto"><Link to="/tableau-de-bord/gerer-vos-produits" className="mr-0">Gérer mes produits ajoutés</Link></li>
                             </ul>
                         </div>
                     </div>
