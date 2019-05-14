@@ -1026,3 +1026,9 @@ header nav ul li button,.btnDashboard{
 .MuiPickersToolbar-toolbar, .MuiPickersDay-isSelected {
   background-color: orangered !important;
 }
+.MuiLinearProgress-barColorPrimary {
+  background-color: orangered !important;
+}
+.MuiLinearProgress-colorPrimary {
+  background-color: rgba(255, 69, 0, 0.3) !important;
+}
