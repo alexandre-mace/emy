@@ -10,7 +10,7 @@ import "moment/locale/fr";
 moment.locale("fr");
 
 function CustomDatePicker(props) {
-    const [selectedDate, handleDateChange] = useState(new Date());
+    const [selectedDate, handleDateChange] = useState(props.initialValue);
 
     return (
         <MuiPickersUtilsProvider utils={MomentUtils}>
@@ -19,8 +19,10 @@ function CustomDatePicker(props) {
                 clearable
                 label="Date de péremption"
                 value={selectedDate}
-                onChange={date => handleDateChange(date)}
-                minDate={new Date()}
+                onChange={date => {
+                    props.onChange(date.format('DD-MM-YYYY'))
+                    handleDateChange(date)
+                }}
                 format="DD/MM/YYYY"
                 required={props.required}
                 id={props.id}

@@ -13,20 +13,21 @@ class Search extends Component {
 
   render() {
     return (
-        <>
         <GoogleComponent
           apiKey={API_KEY}
           language={'fr'}
           coordinates={true}
           locationBoxStyle={'form-control'}
           locationListStyle={'custom-style-list'}
-          onChange={(e) => { this.setState({ place: e }) }}
+          onChange={(e) => {
+              this.setState({ place: e })
+              this.props.onChange(e.place);
+          }}
           label={this.props.label}
-          id={'foodstuff_address'}
+          id={this.props.id}
           name={'address'}
           required={'required'}
         />
-        </>
     )
   } 
 }

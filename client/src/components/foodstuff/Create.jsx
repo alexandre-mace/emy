@@ -18,20 +18,16 @@ class Create extends Component {
     constructor(){
         super();
         this.state = {
-            productAdded: {},
         }
     }
 
   componentWillUnmount() {
     this.props.reset();
   }
-  componentDidUpdate() {
-      if (this.props.created && this.props.created !== this.state.productAdded) {
-          this.props.closeModalAddProduct();
+  componentDidUpdate(prevProps) {
+      if (JSON.stringify(this.props.created) !== JSON.stringify(prevProps.created)) {
           this.props.handleProductAdded();
-          this.setState({
-              productAdded: this.props.created
-          })
+          this.props.closeModalAddProduct();
       }
   }
 
@@ -48,7 +44,8 @@ class Create extends Component {
           </div>
         )}
 
-        <Form onSubmit={this.props.create} values={this.props.item} />
+        <Form onSubmit={this.props.create} values={this.props.item} submitWording="AJOUTER LE PRODUIT"
+        />
       </div>
     );
   }

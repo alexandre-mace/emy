@@ -5,6 +5,7 @@ import Search from '../map/AutoComplete';
 import FieldFileInput from '../utils/FieldFileInput';
 import TextField from '@material-ui/core/TextField';
 import CustomDatePicker from "../utils/CustomDatePicker";
+import displayLocaleDateString from "../../utils/displayLocaleDateString";
 
 class Form extends Component {
     static propTypes = {
@@ -37,7 +38,10 @@ class Form extends Component {
                     step={data.step}
                     required={data.required}
                     label={data.label}
-                    id={`foodstuff_${data.input.name}`}
+                    id={this.props.initialValues
+                        ? `foodstuff_${data.input.name}-${this.props.initialValues.id}`
+                        : `foodstuff_${data.input.name}`
+                        }
                     placeholder={data.placeholder}
                     multiline={data.multiline}
                     margin={data.margin}
@@ -47,11 +51,10 @@ class Form extends Component {
             </div>
         );
     };
-    bindAddress = () => {
-        this._reactInternalFiber._debugOwner.stateNode.props.values['address'] = document.getElementById("foodstuff_address").value;
-        this._reactInternalFiber._debugOwner.stateNode.props.values['expirationDate'] = document.getElementById("foodstuff_expirationDate").value.replace(/\//g, "-");
-    }
 
+    componentDidMount() {
+        this.props.change('expirationDate', displayLocaleDateString(new Date()).replace(/\//g, "-"));
+    }
     render() {
         return (
             <form onSubmit={this.props.handleSubmit}>
@@ -64,18 +67,30 @@ class Form extends Component {
                 />
                 <div className="form-group mt-4">
                     <Field
-                        component={CustomDatePicker}
                         name="expirationDate"
-                        required={true}
-                        id="foodstuff_expirationDate"
-                        type="date"
+                        component={props => <CustomDatePicker
+                            onChange={date => this.props.change('expirationDate', date)}
+                            required={true}
+                            id={this.props.initialValues
+                                ? `foodstuff_expirationDate-${this.props.initialValues.id}`
+                                : 'foodstuff_expirationDate'
+                            }
+                            initialValue={this.props.initialValues
+                                ? this.props.initialValues.expirationDate
+                                : new Date()
+                            }
+                        />}
                     />
                 </div>
                 <Field
                     name="address"
                     label="Adresse à laquelle le produit peut être récupéré"
                     type="text"
-                    component={Search}
+                    component={props => <Search {...props} onChange={address => this.props.change('address', address)} />}
+                    id={this.props.initialValues
+                        ? `foodstuff_address-${this.props.initialValues.id}`
+                        : 'foodstuff_address'
+                    }
                 />
                 <Field
                     component={this.renderField}
@@ -93,10 +108,22 @@ class Form extends Component {
                     rows="3"
                 />
                 <div className="py-4"></div>
-                <Field name="image" label="Ajouter une photo du produit" type="file" component={FieldFileInput} />
+                <Field
+                    name="image"
+                    label="Ajouter une photo du produit"
+                    type="file"
+                    id={this.props.initialValues
+                        ? `foodstuff_file-${this.props.initialValues.id}`
+                        : 'foodstuff_file'
+                    }
+                    component={FieldFileInput}
+                />
 
-                <button type="submit" className="btn btn-success form-btn w-100" onClick={this.bindAddress}>
-                    AJOUTER LE PRODUIT
+                <button
+                    type="submit"
+                    className="btn btn-success form-btn w-100"
+                >
+                    {this.props.submitWording}
                 </button>
             </form>
         );

@@ -7,6 +7,7 @@ import TakeFoodStuffModal from "./TakeFoodStuffModal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import displayLocaleDateString from "../../utils/displayLocaleDateString";
 
 library.add(fas)
 
@@ -68,7 +69,7 @@ class FoodstuffListItem extends React.Component {
                         <h2 className="foodstuff-name">{this.props.item['name']}</h2>
                         <span>                  
                         <FontAwesomeIcon icon="calendar-alt" className="calendar-alt" />
-                        <span className="expirationDate">DDP : {this.props.item['expirationDate']}</span>
+                        <span className="expirationDate">Péremption : {displayLocaleDateString(this.props.item['expirationDate'])}</span>
                         </span>
                         <div className="foodstuff-list-item-button">
                             <TakeFoodStuffModal image={this.state.image} foodstuff={this.props.item} handleProductTaken={this.props.handleProductTaken}/>

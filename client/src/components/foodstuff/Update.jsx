@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Form from './Form';
 import { retrieve, update, reset } from '../../actions/foodstuff/update';
 import { del } from '../../actions/foodstuff/delete';
+import {
+    LinearProgress,
+} from '@material-ui/core';
 
 class Update extends Component {
   static propTypes = {
@@ -23,9 +26,14 @@ class Update extends Component {
     del: PropTypes.func.isRequired,
     reset: PropTypes.func.isRequired
   };
+  constructor(){
+      super();
+      this.state = {
+      }
+  }
 
   componentDidMount() {
-    this.props.retrieve(decodeURIComponent(this.props.match.params.id));
+    this.props.retrieve(decodeURIComponent(this.props.id));
   }
 
   componentWillUnmount() {
@@ -37,31 +45,33 @@ class Update extends Component {
       this.props.del(this.props.retrieved);
   };
 
-  render() {
-    if (this.props.deleted) return <Redirect to=".." />;
+  componentDidUpdate(prevProps) {
+      if (JSON.stringify(this.props.updated) !== JSON.stringify(prevProps.updated)) {
+          this.props.closeModal();
+          this.props.handleChange();
+      }
+  }
 
-    const item = this.props.updated ? this.props.updated : this.props.retrieved;
+  render() {
+    if (this.props.deleted) return <Redirect to="/tableau-de-bord/gerer-vos-produits" />;
+    const item = this.props.initialValues;
 
     return (
       <div>
-        <h1>Edit {item && item['@id']}</h1>
-
-        {this.props.created && (
-          <div className="alert alert-success" role="status">
-            {this.props.created['@id']} created.
-          </div>
-        )}
-        {this.props.updated && (
-          <div className="alert alert-success" role="status">
-            {this.props.updated['@id']} updated.
-          </div>
-        )}
+        {/*{this.props.created && (*/}
+          {/*<div className="alert alert-success" role="status">*/}
+            {/*{this.props.created['@id']} created.*/}
+          {/*</div>*/}
+        {/*)}*/}
+        {/*{this.props.updated && (*/}
+          {/*<div className="alert alert-success" role="status">*/}
+            {/*{this.props.updated['@id']} updated.*/}
+          {/*</div>*/}
+        {/*)}*/}
         {(this.props.retrieveLoading ||
           this.props.updateLoading ||
           this.props.deleteLoading) && (
-          <div className="alert alert-info" role="status">
-            Loading...
-          </div>
+            <LinearProgress/>
         )}
         {this.props.retrieveError && (
           <div className="alert alert-danger" role="alert">
@@ -84,16 +94,18 @@ class Update extends Component {
 
         {item && (
           <Form
+            form={this.props.form}
             onSubmit={values => this.props.update(item, values)}
             initialValues={item}
+            submitWording="MODIFIER VOTRE PRODUIT"
           />
         )}
-        <Link to=".." className="btn btn-primary">
-          Back to list
-        </Link>
-        <button onClick={this.del} className="btn btn-danger">
-          Delete
-        </button>
+        {/*<Link to=".." className="btn btn-primary">*/}
+          {/*Back to list*/}
+        {/*</Link>*/}
+        {/*<button onClick={this.del} className="btn btn-danger">*/}
+          {/*Delete*/}
+        {/*</button>*/}
       </div>
     );
   }

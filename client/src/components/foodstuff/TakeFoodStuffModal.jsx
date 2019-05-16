@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import displayLocaleDateString from "../../utils/displayLocaleDateString";
 
 library.add(fas)
 
@@ -80,7 +81,7 @@ class TakeFoodStuffModal extends React.Component {
                             <div className="d-flex flex-column m-4">
                                 <h4 className="modal-take-it-foodstuff-name">{this.props.foodstuff['name']}</h4>
                                 <p>Disponibilités : {this.props.foodstuff.availabilities}</p>
-                                <span><FontAwesomeIcon icon="calendar-alt" className="calendar-alt" /> {this.props.foodstuff['expirationDate']}</span>
+                                <span><FontAwesomeIcon icon="calendar-alt" className="calendar-alt" /> {displayLocaleDateString(this.props.foodstuff['expirationDate'])}</span>
                                 <span>Tel :{this.props.foodstuff['phoneNumber']}</span>
                                 <button className="btn form-btn" onClick={this.askingToOwn} type="submit" name="button">Je m'engage à prendre ce produit</button>
                             </div>
