@@ -3,6 +3,7 @@ import { ENTRYPOINT } from '../../config/entrypoint';
 import {
     fetch,
 } from '../../utils/dataAccess';
+import displayLocaleDateString from "../../utils/displayLocaleDateString";
 
 export default class FoodstuffsTable extends React.Component {
 
@@ -28,7 +29,7 @@ export default class FoodstuffsTable extends React.Component {
                         }
                     </td>
                     <td>{foodstuff.name}</td>
-                    <td>{foodstuff.expirationDate}</td>
+                    <td>{displayLocaleDateString(foodstuff.expirationDate)}</td>
                     <td>
                         {(() => {
                             switch(true) {

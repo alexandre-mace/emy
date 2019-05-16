@@ -1,6 +1,7 @@
 import React from 'react';
 import { ENTRYPOINT } from '../../config/entrypoint';
 import {fetch} from "../../utils/dataAccess";
+import displayLocaleDateString from "../../utils/displayLocaleDateString";
 
 export default class FoodstuffsToConfirmTable extends React.Component {
     hasBeenTaken = (event) => {
@@ -25,7 +26,7 @@ export default class FoodstuffsToConfirmTable extends React.Component {
                         }
                     </td>
                     <td>{foodstuff.name}</td>
-                    <td>{foodstuff.expirationDate}</td>
+                    <td>{displayLocaleDateString(foodstuff.expirationDate)}</td>
                     <td>{foodstuff.owner.firstName}</td>
                     <td>
                         <button className="form-btn" onClick={this.hasBeenTaken} value={JSON.stringify(foodstuff)} type="button" name="button">Je confirme que ce produit a été pris</button>

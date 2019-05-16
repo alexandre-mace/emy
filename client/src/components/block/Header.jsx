@@ -22,9 +22,15 @@ class Header extends Component {
     };
 
     componentDidUpdate() {
-        if (authenticationService.currentUserValue && this.state.currentUser && authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) {
+        if (authenticationService.currentUserValue &&
+            this.state.currentUser &&
+            authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) {
             this.setState({currentUser: authenticationService.currentUserValue})
-        } else if ((!authenticationService.currentUserValue && this.state.currentUser) || (authenticationService.currentUserValue && !this.state.currentUser)) {
+        } else if ((
+            !authenticationService.currentUserValue &&
+            this.state.currentUser) || (
+            authenticationService.currentUserValue &&
+            !this.state.currentUser)) {
             this.setState({currentUser: authenticationService.currentUserValue})
         }
     }
