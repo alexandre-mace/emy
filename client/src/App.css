@@ -439,6 +439,12 @@ header nav ul li button,.btnDashboard{
   color: orangered;
   font-size: 3rem;
 }
+.img-rank{
+  height:33px;
+  width:auto;
+  margin-left:10px;
+  display: inline-block;
+}
 #dashboard table img {
   max-width: 100%;
   width: 130px;
