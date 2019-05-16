@@ -26,8 +26,8 @@ export function create(values) {
                 })
                 .then(response => {
                     values.image = '/images/' + response.id;
-                    values.provider = authenticationService.currentUser.source.value['@id'];
-                    values.owner = authenticationService.currentUser.source.value['@id'];
+                    values.provider = authenticationService.currentUserValue['@id'];
+                    values.owner = authenticationService.currentUserValue['@id'];
                     fetch('/food_stuffs', { method: 'POST', body: JSON.stringify(values) })
                         .then(response => {
                             dispatch(loading(false));
@@ -45,10 +45,9 @@ export function create(values) {
                         });
                 })
         } else {
-            values.provider = authenticationService.currentUser.source.value['@id'];
-            values.owner = authenticationService.currentUser.source.value['@id'];
+            values.provider = authenticationService.currentUserValue['@id'];
+            values.owner = authenticationService.currentUserValue['@id'];
             return fetch('/food_stuffs', { method: 'POST', body: JSON.stringify(values) })
-
                 .then(response => {
                     dispatch(loading(false));
                     return response.json();

@@ -2,39 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f205155b-1619-41aa-81a6-592b88da3f4d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/public/medias/Capture d’écran de 2018-09-27 20-24-56.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/api/public/medias/feedly.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api/public/medias/lch.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/api/public/medias/stackoverflow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/components/login/LoginPage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/routes/login.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api/public/medias/twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/api/public/medias/youtube.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/reducers/login/alert.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/reducers/login/authentication.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/reducers/login/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/reducers/login/users.reducer.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/public/favicon.ico" afterPath="$PROJECT_DIR$/api/public/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/.env" afterPath="$PROJECT_DIR$/admin/.env" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/config/services.yaml" afterPath="$PROJECT_DIR$/api/config/services.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/Entity/FoodStuff.php" afterPath="$PROJECT_DIR$/api/src/Entity/FoodStuff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/Entity/Image.php" afterPath="$PROJECT_DIR$/api/src/Entity/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/Entity/User.php" afterPath="$PROJECT_DIR$/api/src/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/EventSubscriber/FoodStuffSubscriber.php" afterPath="$PROJECT_DIR$/api/src/EventSubscriber/FoodStuffSubscriber.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/EventSubscriber/UserSubscriber.php" afterPath="$PROJECT_DIR$/api/src/EventSubscriber/UserSubscriber.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/index.html" afterPath="$PROJECT_DIR$/client/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/public/index.php" afterPath="$PROJECT_DIR$/api/public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/App.css" afterPath="$PROJECT_DIR$/client/src/App.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/actions/foodstuff/create.js" afterPath="$PROJECT_DIR$/client/src/actions/foodstuff/create.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/actions/foodstuff/list.js" afterPath="$PROJECT_DIR$/client/src/actions/foodstuff/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/block/Header.js" afterPath="$PROJECT_DIR$/client/src/components/block/Header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" afterPath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js" afterPath="$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js" afterPath="$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/foodstuff/List.js" afterPath="$PROJECT_DIR$/client/src/components/foodstuff/List.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/helpEmy/HelpEmy.js" afterPath="$PROJECT_DIR$/client/src/components/helpEmy/HelpEmy.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/login/LoginModal.js" afterPath="$PROJECT_DIR$/client/src/components/login/LoginModal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/login/PrivateRoute.js" afterPath="$PROJECT_DIR$/client/src/components/login/PrivateRoute.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/login/index.js" afterPath="$PROJECT_DIR$/client/src/components/login/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/partner/Partner.js" afterPath="$PROJECT_DIR$/client/src/components/partner/Partner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/signin/Signin.js" afterPath="$PROJECT_DIR$/client/src/components/signin/Signin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/whoIsEmy/WhoIsEmy.js" afterPath="$PROJECT_DIR$/client/src/components/whoIsEmy/WhoIsEmy.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.js" afterPath="$PROJECT_DIR$/client/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/routes/dashboard.js" afterPath="$PROJECT_DIR$/client/src/routes/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/services/authentication.service.js" afterPath="$PROJECT_DIR$/client/src/services/authentication.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/yarn.lock" afterPath="$PROJECT_DIR$/client/yarn.lock" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,21 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FoodStuff.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/Entity/FoodStuff.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="100" column="1" lean-forward="false" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="List.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="List.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/List.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="62" column="2" lean-forward="true" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="2" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -67,34 +43,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardFoodstuffAwaiting.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/DashboardFoodstuffAwaiting.js">
+      <file leaf-file-name="filterList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/utils/filterList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="80" column="35" lean-forward="false" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
+            <state relative-caret-position="198">
+              <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FoodstuffsAwaitingTable.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsAwaitingTable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FoodstuffsToConfirmTable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsToConfirmTable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -102,18 +56,8 @@
       <file leaf-file-name="FoodstuffListItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1243">
-              <caret line="143" column="15" lean-forward="false" selection-start-line="143" selection-start-column="15" selection-end-line="143" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/block/Header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-72">
-              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+            <state relative-caret-position="298">
+              <caret line="64" column="79" lean-forward="true" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -122,18 +66,8 @@
       <file leaf-file-name="CreateFoodStuffModal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginModal.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/login/LoginModal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="45" column="65" lean-forward="false" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
+            <state relative-caret-position="72">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -141,12 +75,72 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Signin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/signin/Signin.js">
+      <file leaf-file-name="FlashMessage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/block/FlashMessage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="50" column="77" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlashMessageTemplate.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/block/FlashMessageTemplate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="43" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/App.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10476">
+              <caret line="582" column="31" lean-forward="false" selection-start-line="582" selection-start-column="31" selection-end-line="582" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+              <folding>
+                <marker date="1556729014899" expanded="true" signature="0:1633" ph="{&quot;name&quot;: &quot;client&quot;...}" />
+                <marker date="1556729014899" expanded="true" signature="81:1374" ph="{&quot;@material-ui/core&quot;: &quot;^3.9.2&quot;...}" />
+                <marker date="1556729014899" expanded="true" signature="1389:1535" ph="{&quot;start&quot;: &quot;react-scripts start&quot;...}" />
+                <marker date="1556729014899" expanded="true" signature="1555:1631" ph="[...]" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/block/Header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#660#698#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,17 +156,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mr-3</find>
-      <find>content</find>
-      <find>asking</find>
-      <find>username</find>
-      <find>await</find>
-      <find>null</find>
-      <find>30px</find>
-      <find>img</find>
-      <find>LoginP</find>
-      <find>selected</find>
-      <find>&gt;</find>
       <find>dashboard</find>
       <find>$rate</find>
       <find>awaiting</find>
@@ -192,6 +175,17 @@
       <find>Link</find>
       <find>handle</find>
       <find>visible</find>
+      <find>medias/</find>
+      <find>transition</find>
+      <find>example</find>
+      <find>productUpdated</find>
+      <find>flash</find>
+      <find>FlashMessage</find>
+      <find>react-al</find>
+      <find>react-transition-group</find>
+      <find>Trans</find>
+      <find>filterList</find>
+      <find>handleProductAdded</find>
     </findStrings>
     <replaceStrings>
       <replace>filterListInput</replace>
@@ -202,9 +196,9 @@
       <replace>label-d-none</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/client</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/client/src</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/client</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -213,10 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/components/map/LeafletMarker.js" />
-        <option value="$PROJECT_DIR$/client/src/App.scss" />
-        <option value="$PROJECT_DIR$/api/.env" />
-        <option value="$PROJECT_DIR$/api/.env.local" />
         <option value="$PROJECT_DIR$/client/.env" />
         <option value="$PROJECT_DIR$/client/src/actions/foodstuff/create.js" />
         <option value="$PROJECT_DIR$/admin/.env" />
@@ -226,7 +216,6 @@
         <option value="$PROJECT_DIR$/client/public/index.html" />
         <option value="$PROJECT_DIR$/client/src/services/authentication.service.js" />
         <option value="$PROJECT_DIR$/client/src/components/login/index.js" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js" />
         <option value="$PROJECT_DIR$/api/config/services.yaml" />
         <option value="$PROJECT_DIR$/api/src/EventSubscriber/UserSubscriber.php" />
         <option value="$PROJECT_DIR$/api/src/EventSubscriber/FoodStuffSubscriber.php" />
@@ -241,16 +230,12 @@
         <option value="$PROJECT_DIR$/client/src/utils/loader.js" />
         <option value="$PROJECT_DIR$/client/src/components/block/Loader.js" />
         <option value="$PROJECT_DIR$/client/src/components/dashboard/UserRank.js" />
-        <option value="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" />
         <option value="$PROJECT_DIR$/client/src/components/dashboard/DashboardFoodstuffReceived.js" />
         <option value="$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsGivenTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsReceivedTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsToConfirmTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/dashboard/DashboardFoodstuffGiven.js" />
-        <option value="$PROJECT_DIR$/client/src/App.css" />
         <option value="$PROJECT_DIR$/client/src/routes/donors.js" />
-        <option value="$PROJECT_DIR$/client/src/index.js" />
-        <option value="$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsAwaitingTable.js" />
         <option value="$PROJECT_DIR$/api/src/Entity/FoodStuff.php" />
         <option value="$PROJECT_DIR$/api/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/client/src/actions/user/list.js" />
@@ -260,10 +245,19 @@
         <option value="$PROJECT_DIR$/client/src/components/login/PrivateRoute.js" />
         <option value="$PROJECT_DIR$/client/src/routes/dashboard.js" />
         <option value="$PROJECT_DIR$/client/src/components/block/Header.js" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js" />
-        <option value="$PROJECT_DIR$/client/src/components/login/LoginModal.js" />
-        <option value="$PROJECT_DIR$/client/src/components/foodstuff/List.js" />
         <option value="$PROJECT_DIR$/client/src/components/dashboard/DashboardFoodstuffAwaiting.js" />
+        <option value="$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsAwaitingTable.js" />
+        <option value="$PROJECT_DIR$/client/src/components/login/LoginModal.js" />
+        <option value="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/client/package.json" />
+        <option value="$PROJECT_DIR$/client/src/components/block/FlashMessageTemplate.js" />
+        <option value="$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js" />
+        <option value="$PROJECT_DIR$/client/src/components/block/FlashMessage.js" />
+        <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/client/src/App.css" />
+        <option value="$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js" />
+        <option value="$PROJECT_DIR$/client/src/components/foodstuff/List.js" />
+        <option value="$PROJECT_DIR$/client/src/utils/filterList.js" />
       </list>
     </option>
   </component>
@@ -302,25 +296,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
               <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
@@ -332,6 +313,26 @@
               <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
@@ -370,14 +371,6 @@
               <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -386,14 +379,60 @@
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="block" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
               <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="foodstuff" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="helpers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="foodstuff" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="emy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="emy" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="image" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="emy" type="b2602c69:ProjectViewProjectNode" />
@@ -413,15 +452,17 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cinemapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gautier-ecommerce" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="two.files.diff.last.used.folder" value="$USER_HOME$/Documents/emy/client/src" />
     <property name="two.files.diff.last.used.file" value="$USER_HOME$/Documents/emy/client/src/components/foodstuff/map/GoogleComponent.js" />
-    <property name="SearchEverywhereHistoryKey" value="ToC&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/FoodstuffsToConfirmTable.js&#10;Foo&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/FoodStuff.php&#10;Sign&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/signin/Signin.js&#10;Mo&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;Login&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;Hea&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/block/Header.js&#10;dashboard&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/routes/dashboard.js&#10;Priva&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/PrivateRoute.js&#10;Dash&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/DashboardFoodstuffAwaiting.js&#10;Lis&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/List.js&#10;List&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/list.js&#10;User&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/User.php&#10;Food&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/FoodStuff.php&#10;App&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;Ap&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;Das&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/Dashboard.js&#10;app&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;AP&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;GIv&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/FoodstuffsGivenTable.js&#10;Li&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/List.js&#10;F&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/FoodStuff.php&#10;dashbo&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/Dashboard.js&#10;Us&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/User.php&#10;LoginP&#9;null&#9;null&#10;Dashb&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/Dashboard.js&#10;Log&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;login&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;app.c&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;crea&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/create.js&#10;Crea&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/CreateFoodStuffModal.js&#10;upda&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/update.js&#10;Head&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/block/Header.js&#10;Create&#9;null&#9;null&#10;He&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/block/Header.js&#10;Logi&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;creat&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/create.js&#10;Cre&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/CreateFoodStuffModal.js&#10;const&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/constants/user/constants.js&#10;actions&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/user/actions.js&#10;reducer&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/reducers/user/reducer.js&#10;actio&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/user/actions.js&#10;acti&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/user/actions.js&#10;googl&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/map/GoogleComponent.js&#10;Map&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/map/MapContainer.js" />
+    <property name="SearchEverywhereHistoryKey" value="App&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;Dashboard&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/Dashboard.js&#10;Toc&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/FoodstuffsToConfirmTable.js&#10;Hea&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/block/Header.js&#10;APp&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;LoginM&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;ToC&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/FoodstuffsToConfirmTable.js&#10;Foo&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/FoodStuff.php&#10;Sign&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/signin/Signin.js&#10;Mo&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;Login&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;dashboard&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/routes/dashboard.js&#10;Priva&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/PrivateRoute.js&#10;Dash&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/DashboardFoodstuffAwaiting.js&#10;Lis&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/List.js&#10;List&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/list.js&#10;User&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/User.php&#10;Food&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/FoodStuff.php&#10;Ap&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;Das&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/Dashboard.js&#10;app&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;AP&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;GIv&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/FoodstuffsGivenTable.js&#10;Li&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/List.js&#10;F&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/FoodStuff.php&#10;dashbo&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/Dashboard.js&#10;Us&#9;FILE&#9;file:///home/alex/Bureau/emy/api/src/Entity/User.php&#10;LoginP&#9;null&#9;null&#10;Dashb&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/dashboard/Dashboard.js&#10;Log&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;login&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;app.c&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/App.css&#10;crea&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/create.js&#10;Crea&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/CreateFoodStuffModal.js&#10;upda&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/update.js&#10;Head&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/block/Header.js&#10;Create&#9;null&#9;null&#10;He&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/block/Header.js&#10;Logi&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/login/LoginModal.js&#10;creat&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/foodstuff/create.js&#10;Cre&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/CreateFoodStuffModal.js&#10;const&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/constants/user/constants.js&#10;actions&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/user/actions.js&#10;reducer&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/reducers/user/reducer.js&#10;actio&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/user/actions.js&#10;acti&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/actions/user/actions.js&#10;googl&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/map/GoogleComponent.js&#10;Map&#9;FILE&#9;file:///home/alex/Bureau/emy/client/src/components/foodstuff/map/MapContainer.js" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -482,21 +523,23 @@
       <workItem from="1555578665610" duration="709000" />
       <workItem from="1555580143693" duration="1712000" />
       <workItem from="1555587065370" duration="26373000" />
-      <workItem from="1555672566069" duration="76163000" />
+      <workItem from="1555672566069" duration="77991000" />
+      <workItem from="1556303221770" duration="19033000" />
+      <workItem from="1556727110739" duration="2487000" />
+      <workItem from="1556780867641" duration="1560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257430000" />
+    <option name="totallyTimeSpent" value="282338000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20405924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2106418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -508,6 +551,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -526,451 +570,370 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/components/login/LoginPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/login/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/routes/login.js">
+    <entry file="file://$PROJECT_DIR$/api/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/config/services.yaml">
+    <entry file="file://$PROJECT_DIR$/api/.env.local">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="33" selection-end-column="70" />
-          <folding />
+        <state relative-caret-position="378">
+          <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/EventSubscriber/UserSubscriber.php">
+    <entry file="file://$PROJECT_DIR$/client/src/serviceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="-1666">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/utils/dataAccess.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-514">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/services/user.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/services/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/services/authentication.service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="5" column="58" lean-forward="true" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/Welcome.js">
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/foodstuff/create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/foodstuff/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/foodstuff/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="false" />
+            <element signature="e#0#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/welcome.css">
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/foodstuff/list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/foodstuff/show.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/foodstuff/update.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/login/index.js" />
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/login/users.reducer.js" />
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/login/alert.reducer.js" />
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/login/authentication.reducer.js" />
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/image/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/image/create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/helpers/auth-header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/helpers/handle-response.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/helpers/history.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/helpers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/config/entrypoint.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/public/medias/feedly.png" />
+    <entry file="file://$PROJECT_DIR$/client/src/components/login/LoginModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="25" column="82" lean-forward="true" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/block/Loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/FieldFileInput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/Create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/Show.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1036">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/Update.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsToConfirmTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="62" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/Controller/CreateImageAction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/Entity/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/yarn.lock">
+    <entry file="file://$PROJECT_DIR$/client/node_modules/react-transition-group/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10458">
-          <caret line="581" column="30" lean-forward="false" selection-start-line="581" selection-start-column="25" selection-end-line="581" selection-end-column="30" />
+        <state relative-caret-position="306">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/Entity/FoodStuff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="63" column="33" lean-forward="false" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/partner/Partner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="818">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="468">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
           <folding>
-            <element signature="e#0#26#0" expanded="false" />
+            <marker date="1556729014899" expanded="true" signature="0:1633" ph="{&quot;name&quot;: &quot;client&quot;...}" />
+            <marker date="1556729014899" expanded="true" signature="81:1374" ph="{&quot;@material-ui/core&quot;: &quot;^3.9.2&quot;...}" />
+            <marker date="1556729014899" expanded="true" signature="1389:1535" ph="{&quot;start&quot;: &quot;react-scripts start&quot;...}" />
+            <marker date="1556729014899" expanded="true" signature="1555:1631" ph="[...]" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/whoIsEmy/WhoIsEmy.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/block/FlashMessageTemplate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/getToConfirm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#52#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/getGiven.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#52#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/getReceived.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#52#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/getAwaiting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#52#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/utils/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/block/Loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/EventSubscriber/FoodStuffSubscriber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="58" column="44" lean-forward="false" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/UserRank.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/DashboardFoodstuffReceived.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsGivenTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsReceivedTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/DashboardFoodstuffGiven.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="77" column="27" lean-forward="true" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="347" column="15" lean-forward="false" selection-start-line="347" selection-start-column="15" selection-end-line="347" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/routes/foodstuff.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/routes/helpEmy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/helpEmy/HelpEmy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/user/getOne.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#52#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-          <folding>
-            <element signature="e#762#811#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-766">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/routes/donors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/vendor/api-platform/core/src/Bridge/Doctrine/Orm/Filter/OrderFilter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="36" column="6" lean-forward="false" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="87" lean-forward="false" selection-start-line="17" selection-start-column="87" selection-end-line="17" selection-end-column="87" />
-          <folding>
-            <element signature="e#30#72#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/user/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/donors/Donors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/foodstuff/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/login/PrivateRoute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/structural.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="98" column="16" lean-forward="false" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/routes/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1243">
-          <caret line="143" column="15" lean-forward="false" selection-start-line="143" selection-start-column="15" selection-end-line="143" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/DashboardHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/login/LoginModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="45" column="65" lean-forward="false" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/signin/Signin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="50" column="77" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="54">
+          <caret line="3" column="43" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/block/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
+        <state relative-caret-position="36">
           <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/List.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/CreateFoodStuffModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/Entity/FoodStuff.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="100" column="1" lean-forward="false" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/DashboardFoodstuffAwaiting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="80" column="35" lean-forward="false" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsToConfirmTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        <state relative-caret-position="72">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/dashboard/FoodstuffsAwaitingTable.js">
+    <entry file="file://$PROJECT_DIR$/client/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10476">
+          <caret line="582" column="31" lean-forward="false" selection-start-line="582" selection-start-column="31" selection-end-line="582" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/block/FlashMessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#660#698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/utils/filterList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/FoodstuffListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="64" column="79" lean-forward="true" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/foodstuff/List.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-          <folding />
+          <caret line="62" column="2" lean-forward="true" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
