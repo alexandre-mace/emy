@@ -120,7 +120,7 @@ class FoodStuff
 
     public function getExpirationDate()
     {
-        return $this->expirationDate->format('d/m/Y');
+        return $this->expirationDate;
     }
 
     public function setExpirationDate(\DateTimeInterface $expirationDate): self
