@@ -3,6 +3,7 @@ import {list} from "../../actions/user/list";
 import ReactPlaceholder from 'react-placeholder';
 import "react-placeholder/lib/reactPlaceholder.css";
 import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate';
+import {getAllGiven} from "../../actions/foodstuff/getAllGiven";
 
 export default class Donors extends React.Component {
 
@@ -10,16 +11,19 @@ export default class Donors extends React.Component {
         super();
         this.state = {
             donors: null,
+            totalFoodstuffGiven: null
         }
     }
 
     componentDidMount = () => {
-        list()
-            .then(donors => {
-                this.setState({
-                    donors: donors
-                })
+        const listPromise = list();
+        const totalFoodstuffGivenPromise = getAllGiven();
+        Promise.all([listPromise, totalFoodstuffGivenPromise]).then(values => {
+            this.setState({
+                donors: values[0],
+                totalFoodstuffGiven: values[1]['hydra:totalItems']
             })
+        });
     }
 
     render() {
@@ -39,10 +43,13 @@ export default class Donors extends React.Component {
                         <div className="col-12">
                             <div>
                                 <h3 className="page-title">Contributeurs</h3>
+                                {this.state.totalFoodstuffGiven !== null &&
+                                    <p className="text-center mb-4" id="totalFoodstuffGiven">Grâce à vous, c'est <span id="totalFoodstuffGivenNumber">{this.state.totalFoodstuffGiven}</span> produits qui ont été donnés</p>
+                                }
                                 <p className="mb-5">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <ReactPlaceholder showLoadingAnimation customPlaceholder={tablePlaceholderTemplate} ready={this.state.donors}>
+                                <ReactPlaceholder showLoadingAnimation customPlaceholder={tablePlaceholderTemplate} ready={this.state.donors !== null}>
                                     <table>
                                         <thead>
                                         <tr>
