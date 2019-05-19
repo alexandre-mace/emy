@@ -74,10 +74,11 @@ class TakeFoodStuffModal extends React.Component {
                         <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
                         <h3 className="modal-style-title">Planifier le rendez-vous !</h3>
                         <div className="modal-take-it-foodstuff-description">
-                            <div className="m-4">
-                                {this.props.image &&
-                                    <img src={ENTRYPOINT + '/medias/' + this.props.image} className="foodstuff-img" alt=""/>
-                                }                            </div>
+                            {this.props.foodstuff.image &&
+                                <div className="m-4">
+                                    <img src={ENTRYPOINT + '/medias/' + this.props.foodstuff.image.contentUrl} className="foodstuff-img" alt=""/>
+                                </div>
+                            }
                             <div className="d-flex flex-column m-4">
                                 <h4 className="modal-take-it-foodstuff-name">{this.props.foodstuff['name']}</h4>
                                 <p>Disponibilités : {this.props.foodstuff.availabilities}</p>

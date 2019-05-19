@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {LayoutContext} from "../block/Layout";
-import {getOne} from "../../actions/image/getOne";
 import {ENTRYPOINT} from "../../config/entrypoint";
 import TakeFoodStuffModal from "./TakeFoodStuffModal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,19 +15,7 @@ class FoodstuffListItem extends React.Component {
     constructor(){
         super();
         this.state = {
-            selected: false,
-            image: '',
-        }
-    }
-
-    componentDidMount() {
-        if (this.props.item.image) {
-            getOne(this.props.item.image)
-                .then(image => {
-                    this.setState({
-                        image: image.contentUrl
-                    })
-                })
+            selected: false
         }
     }
 
@@ -62,8 +49,9 @@ class FoodstuffListItem extends React.Component {
         return(
             <li key={this.props.item['@id']} className={'foodstuff-' + this.props.item['id']}>
                 <div className="foodstuff-list-item" onClick={this.handleClick}>
-                    {this.state.image &&
-                        <img src={ENTRYPOINT + '/medias/' + this.state.image} className="foodstuff-list-item-image" alt=""/>
+                    {this.props.item.image &&
+                        <img src={ENTRYPOINT + '/medias/' + this.props.item.image.contentUrl} className="foodstuff-list-item-image" alt=""/>
+
                     }
                     <div className="foodstuff-list-item-description">
                         <h2 className="foodstuff-name">{this.props.item['name']}</h2>
@@ -72,7 +60,7 @@ class FoodstuffListItem extends React.Component {
                         <span className="expirationDate">Péremption : {displayLocaleDateString(this.props.item['expirationDate'])}</span>
                         </span>
                         <div className="foodstuff-list-item-button">
-                            <TakeFoodStuffModal image={this.state.image} foodstuff={this.props.item} handleProductTaken={this.props.handleProductTaken}/>
+                            <TakeFoodStuffModal foodstuff={this.props.item} handleProductTaken={this.props.handleProductTaken}/>
                             <button className="localize-it">
                                 <FontAwesomeIcon icon="map-marker-alt" className="img-calendar" />
                                  Localiser
