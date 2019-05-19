@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { list, reset } from '../../actions/foodstuff/list';
 import FoodstuffListItem from './FoodstuffListItem.jsx';
-import '../../App.css';
 import LeafletMap from "../map/LeafletMap.jsx";
 import CreateFoodStuffModal from './CreateFoodStuffModal.jsx';
 import Alert from 'react-s-alert';
