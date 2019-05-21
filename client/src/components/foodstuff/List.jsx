@@ -103,7 +103,7 @@ class List extends Component {
                                     }
                                 </>
                             </ReactPlaceholder>
-                            {/*{this.pagination()}*/}
+                            {this.pagination()}
                         </ul>
                     </div>
                     <div id="map-container">
@@ -133,12 +133,12 @@ class List extends Component {
         } = view;
 
         return (
-            <nav aria-label="Page navigation">
+            <nav className="foodstuff-pagination mt-auto" aria-label="Page navigation">
                 <Link
                     to="."
                     className={`btn btn-primary${previous ? '' : ' disabled'}`}
                 >
-                    <span aria-hidden="true">&lArr;</span> First
+                    <span aria-hidden="true">&lArr;</span>
                 </Link>
                 <Link
                     to={
@@ -146,19 +146,19 @@ class List extends Component {
                     }
                     className={`btn btn-primary${previous ? '' : ' disabled'}`}
                 >
-                    <span aria-hidden="true">&larr;</span> Previous
+                    <span aria-hidden="true">&larr;</span>
                 </Link>
                 <Link
                     to={next ? encodeURIComponent(next) : '#'}
                     className={`btn btn-primary${next ? '' : ' disabled'}`}
                 >
-                    Next <span aria-hidden="true">&rarr;</span>
+                    <span aria-hidden="true">&rarr;</span>
                 </Link>
                 <Link
                     to={last ? encodeURIComponent(last) : '#'}
                     className={`btn btn-primary${next ? '' : ' disabled'}`}
                 >
-                    Last <span aria-hidden="true">&rArr;</span>
+                    <span aria-hidden="true">&rArr;</span>
                 </Link>
             </nav>
         );
