@@ -11,10 +11,23 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(attributes={
- *     "formats"={"jsonld"},
- *     "normalization_context"={"groups"={"food_stuff", "food_stuff:read"}},
- *     "denormalizationContext"={"groups"={"food_stuff", "food_stuff:write"}}})
+ * @ApiResource(
+ *     attributes={
+ *         "formats"={"jsonld"},
+ *         "normalization_context"={"groups"={"food_stuff", "food_stuff:read"}},
+ *         "denormalizationContext"={"groups"={"food_stuff", "food_stuff:write"}}
+ *     },
+ *     collectionOperations={
+ *         "get",
+ *         "post"={"access_control"="is_granted('ROLE_USER')", "access_control_message"="Seulement les utilisateurs inscrits peuvent ajouter un produit."}
+ *     },
+ *     itemOperations={
+ *         "get"={"method"="GET", "access_control"="is_granted('ROLE_USER')", "access_control_message"="Seulement les utilisateurs inscrits peuvent accéder au détail d'un produit."},
+ *         "put"={"method"="PUT", "access_control"="is_granted('ROLE_USER')", "access_control_message"="Seulement les utilisateurs inscrits peuvent modifier un produit."},
+ *         "delete"={"method"="DELETE", "access_control"="is_granted('ROLE_USER') and object.provider == user", "access_control_message"="Seulement les utilisateurs inscrits peuvent ajouter un produit."}
+ *     }
+ * )
+ *
  * @ORM\Entity(repositoryClass="App\Repository\FoodStuffRepository")
  * @ApiFilter(SearchFilter::class, properties={"provider": "exact", "owner": "exact", "askingToOwn": "exact"})
  * @ApiFilter(BooleanFilter::class, properties={"isAwaiting", "hasBeenGiven"})
@@ -74,7 +87,7 @@ class FoodStuff
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"food_stuff"})
      */
-    private $provider;
+    public $provider;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="foodStuffsOwned")
