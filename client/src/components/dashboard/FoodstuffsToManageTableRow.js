@@ -2,6 +2,9 @@ import React from 'react';
 import { ENTRYPOINT } from '../../config/entrypoint';
 import UpdateFoodstuffModal from "./UpdateFoodstuffModal";
 import displayLocaleDateString from "../../utils/displayLocaleDateString";
+import {
+    fetch,
+} from '../../utils/dataAccess';
 
 export default class FoodstuffsToManageTableRow extends React.Component {
     constructor(props){
@@ -18,10 +21,13 @@ export default class FoodstuffsToManageTableRow extends React.Component {
         fetch(foodstuff['@id'], {
             method: 'DELETE',
             headers: new Headers({ 'Content-Type': 'application/ld+json' }),
+        }).then(response => {
+            console.log(response)
         })
-            .then(response => {
-                this.props.handleChange();
-            })
+            .catch(e => {
+                console.log(e)
+            });
+        ;
     };
 
     openModal = () => {
