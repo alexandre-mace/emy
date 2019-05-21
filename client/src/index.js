@@ -52,7 +52,6 @@ ReactDOM.render(
             <Layout>
                 <Switch>
                     <Route path="/" component={List} strict={true} exact={true}/>
-                    { foodstuffRoutes }
                     { imageRoutes }
                     { dashboardRoutes }
                     { partnerRoutes }
@@ -60,6 +59,7 @@ ReactDOM.render(
                     { whoIsEmyRoutes }
                     { signinRoutes }
                     { donorRoutes }
+                    { foodstuffRoutes }
                     { welcomeRoutes }
                     <Route render={() => <h1>Not Found</h1>} />
                 </Switch>
