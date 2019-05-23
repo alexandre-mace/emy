@@ -1065,3 +1065,11 @@ header nav ul li button,.btnDashboard{
   color: orangered;
   font-size: 2.4rem;
 }
+.marker-cluster-small {
+  background-color: rgba(230,69,0,.6) !important;
+}
+.marker-cluster-small div {
+  background-color: rgba(255,69,0,.6) !important;
+  color: white !important;
+  font-size: 18px !important;
+}
