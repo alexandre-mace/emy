@@ -193,7 +193,7 @@ header nav ul li button,.btnDashboard{
 .foodstuff-list {
   list-style: none;
   height: calc(100% - 120px);
-  overflow: scroll;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
@@ -204,9 +204,9 @@ header nav ul li button,.btnDashboard{
   border-radius: 4px;
   width: 100%;
 }
-.foodstuff-pagination a.disabled {
-  background-color: orangered;
-  border-color: orangered;
+.foodstuff-pagination a.disabled, .foodstuff-pagination a:not(.disabled):active {
+  background-color: orangered !important;
+  border-color: orangered !important;
 }
 .foodstuff-list li.selected {
   background-color: orangered;
