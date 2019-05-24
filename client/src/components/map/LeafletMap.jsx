@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Map, TileLayer } from 'react-leaflet'
 import {GoogleApiWrapper} from 'google-maps-react';
 import LeafletMarker from './LeafletMarker.jsx';
+import MapSearchAutoComplete from './MapSearchAutoComplete';
 
 type State = {
     lat: number,
@@ -18,6 +19,8 @@ export class LeafletMap extends Component<{}, State> {
             markers: [],
             zoom: 13,
         }
+
+        this.goToAddress = this.goToAddress.bind(this);
     }
 
     componentWillReceiveProps(props) {
@@ -65,10 +68,22 @@ export class LeafletMap extends Component<{}, State> {
         }
     }
 
+    goToAddress = (coordinates) => {
+        console.log(coordinates)
+        this.setState({
+            coordinates: {lat: coordinates.lat, lng: coordinates.lng}
+        });
+    }
+
     render() {
+        const coordinates = this.state.coordinates
+        ? [ this.state.coordinates.lat, this.state.coordinates.lng ]
+        : [ 44.8337080, -0.5821208]
+        
         window.dispatchEvent(new Event('resize'));
         return (
-            <Map center={[ 44.8337080, -0.5821208]} zoom={this.state.zoom}>
+            <>
+            <Map center={coordinates} zoom={this.state.zoom}>
                 <TileLayer
                     url='http://{s}.tile.openstreetmap.fr/openriverboatmap/{z}/{x}/{y}.png'
                     attribution='map data © [[http://osm.org/copyright|OpenStreetMap contributors]] under ODbL  - tiles OpenRiverboatMap'
@@ -77,6 +92,16 @@ export class LeafletMap extends Component<{}, State> {
                     <LeafletMarker key={marker[0]} marker={marker} productAdded={this.state.productAdded}></LeafletMarker>
                 ))}
             </Map>
+            {
+                !this.state.coordinates &&
+                <div className="ctn-search-map">
+                    <div className="center-search-map">
+                        <MapSearchAutoComplete mapSearchContext={true} goToAddress={this.goToAddress}/>
+                    </div>
+                </div>
+            }
+           
+            </>
         )
     }
 }

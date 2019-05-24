@@ -181,13 +181,13 @@ export class GoogleComponent extends Component {
           className: this.props.locationBoxStyle ? this.props.locationBoxStyle : 'location-box',
           type: "text",
           required: this.props.required,
-          placeholder: '',
+          placeholder: this.props.placeholder,
           id: this.props.id,
           onChange: (e) => this.arrangeValue(e.target.value),
           value: this.state.place,
           title: this.state.place
         }),
-          <label htmlFor="foodstuff_address">Adresse à laquelle le produit peut être récupéré</label>
+          <label htmlFor={this.props.labelFor}>{this.props.labelMessage}</label>
           ,
 
         this.state.collectionShow ?

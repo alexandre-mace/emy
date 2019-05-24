@@ -86,7 +86,7 @@ class Form extends Component {
                     name="address"
                     label="Adresse à laquelle le produit peut être récupéré"
                     type="text"
-                    component={props => <Search {...props} onChange={address => this.props.change('address', address)} />}
+                    component={props => <Search {...props} formContext={true} onChange={address => this.props.change('address', address)} />}
                     id={this.props.initialValues
                         ? `foodstuff_address-${this.props.initialValues.id}`
                         : 'foodstuff_address'

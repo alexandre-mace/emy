@@ -310,6 +310,7 @@ header nav ul li button,.btnDashboard{
 #map-container {
   width: calc(100% - 500px);
   height: auto;
+  position: relative;
 }
 #map-container > * {
   width: 100%;
@@ -334,6 +335,67 @@ header nav ul li button,.btnDashboard{
     top: -30px;
   }
 }
+
+/* Search in map */
+
+.ctn-search-map{
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,.8);
+  z-index:1001;
+  display: flex;
+}
+
+.ctn-search-map .center-search-map{
+  margin:auto;
+  width:65%;
+}
+
+.ctn-search-map label{
+  width:100% !important;
+  left:0% !important;
+  color:white !important;
+  margin-bottom:20px !important;
+}
+
+.ctn-search-map .location-box-cover input{
+  margin:auto;
+  background:white;
+  width:100%;
+  padding-top:30px;
+  padding-bottom:30px;
+  padding-left:13px;
+  color:#1B1B1B;
+}
+
+.ctn-search-map .location-box-cover input::placeholder{
+  color:#D6D6D6;
+  text-align:left;
+  font-size:16px;
+  font-weight:600;
+}
+
+.center-search-map .mapsearch_address{
+  display: none !important;
+}
+
+.center-search-map button{
+  padding:10px 30px;
+  border-radius: 24px;
+  background:#FF4500;
+  display: block;
+  margin:0 auto;
+}
+
+.ctn-search-map .google-covert{
+  width:100%;
+  left:0%;
+}
+
+
 /* LeafletMap */
 /* FieldFileInput */
 .label-file {
@@ -542,6 +604,7 @@ header nav ul li button,.btnDashboard{
   #dashboard table tbody tr td:nth-child(5):before {
     content: "Status";
   }
+
 }
 
 .img-manage{
