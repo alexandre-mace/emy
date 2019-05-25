@@ -63,7 +63,7 @@ export default class LoginModal extends React.Component {
                                         )}
                                     </div>
                                     {status &&
-                                    <div className={'alert alert-danger'}>{status}</div>
+                                    <div className={'alert alert-danger'}>{this.props.translation(status)}</div>
                                     }
                                 </Form>
                             )}

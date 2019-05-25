@@ -4,10 +4,11 @@ import LoginModal from "../login/LoginModal.jsx";
 import Alert from 'react-s-alert';
 import { authenticationService } from '../../services';
 import Loader from "../utils/Loader.jsx";
+import { withTranslation } from 'react-i18next';
 
 export const LayoutContext = React.createContext();
 
-export default class Layout extends React.Component {
+class Layout extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -34,9 +35,11 @@ export default class Layout extends React.Component {
     };
 
     handleLogin = () => {
-        this.setState({
-            currentUser: authenticationService.currentUserValue['@id']
-        })
+        if (authenticationService.currentUserValue) {
+            this.setState({
+                currentUser: authenticationService.currentUserValue['@id']
+            })
+        }
     };
 
     handleLogout = () => {
@@ -58,6 +61,8 @@ export default class Layout extends React.Component {
         }
     }
     render() {
+        const { t } = this.props;
+
         return(
             <div>
                 <div className="fullscreenLoader d-flex">
@@ -70,10 +75,10 @@ export default class Layout extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Alert stack={{limit: 3}} />
-                <Header openLoginModal={this.openLoginModal} handleLogout={this.handleLogout} />
-                <LoginModal visible={this.state.loginModalActive} closeModal={this.closeLoginModal} handleLogin={this.handleLogin} />
-                <LayoutContext.Provider value={{ openLoginModal: this.openLoginModal }}>
+                <LayoutContext.Provider value={{ openLoginModal: this.openLoginModal, translation: t }}>
+                    <Alert stack={{limit: 3}} />
+                    <Header openLoginModal={this.openLoginModal} handleLogout={this.handleLogout} />
+                    <LoginModal translation={t} visible={this.state.loginModalActive} closeModal={this.closeLoginModal} handleLogin={this.handleLogin} />
                     <div className="page">
                         {this.props.children}
                     </div>
@@ -83,3 +88,4 @@ export default class Layout extends React.Component {
     }
 }
 
+export default withTranslation()(Layout);

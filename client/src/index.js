@@ -34,6 +34,7 @@ import donorRoutes from './routes/donors';
 
 import List from './components/foodstuff/List.jsx';
 import Layout from "./components/block/Layout";
+import './i18n';
 
 const history = createBrowserHistory();
 const store = createStore(
