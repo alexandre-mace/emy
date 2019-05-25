@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import displayLocaleDateString from "../../utils/displayLocaleDateString";
+import { Link }from 'react-router-dom';
 
 library.add(fas)
 
@@ -65,7 +66,13 @@ class TakeFoodStuffModal extends React.Component {
         return(
             <>
                 {this.state.currentUser ? (
-                    <button className="take-it" value="Open" onClick={() => this.openModal()}>Je prends !</button>
+                    <>
+                    {(this.state.currentUser['@id'] === this.props.foodstuff.provider['@id']) ? (
+                        <Link to="/tableau-de-bord/gerer-vos-produits"><button className="take-it">Gérer mon produit</button></Link>
+                    ) : (
+                        <button className="take-it" value="Open" onClick={this.context.openLoginModal}>Je prends !</button>
+                    )}
+                    </>
                 ) : (
                     <button className="take-it" value="Open" onClick={this.context.openLoginModal}>Je prends !</button>
                 )}
