@@ -70,7 +70,7 @@ export class LeafletMap extends Component<{}, State> {
     render() {
         window.dispatchEvent(new Event('resize'));
         return (
-            <Map center={[ 44.8337080, -0.5821208]} zoom={this.state.zoom} maxZoom={18}>
+            <Map center={[ 44.8337080, -0.5821208]} zoom={this.state.zoom} maxZoom={22}>
                 <TileLayer
                     url='http://{s}.tile.openstreetmap.fr/openriverboatmap/{z}/{x}/{y}.png'
                     attribution='map data © [[http://osm.org/copyright|OpenStreetMap contributors]] under ODbL  - tiles OpenRiverboatMap'

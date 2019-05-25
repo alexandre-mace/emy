@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
 export class GoogleComponent extends Component {
-  constructor(props) {
+    _isMounted = false;
+    constructor(props) {
     super(props);
 
     this.state = {
@@ -22,9 +23,10 @@ export class GoogleComponent extends Component {
   }
 
   async componentDidMount() {
-
-    await this.setState({ liStyle: this.props.locationListStyle ? this.props.locationListStyle : 'style-list' })
-
+      this._isMounted = true;
+      if (this._isMounted) {
+          await this.setState({liStyle: this.props.locationListStyle ? this.props.locationListStyle : 'style-list'})
+      }
     let _ico = React.createElement("img", {
       className: 'current-loc-ico',
       src: "https://www.materialui.co/materialIcons/maps/my_location_black_192x192.png",
@@ -32,12 +34,16 @@ export class GoogleComponent extends Component {
     let _current = React.createElement("li",
       { className: this.state.liStyle, onClick: () => this.getCurrentLocation(), },
       _ico, "Current Location");
-    this.setState({ currentLocation: _current })
+      if (this._isMounted) {
+
+          this.setState({currentLocation: _current})
+      }
     document.addEventListener("mousedown", (e) => this.handleClickOutside(e));
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", (e) => this.handleClickOutside(e));
+      this._isMounted = false;
+      document.removeEventListener("mousedown", (e) => this.handleClickOutside(e));
 
 
   }
