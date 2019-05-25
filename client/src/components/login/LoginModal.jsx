@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-awesome-modal';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { authenticationService } from '../../services';
 import { TextField } from 'formik-material-ui';
@@ -29,8 +29,8 @@ export default class LoginModal extends React.Component {
                                 password: ''
                             }}
                             validationSchema={Yup.object().shape({
-                                email: Yup.string().required('Email is required'),
-                                password: Yup.string().required('Password is required')
+                                email: Yup.string().required('L\'email est requis'),
+                                password: Yup.string().required('Le mot de passe est requis')
                             })}
                             onSubmit={({ email, password }, { setStatus, setSubmitting }) => {
                                 setStatus();
