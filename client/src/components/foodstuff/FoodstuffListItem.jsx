@@ -24,7 +24,9 @@ class FoodstuffListItem extends React.Component {
         let marker = document.getElementsByClassName('marker-' + this.props.item['id'])[0];
         if (foodstuff.className.includes('selected')) {
             foodstuff.classList.remove('selected');
-            marker.classList.remove('bounce-infinite');
+            if (marker) {
+                marker.classList.remove('bounce-infinite');
+            }
             this.setState({selected: false});
         } else {
             Array.from(document.getElementsByClassName('foodstuff-list-item')).forEach(function(element) {
@@ -32,15 +34,19 @@ class FoodstuffListItem extends React.Component {
                     element.parentNode.classList.remove('selected');
                     const foodstuffId = /[^-]*$/.exec(element.parentNode.className.replace(/ .*/,''))[0];
                     let marker = document.getElementsByClassName('marker-' + foodstuffId)[0];
-                    if (marker.className.includes('bounce-infinite')) {
-                        marker.classList.remove('bounce-infinite');
-                    } else if (marker.className.includes('bounce')){
-                        marker.classList.remove('bounce');
+                    if (marker) {
+                        if (marker.className.includes('bounce-infinite')) {
+                            marker.classList.remove('bounce-infinite');
+                        } else if (marker.className.includes('bounce')){
+                            marker.classList.remove('bounce');
+                        }
                     }
                 }
             });
             foodstuff.classList.add('selected');
-            marker.classList.add('bounce-infinite');
+            if (marker) {
+                marker.classList.add('bounce-infinite');
+            }
             this.setState({selected: true});
         }
     }
