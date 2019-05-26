@@ -60,8 +60,8 @@ ReactDOM.render(
                     { whoIsEmyRoutes }
                     { signinRoutes }
                     { donorRoutes }
-                    { foodstuffRoutes }
                     { welcomeRoutes }
+                    { foodstuffRoutes }
                     <Route render={() => <h1>Not Found</h1>} />
                 </Switch>
             </Layout>

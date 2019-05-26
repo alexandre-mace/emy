@@ -179,7 +179,15 @@ header nav ul li button,.btnDashboard{
   width:60px !important;
   height:50px !important;
 }
-
+.notifications-total {
+  display: flex;
+  background-color: white;
+  color: orangered;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 8px;
+}
 #foodstuff-list-search {
   width: 100%;
   display: block;
@@ -497,6 +505,10 @@ header nav ul li button,.btnDashboard{
 #dashboard table tbody tr {
   height: 48px;
   border-bottom: 1px solid #EDEDED;
+}
+#dashboard table tbody tr.has-not-been-seen {
+  color: white;
+  background-color: orangered;
 }
 #dashboard table tbody tr:last-child {
   border: 0;

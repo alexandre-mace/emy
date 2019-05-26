@@ -22,16 +22,16 @@ class Header extends Component {
     };
 
     componentDidUpdate() {
-        if (authenticationService.currentUserValue &&
+        if ((authenticationService.currentUserValue &&
             this.state.currentUser &&
-            authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) {
-            this.setState({currentUser: authenticationService.currentUserValue})
-        } else if ((
-            !authenticationService.currentUserValue &&
-            this.state.currentUser) || (
-            authenticationService.currentUserValue &&
-            !this.state.currentUser)) {
-            this.setState({currentUser: authenticationService.currentUserValue})
+            authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) ||
+            (authenticationService.currentUserValue && !this.state.currentUser) ||
+            (!authenticationService.currentUserValue &&
+                this.state.currentUser)
+        ) {
+            this.setState({
+                currentUser: authenticationService.currentUserValue,
+            })
         }
     }
 
@@ -54,7 +54,7 @@ class Header extends Component {
                     <h2>
                         Emy<span className="black">.</span>
                         {this.state.currentUser &&
-                         <span> 
+                         <span>
                             <img alt="icon bonjour" src={require('../../assets/img/hello.png')} />
                             Hello {this.state.currentUser.firstName}
                          </span>
@@ -63,7 +63,12 @@ class Header extends Component {
                 </Link>
 
                 {this.state.currentUser &&
-                    <Link to="/tableau-de-bord" className="btn btnDashboard">Tableau de bord</Link>
+                    <Link to="/tableau-de-bord" className="btn btnDashboard d-flex align-items-center">
+                        Tableau de bord
+                        {this.props.notificationsTotal !== null &&
+                            <span className="notifications-total"><span className="m-auto">{this.props.notificationsTotal}</span></span>
+                        }
+                    </Link>
                 }
                 <nav className={this.state.activeBurgerMenu ? 'nav-display': null}>
                     <ul id="header-links">

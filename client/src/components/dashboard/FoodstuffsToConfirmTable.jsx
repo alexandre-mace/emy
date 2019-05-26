@@ -2,8 +2,10 @@ import React from 'react';
 import { ENTRYPOINT } from '../../config/entrypoint';
 import {fetch} from "../../utils/dataAccess";
 import displayLocaleDateString from "../../utils/displayLocaleDateString";
+import {LayoutContext} from "../block/Layout";
 
 export default class FoodstuffsToConfirmTable extends React.Component {
+    static contextType = LayoutContext;
     hasBeenTaken = (event) => {
         let foodstuff = JSON.parse(event.target.value);
         fetch(foodstuff['@id'], {
@@ -11,15 +13,35 @@ export default class FoodstuffsToConfirmTable extends React.Component {
             headers: new Headers({ 'Content-Type': 'application/ld+json' }),
             body: JSON.stringify({ isAwaiting:false, hasBeenGiven: true, owner: foodstuff.askingToOwn['@id'] })
         })
-            .then(response => {
+            .then(() => {
                 this.props.handleChange();
             })
     };
 
+    hasBeenSeen = (notification) => {
+        if (notification && notification.hasBeenSeen === false) {
+            fetch(notification['@id'], {
+                method: 'PUT',
+                headers: new Headers({ 'Content-Type': 'application/ld+json' }),
+                body: JSON.stringify({ hasBeenSeen:true })
+            })
+                .then(() => {
+                    this.props.handleChange();
+                    this.context.handleChange();
+                })
+        }
+    }
+
     render() {
         const confirmTableRows = this.props.foodstuffsToConfirm &&
             this.props.foodstuffsToConfirm['hydra:member'].map(foodstuff => (
-                <tr key={foodstuff['@id']}>
+                <tr key={foodstuff['@id']}
+                    onMouseOver={() => this.hasBeenSeen(foodstuff.foodStuffNotifications[0])}
+                    className={
+                        (foodstuff.foodStuffNotifications[0] &&
+                        foodstuff.foodStuffNotifications[0].hasBeenSeen === false) ? 'has-not-been-seen' : ''
+                    }
+                >
                     <td>
                         {foodstuff.image &&
                         <img src={ENTRYPOINT + '/medias/' + foodstuff.image.contentUrl} alt=""/>
