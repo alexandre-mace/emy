@@ -82,10 +82,16 @@ class User implements UserInterface
      */
     private $grade = 'bronze';
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuffNotification", mappedBy="notifiedUser", orphanRemoval=true)
+     */
+    private $foodStuffNotifications;
+
     public function __construct()
     {
         $this->foodStuffs = new ArrayCollection();
         $this->askingToOwnFoodstuffs = new ArrayCollection();
+        $this->foodStuffNotifications = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -302,6 +308,37 @@ class User implements UserInterface
     public function setGrade(string $grade): self
     {
         $this->grade = $grade;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FoodStuffNotification[]
+     */
+    public function getFoodStuffNotifications(): Collection
+    {
+        return $this->foodStuffNotifications;
+    }
+
+    public function addFoodStuffNotification(FoodStuffNotification $foodStuffNotification): self
+    {
+        if (!$this->foodStuffNotifications->contains($foodStuffNotification)) {
+            $this->foodStuffNotifications[] = $foodStuffNotification;
+            $foodStuffNotification->setNotifiedUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFoodStuffNotification(FoodStuffNotification $foodStuffNotification): self
+    {
+        if ($this->foodStuffNotifications->contains($foodStuffNotification)) {
+            $this->foodStuffNotifications->removeElement($foodStuffNotification);
+            // set the owning side to null (unless already changed)
+            if ($foodStuffNotification->getNotifiedUser() === $this) {
+                $foodStuffNotification->setNotifiedUser(null);
+            }
+        }
 
         return $this;
     }

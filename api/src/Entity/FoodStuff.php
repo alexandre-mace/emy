@@ -6,6 +6,8 @@ use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -113,6 +115,17 @@ class FoodStuff
      * @Groups({"food_stuff:read"})
      */
     private $askingToOwn = null;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuffNotification", mappedBy="foodstuff", orphanRemoval=true)
+     * @Groups({"food_stuff:read"})
+     */
+    private $foodStuffNotifications;
+
+    public function __construct()
+    {
+        $this->foodStuffNotifications = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -247,6 +260,37 @@ class FoodStuff
     public function setAskingToOwn(?User $askingToOwn): self
     {
         $this->askingToOwn = $askingToOwn;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FoodStuffNotification[]
+     */
+    public function getFoodStuffNotifications(): Collection
+    {
+        return $this->foodStuffNotifications;
+    }
+
+    public function addFoodStuffNotification(FoodStuffNotification $foodStuffNotification): self
+    {
+        if (!$this->foodStuffNotifications->contains($foodStuffNotification)) {
+            $this->foodStuffNotifications[] = $foodStuffNotification;
+            $foodStuffNotification->setFoodstuff($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFoodStuffNotification(FoodStuffNotification $foodStuffNotification): self
+    {
+        if ($this->foodStuffNotifications->contains($foodStuffNotification)) {
+            $this->foodStuffNotifications->removeElement($foodStuffNotification);
+            // set the owning side to null (unless already changed)
+            if ($foodStuffNotification->getFoodstuff() === $this) {
+                $foodStuffNotification->setFoodstuff(null);
+            }
+        }
 
         return $this;
     }
