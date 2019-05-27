@@ -2,6 +2,7 @@ import React from 'react';
 import UserRank from "./UserRank.jsx";
 import {getOne} from "../../actions/user/getOne";
 import { Link }from 'react-router-dom';
+import './DashboardHeader.scss';
 
 export default class DashboardHeader extends React.Component {
     constructor(){

@@ -1,9 +1,10 @@
 import React from 'react';
+import './WhoIsEmy.scss';
 
 export default class WhoIsEmy extends React.Component {
     render() {
         return(
-            <div id="whoIsEmy" className="content container">
+            <div id="whoIsEmy" className="content-page container">
                 <div className="row">
                     <div className="col">
                         <h3 className="page-title">Emy, c'est vous</h3>

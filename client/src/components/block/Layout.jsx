@@ -3,9 +3,9 @@ import Header from "./Header.jsx";
 import LoginModal from "../login/LoginModal.jsx";
 import Alert from 'react-s-alert';
 import { authenticationService } from '../../services';
-import Loader from "../utils/Loader.jsx";
 import { withTranslation } from 'react-i18next';
 import {findAllByUser} from "../../actions/foodstuffNotification/findAllbyUser";
+import FullScreenLoader from "../utils/FullScreenLoader";
 
 export const LayoutContext = React.createContext();
 
@@ -96,14 +96,7 @@ class Layout extends React.Component {
         return(
             <div>
                 <div className="fullscreenLoader d-flex">
-                    <div className="row m-auto">
-                        <div className="col-12 mb-5">
-                            <Loader />
-                        </div>
-                        <div className="col-12 text-center">
-                            <p className="fullscreenLoader-text">Chaque seconde, 41.2 tonnes de nourriture jetées dans le monde</p>
-                        </div>
-                    </div>
+                    <FullScreenLoader/>
                 </div>
                 <LayoutContext.Provider value={{ openLoginModal: this.openLoginModal, translation: t, handleChange: this.handleChange }}>
                     <Alert stack={{limit: 3}} />

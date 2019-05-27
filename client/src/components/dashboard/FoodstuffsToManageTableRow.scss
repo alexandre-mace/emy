@@ -1,0 +1,11 @@
+@import "../../assets/sass/variables.scss";
+
+.img-manage{
+  width:auto !important;
+  height:20px !important;
+  display: block;
+}
+.btn-delete{
+  background: $delete-color;
+  margin-left:8px;
+}

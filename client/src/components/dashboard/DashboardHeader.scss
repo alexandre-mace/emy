@@ -1,0 +1,24 @@
+@import '../../assets/sass/variables.scss';
+
+#dashboard-header {
+  color: $secondary-color;
+  background: $primary-color;
+  font-size: 1.2rem;
+  p {
+    font-size:18px;
+    font-weight: 600;
+  }
+}
+#dashboard-header-links {
+  li a {
+    display: block;
+    margin-right: 2rem;
+    background: $secondary-color;
+    border-radius: 6px;
+    color: $primary-color;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 15px 30px;
+    font-size:14px;
+    font-weight: 600;
+  }
+}

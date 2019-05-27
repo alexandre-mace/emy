@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { authenticationService } from '../../services';
 import { Link }from 'react-router-dom';
+import './Header.scss'
+import NotificationsTotal from "./NotificationsTotal";
 
 class Header extends Component {
     constructor(props) {
@@ -49,12 +51,12 @@ class Header extends Component {
 
     render() {
         return (
-            <header>
+            <header id="header">
                 <Link to="/">
-                    <h2>
-                        Emy<span className="black">.</span>
+                    <h2 id="header-app-name">
+                        Emy<span id="header-app-name-dot">.</span>
                         {this.state.currentUser &&
-                         <span>
+                         <span id="header-hello-user">
                             <img alt="icon bonjour" src={require('../../assets/img/hello.png')} />
                             Hello {this.state.currentUser.firstName}
                          </span>
@@ -63,11 +65,9 @@ class Header extends Component {
                 </Link>
 
                 {this.state.currentUser &&
-                    <Link to="/tableau-de-bord" className="btn btnDashboard d-flex align-items-center">
+                    <Link to="/tableau-de-bord" className="btn btn-dashboard d-flex align-items-center">
                         Tableau de bord
-                        {this.props.notificationsTotal !== null &&
-                            <span className="notifications-total"><span className="m-auto">{this.props.notificationsTotal}</span></span>
-                        }
+                        <NotificationsTotal notificationsTotal={this.props.notificationsTotal}/>
                     </Link>
                 }
                 <nav className={this.state.activeBurgerMenu ? 'nav-display': null}>
@@ -92,7 +92,6 @@ class Header extends Component {
                     <span></span>
                     <span></span>
                 </div>
-
             </header>
         )
     }

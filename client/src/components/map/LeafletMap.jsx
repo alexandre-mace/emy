@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Map, TileLayer } from 'react-leaflet'
 import {GoogleApiWrapper} from 'google-maps-react';
 import LeafletMarker from './LeafletMarker.jsx';
+import './LeafletMap.scss';
 import 'react-leaflet-markercluster/dist/styles.min.css'; // css
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 

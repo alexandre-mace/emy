@@ -1,0 +1,61 @@
+@import "variables";
+
+button {
+  background-color: $primary-color;
+  border-style: none;
+  color: $secondary-color;
+  padding: 13px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+button[type="submit"] {
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+button:hover {
+  background-color: $primary-color;
+  cursor: pointer;
+  color: $secondary-color;
+}
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.btn {
+  background-color: $primary-color;
+  border-style: none;
+  color: $secondary-color;
+  padding: 10px 16px;
+  border-radius: 25px;
+  letter-spacing: .2px;
+}
+.btn:hover {
+  background-color: orangered;
+  cursor: pointer;
+  color: white;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.form-btn {
+  border-radius: 5px;
+  padding: 10px 18px;
+  border: 0;
+  margin: 20px 0;
+  color:white;
+}
+.btn-edit{
+  background:white;
+  margin:initial;
+}
+.btn-edit:hover{
+  background:initial;
+}
+.btn-edit img{
+  width:20px !important;
+  height:auto !important;
+  display: block !important;
+}

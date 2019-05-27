@@ -25,7 +25,7 @@ class Form extends Component {
       <div className={`form-group`}>
         <label
           htmlFor={`image_${data.input.name}`}
-          className="label-d-none"
+          className="d-none"
         >
           {data.input.name}
         </label>

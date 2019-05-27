@@ -5,6 +5,7 @@ import displayLocaleDateString from "../../utils/displayLocaleDateString";
 import {
     fetch,
 } from '../../utils/dataAccess';
+import './FoodstuffsToManageTableRow.scss';
 
 export default class FoodstuffsToManageTableRow extends React.Component {
     constructor(props){
@@ -54,7 +55,7 @@ export default class FoodstuffsToManageTableRow extends React.Component {
                 <td>{displayLocaleDateString(this.props.foodstuff.expirationDate)}</td>
                 <td>
                     <UpdateFoodstuffModal closeModal={this.closeModal} openModal={this.openModal} visible={this.state.visible} foodstuff={this.props.foodstuff} handleChange={this.props.handleChange} key={this.props.foodstuff['@id']}/>
-                    <button className="form-btn btn-delete-color" onClick={this.deleteFoodstuff} value={JSON.stringify(this.props.foodstuff)} type="button" name="button">
+                    <button className="form-btn btn-delete" onClick={this.deleteFoodstuff} value={JSON.stringify(this.props.foodstuff)} type="button" name="button">
                         <img alt="Supprimer le produit" src={require('../../assets/img/trash.png')} className="img-manage" />
                     </button>
                 </td>

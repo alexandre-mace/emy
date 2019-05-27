@@ -1,0 +1,101 @@
+#dashboard table img {
+  max-width: 100%;
+  width: 130px;
+  display: block;
+}
+#dashboard table {
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  -webkit-box-shadow: 0px 1px 37px -20px rgba(0,0,0,0.50);
+  -moz-box-shadow: 0px 1px 37px -20px rgba(0,0,0,0.50);
+  box-shadow: 0px 1px 37px -20px rgba(0,0,0,0.50);
+}
+#dashboard table thead,#dashboard table th, #dashboard table td  {
+  position: relative;
+  text-align: center;
+  font-size:14px;
+}
+
+#dashboard table td, #dashboard table th {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+#dashboard table thead tr {
+  height: 60px;
+  background: orangered;
+  color: white;
+  font-size: 16px;
+}
+#dashboard table thead th{
+  color:white;
+}
+#dashboard table tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #EDEDED;
+}
+#dashboard table tbody tr.has-not-been-seen {
+  color: white;
+  background-color: orangered;
+}
+#dashboard table tbody tr:last-child {
+  border: 0;
+}
+#dashboard table td, #dashboard table th {
+}
+#dashboard table td.l, #dashboard table th.l {
+}
+#dashboard table td.c, #dashboard table th.c {
+  text-align: center;
+}
+#dashboard table td.r, #dashboard table th.r {
+  text-align: center;
+}
+@media screen and (max-width: 35.5em) {
+  #dashboard table {
+    display: block;
+  }
+  #dashboard table > *, #dashboard table tr, #dashboard table td, #dashboard table th {
+    display: block;
+  }
+  #dashboard table thead {
+    display: none;
+  }
+  #dashboard table tbody tr {
+    height: auto;
+    padding: 8px 0;
+  }
+  #dashboard table tbody tr td {
+    padding-left: 45%;
+    margin-bottom: 12px;
+  }
+  #dashboard table tbody tr td:last-child {
+    margin-bottom: 0;
+  }
+  #dashboard table tbody tr td:before {
+    position: absolute;
+    font-weight: 700;
+    width: 30%;
+    left: 10px;
+    top: 0;
+  }
+  #dashboard table tbody tr td:nth-child(1):before {
+    content: "Image";
+  }
+  #dashboard table tbody tr td:nth-child(2):before {
+    content: "Nom";
+  }
+  #dashboard table tbody tr td:nth-child(3):before {
+    content: "DDP";
+  }
+  #dashboard table tbody tr td:nth-child(4):before {
+    content: "Contact";
+  }
+  #dashboard table tbody tr td:nth-child(5):before {
+    content: "Status";
+  }
+}

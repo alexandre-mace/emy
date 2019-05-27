@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { update } from '../../actions/foodstuff/update';
 import { connect } from 'react-redux';
 import Update from '../foodstuff/Update'
+import './UpdateFoodstuffModal.scss';
 
 class UpdateFoodstuffModal extends React.Component {
     static propTypes = {
@@ -33,7 +34,7 @@ class UpdateFoodstuffModal extends React.Component {
     render() {
         return(
             <>
-                <button onClick={this.props.openModal} value={JSON.stringify(this.props.foodstuff)}  className="form-btn btn-edit-color" type="button" name="button">
+                <button onClick={this.props.openModal} value={JSON.stringify(this.props.foodstuff)}  className="form-btn btn-edit" type="button" name="button">
                     <img alt="Modifier le produit" src={require('../../assets/img/edit-white.png')} className="img-manage" />
                 </button>
                 <div className="update-foodstuff-modal">

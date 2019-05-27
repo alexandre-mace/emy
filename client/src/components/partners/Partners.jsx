@@ -1,4 +1,5 @@
 import React from 'react';
+import './Partner.scss';
 
 export default class Partners extends React.Component {
     constructor(){
@@ -9,7 +10,7 @@ export default class Partners extends React.Component {
 
     render() {
         return(
-            <div id="partner" className="content container">
+            <div id="partner" className="content-page container">
                 <div className="row">
                     <div className="col-12">
                         <h3 className="page-title">Les super partenaires</h3>

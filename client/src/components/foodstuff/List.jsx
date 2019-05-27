@@ -14,6 +14,7 @@ import Loader from "../utils/Loader.jsx";
 import foodstuffListPlaceholderTemplate from "../block/foodstuffListPlaceholderTemplate.jsx";
 import ReactPlaceholder from 'react-placeholder';
 import "react-placeholder/lib/reactPlaceholder.css";
+import './List.scss';
 
 class List extends Component {
     static propTypes = {
@@ -93,7 +94,7 @@ class List extends Component {
                             <CreateFoodStuffModal handleProductAdded = {this.handleProductAdded} />
                             <input type="text" id="foodstuff-list-search" onKeyUp={filterList} placeholder="Chercher facilement un produit"/>
                         </div>
-                        <ul className="foodstuff-list" id="myUL">
+                        <ul className="foodstuff-list">
                             <ReactPlaceholder showLoadingAnimation customPlaceholder={foodstuffListPlaceholderTemplate} ready={this.props.retrieved !== null}>
                                 <>
                                     {this.props.retrieved &&

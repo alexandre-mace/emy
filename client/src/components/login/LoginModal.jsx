@@ -20,7 +20,7 @@ export default class LoginModal extends React.Component {
             <div>
                 <Modal visible={this.props.visible} width="600" className="modal-popup" effect="fadeInUp" onClickAway={this.props.closeModal}>
                     <div className="modal-style">
-                        <img src={require('../foodstuff/assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={this.props.closeModal}/>
+                        <img src={require('../../assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={this.props.closeModal}/>
                         <h3 className="modal-style-title">Se connecter</h3>
                         <p>Connectez-vous pour ajouter des produits et accéder à votre tableau de bord.</p>
                         <Formik

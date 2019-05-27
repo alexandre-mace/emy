@@ -1,0 +1,19 @@
+@import '../../assets/sass/variables.scss';
+
+.fullscreenLoader {
+  position: absolute;
+  background-color: #F8F8F8;
+  color: $primary-color;
+  width: 100vw !important;
+  height:100vh;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+.fullscreenLoader-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 50%;
+  line-height: 1.5;
+  margin: auto;
+}

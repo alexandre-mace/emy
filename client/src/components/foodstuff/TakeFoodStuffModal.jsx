@@ -12,6 +12,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import displayLocaleDateString from "../../utils/displayLocaleDateString";
 import { Link }from 'react-router-dom';
 import { create } from '../../actions/foodstuffNotification/create';
+import './TakeFoodStuffModal.scss';
 
 library.add(fas)
 
@@ -86,7 +87,7 @@ class TakeFoodStuffModal extends React.Component {
                 )}
                 <Modal width="800" visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div className="modal-style">
-                        <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
+                        <img src={require('../../assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
                         <h3 className="modal-style-title">Planifier le rendez-vous !</h3>
                         <div className="modal-take-it-foodstuff-description">
                             {this.props.foodstuff.image &&

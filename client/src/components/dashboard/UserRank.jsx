@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserRank.scss';
 
 export default class UserRank extends React.Component {
 

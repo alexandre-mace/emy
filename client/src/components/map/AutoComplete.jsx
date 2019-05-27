@@ -1,5 +1,6 @@
 import { GoogleComponent } from './GoogleComponent';
 import React, { Component } from 'react';
+import './AutoComplete.scss';
 
 const API_KEY = 'AIzaSyCgFf-er2mba4V3HG0awy_w7M13nlrNtaY';  
 

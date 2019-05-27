@@ -13,7 +13,7 @@ import {
 } from 'connected-react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
-import './app.css';
+import './app.scss';
 import * as serviceWorker from './serviceWorker';
 
 // Import your reducers and routes here

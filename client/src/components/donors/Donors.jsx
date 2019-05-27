@@ -4,6 +4,7 @@ import ReactPlaceholder from 'react-placeholder';
 import "react-placeholder/lib/reactPlaceholder.css";
 import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate';
 import {getAllGiven} from "../../actions/foodstuff/getAllGiven";
+import './Donors.scss';
 
 export default class Donors extends React.Component {
 
@@ -38,7 +39,7 @@ export default class Donors extends React.Component {
         ;
 
         return(
-            <div id="dashboard" className="content container">
+            <div id="dashboard" className="content-page container">
                     <div className="row">
                         <div className="col-12">
                             <div>

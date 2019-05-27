@@ -1,0 +1,36 @@
+/* LeafletMap */
+#map-container {
+  width: calc(100% - 500px);
+  height: auto;
+  > * {
+    width: 100%;
+    height: 100%;
+  }
+}
+.leaflet-container {
+  height: 100%;
+}
+.bounce {
+  position: absolute;
+  animation: bounce 0.35s ease 0s 12 alternate;
+}
+.bounce-infinite {
+  position: absolute;
+  animation: bounce 0.35s ease infinite alternate;
+}
+@keyframes bounce {
+  from {
+    top: 0;
+  }
+  to {
+    top: -30px;
+  }
+}
+.marker-cluster-small {
+  background-color: rgba(230,69,0,.6) !important;
+}
+.marker-cluster-small div {
+  background-color: rgba(255,69,0,.6) !important;
+  color: white !important;
+  font-size: 18px !important;
+}
