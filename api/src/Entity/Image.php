@@ -45,7 +45,7 @@ class Image
     /**
      * @var string|null
      * @ORM\Column(nullable=true)
-     * @Groups({"food_stuff"})
+     * @Groups({"food_stuff", "offer:read"})
      * @ApiProperty(iri="http://schema.org/contentUrl")
      */
     public $contentUrl;

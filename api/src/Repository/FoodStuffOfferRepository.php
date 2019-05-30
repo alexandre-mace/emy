@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\FoodStuffNotification;
+use App\Entity\FoodStuffOffer;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method FoodStuffNotification|null find($id, $lockMode = null, $lockVersion = null)
- * @method FoodStuffNotification|null findOneBy(array $criteria, array $orderBy = null)
- * @method FoodStuffNotification[]    findAll()
- * @method FoodStuffNotification[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method FoodStuffOffer|null find($id, $lockMode = null, $lockVersion = null)
+ * @method FoodStuffOffer|null findOneBy(array $criteria, array $orderBy = null)
+ * @method FoodStuffOffer[]    findAll()
+ * @method FoodStuffOffer[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class FoodStuffNotificationRepository extends ServiceEntityRepository
+class FoodStuffOfferRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, FoodStuffNotification::class);
+        parent::__construct($registry, FoodStuffOffer::class);
     }
 
     // /**
-    //  * @return FoodStuffNotification[] Returns an array of FoodStuffNotification objects
+    //  * @return FoodStuffOffer[] Returns an array of FoodStuffOffer objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class FoodStuffNotificationRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?FoodStuffNotification
+    public function findOneBySomeField($value): ?FoodStuffOffer
     {
         return $this->createQueryBuilder('f')
             ->andWhere('f.exampleField = :val')

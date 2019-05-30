@@ -31,7 +31,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * )
  *
  * @ORM\Entity(repositoryClass="App\Repository\FoodStuffRepository")
- * @ApiFilter(SearchFilter::class, properties={"provider": "exact", "owner": "exact", "askingToOwn": "exact"})
+ * @ApiFilter(SearchFilter::class, properties={"provider": "exact", "owner": "exact"})
  * @ApiFilter(BooleanFilter::class, properties={"isAwaiting", "hasBeenGiven"})
  */
 class FoodStuff
@@ -40,21 +40,21 @@ class FoodStuff
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"food_stuff:read"})
+     * @Groups({"food_stuff:read", "offer:read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
-     * @Groups({"food_stuff"})
+     * @Groups({"food_stuff", "offer:read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="date")
      * @Assert\NotNull
-     * @Groups({"food_stuff"})
+     * @Groups({"food_stuff", "offer:read"})
      */
     private $expirationDate;
 
@@ -80,7 +80,7 @@ class FoodStuff
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist", "remove"})
-     * @Groups({"food_stuff"})
+     * @Groups({"food_stuff", "offer:read"})
      */
     private $image;
 
@@ -111,20 +111,14 @@ class FoodStuff
     private $hasBeenGiven = false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="askingToOwnFoodstuffs")
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuffOffer", mappedBy="foodstuff", orphanRemoval=true)
      * @Groups({"food_stuff:read"})
      */
-    private $askingToOwn = null;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuffNotification", mappedBy="foodstuff", orphanRemoval=true)
-     * @Groups({"food_stuff:read"})
-     */
-    private $foodStuffNotifications;
+    private $foodStuffOffers;
 
     public function __construct()
     {
-        $this->foodStuffNotifications = new ArrayCollection();
+        $this->foodStuffOffers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -252,43 +246,31 @@ class FoodStuff
         return $this;
     }
 
-    public function getAskingToOwn(): ?User
-    {
-        return $this->askingToOwn;
-    }
-
-    public function setAskingToOwn(?User $askingToOwn): self
-    {
-        $this->askingToOwn = $askingToOwn;
-
-        return $this;
-    }
-
     /**
-     * @return Collection|FoodStuffNotification[]
+     * @return Collection|FoodStuffOffer[]
      */
-    public function getFoodStuffNotifications(): Collection
+    public function getFoodStuffOffers(): Collection
     {
-        return $this->foodStuffNotifications;
+        return $this->foodStuffOffers;
     }
 
-    public function addFoodStuffNotification(FoodStuffNotification $foodStuffNotification): self
+    public function addFoodStuffOffer(FoodStuffOffer $foodStuffOffer): self
     {
-        if (!$this->foodStuffNotifications->contains($foodStuffNotification)) {
-            $this->foodStuffNotifications[] = $foodStuffNotification;
-            $foodStuffNotification->setFoodstuff($this);
+        if (!$this->foodStuffOffers->contains($foodStuffOffer)) {
+            $this->foodStuffOffers[] = $foodStuffOffer;
+            $foodStuffOffer->setFoodstuff($this);
         }
 
         return $this;
     }
 
-    public function removeFoodStuffNotification(FoodStuffNotification $foodStuffNotification): self
+    public function removeFoodStuffOffer(FoodStuffOffer $foodStuffOffer): self
     {
-        if ($this->foodStuffNotifications->contains($foodStuffNotification)) {
-            $this->foodStuffNotifications->removeElement($foodStuffNotification);
+        if ($this->foodStuffOffers->contains($foodStuffOffer)) {
+            $this->foodStuffOffers->removeElement($foodStuffOffer);
             // set the owning side to null (unless already changed)
-            if ($foodStuffNotification->getFoodstuff() === $this) {
-                $foodStuffNotification->setFoodstuff(null);
+            if ($foodStuffOffer->getFoodstuff() === $this) {
+                $foodStuffOffer->setFoodstuff(null);
             }
         }
 
