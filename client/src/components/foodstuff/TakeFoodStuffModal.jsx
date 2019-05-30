@@ -11,7 +11,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import displayLocaleDateString from "../../utils/displayLocaleDateString";
 import { Link }from 'react-router-dom';
-import { create } from '../../actions/foodstuffNotification/create';
+import { create as createOffer } from '../../actions/foodstuffOffer/create';
 import './TakeFoodStuffModal.scss';
 
 library.add(fas)
@@ -57,13 +57,11 @@ class TakeFoodStuffModal extends React.Component {
     }
 
     askingToOwn = () => {
-        this.props.update(this.props.foodstuff, { isAwaiting: true, askingToOwn: authenticationService.currentUserValue['@id'] })
-            .then(() => {
-                return create({
-                    notifiedUser: this.props.foodstuff.provider['@id'],
-                    foodstuff: this.props.foodstuff['@id'],
-                    hasBeenSeen: false
-                })
+            createOffer({
+                foodstuff: this.props.foodstuff['@id'],
+                askingUser: authenticationService.currentUserValue['@id'],
+                owner: this.props.foodstuff.provider['@id'],
+                status: 'waiting'
             })
             .then(() => {
                 this.props.handleProductTaken();
@@ -79,7 +77,7 @@ class TakeFoodStuffModal extends React.Component {
                     {(this.state.currentUser['@id'] === this.props.foodstuff.provider['@id']) ? (
                         <Link to="/tableau-de-bord/gerer-vos-produits"><button className="take-it">Gérer mon produit</button></Link>
                     ) : (
-                        <button className="take-it" value="Open" onClick={() => this.openModal()}>Je prends !</button>
+                        <button className="take-it" value="Open" onClick={() => this.openModal()}>Je demande ce produit</button>
                     )}
                     </>
                 ) : (
@@ -100,7 +98,7 @@ class TakeFoodStuffModal extends React.Component {
                                 <p>Disponibilités : {this.props.foodstuff.availabilities}</p>
                                 <span><FontAwesomeIcon icon="calendar-alt" className="calendar-alt" /> {displayLocaleDateString(this.props.foodstuff['expirationDate'])}</span>
                                 <span>Tel :{this.props.foodstuff['phoneNumber']}</span>
-                                <button className="btn form-btn" onClick={this.askingToOwn} type="submit" name="button">Je m'engage à prendre ce produit</button>
+                                <button className="btn form-btn" onClick={this.askingToOwn} type="submit" name="button">J'envoie une demande au propriétaire du produit</button>
                             </div>
                         </div>
                     </div>

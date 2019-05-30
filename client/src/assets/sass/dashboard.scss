@@ -1,7 +1,12 @@
+#dashboard {
+  padding-top: 100px;
+}
 #dashboard table img {
   max-width: 100%;
-  width: 130px;
+  max-height: 60px;
   display: block;
+  margin: auto;
+  position: relative;
 }
 #dashboard table {
   border-collapse: collapse;
@@ -20,7 +25,20 @@
   text-align: center;
   font-size:14px;
 }
-
+#dashboard .important-information {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#dashboard #dashboard-page-title {
+  font-size: 14rem;
+  color: orangered;
+  top: -90px;
+  left: -80px;
+  z-index: -1;
+  opacity: 0.05;
+  position: absolute;
+  line-height: 0.7;
+}
 #dashboard table td, #dashboard table th {
   padding-left: 8px;
   padding-right: 8px;

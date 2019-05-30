@@ -44,6 +44,7 @@ export default class DashboardHeader extends React.Component {
     }
 
     render() {
+        const currentLocation = window.location.pathname;
         return(
             <>
                 <div id="dashboard-header" className="mb-4 py-3">
@@ -62,9 +63,11 @@ export default class DashboardHeader extends React.Component {
                     <div className="row">
                         <div className="col d-flex">
                             <ul id="dashboard-header-links" className="d-flex w-100">
-                                <li><Link to="/tableau-de-bord">Tous</Link></li>
-                                <li><Link to="/tableau-de-bord/produits-a-confirmer">À confirmer</Link></li>
-                                <li className="ml-auto"><Link to="/tableau-de-bord/gerer-vos-produits" className="mr-0">Gérer mes produits ajoutés</Link></li>
+                                <li className={(currentLocation === '/tableau-de-bord/produits-en-cours' ? 'active' : '')}><Link to="/tableau-de-bord/produits-en-cours">En cours</Link></li>
+                                <li className={(currentLocation === '/tableau-de-bord/produits-a-confirmer' ? 'active' : '')}><Link to="/tableau-de-bord/produits-a-confirmer">À confirmer</Link></li>
+                                <li className={(currentLocation === '/tableau-de-bord/produits-en-attente' ? 'active' : '')}><Link to="/tableau-de-bord/produits-en-attente">Vous attendez</Link></li>
+                                <li className={(currentLocation === '/tableau-de-bord/produits-donnes-et-recus' ? 'active' : '')}><Link to="/tableau-de-bord/produits-donnes-et-recus">Donnés et reçus</Link></li>
+                                <li className={(currentLocation === '/tableau-de-bord/gerer-vos-produits' ? 'active ml-auto' : 'ml-auto')}><Link to="/tableau-de-bord/gerer-vos-produits" className="mr-0">Gérer mes produits ajoutés</Link></li>
                             </ul>
                         </div>
                     </div>

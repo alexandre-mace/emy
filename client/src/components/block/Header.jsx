@@ -65,7 +65,7 @@ class Header extends Component {
                 </Link>
 
                 {this.state.currentUser &&
-                    <Link to="/tableau-de-bord" className="btn btn-dashboard d-flex align-items-center">
+                    <Link to="/tableau-de-bord/produits-en-cours" className="btn btn-dashboard d-flex align-items-center">
                         Tableau de bord
                         <NotificationsTotal notificationsTotal={this.props.notificationsTotal}/>
                     </Link>

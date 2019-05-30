@@ -1,26 +1,58 @@
 import React from 'react';
-import { ENTRYPOINT } from '../../config/entrypoint';
+import Alert from 'react-s-alert';
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import {fetch} from "../../utils/dataAccess";
 import displayLocaleDateString from "../../utils/displayLocaleDateString";
 import {LayoutContext} from "../block/Layout";
 
 export default class FoodstuffsToConfirmTable extends React.Component {
     static contextType = LayoutContext;
-    hasBeenTaken = (event) => {
-        let foodstuff = JSON.parse(event.target.value);
-        fetch(foodstuff['@id'], {
+
+    acceptOffer = (offer) => {
+        fetch(offer['@id'], {
             method: 'PUT',
             headers: new Headers({ 'Content-Type': 'application/ld+json' }),
-            body: JSON.stringify({ isAwaiting:false, hasBeenGiven: true, owner: foodstuff.askingToOwn['@id'] })
+            body: JSON.stringify({ status: 'accepted' })
         })
             .then(() => {
+                fetch(offer.foodstuff['@id'], {
+                    method: 'PUT',
+                    headers: new Headers({ 'Content-Type': 'application/ld+json' }),
+                    body: JSON.stringify({ isAwaiting: true })
+                })
+            })
+            .then(() => {
+                Alert.success('Vous venez d\'accepter une demande, échangez avec l\{autre personne dans la catégorie \'en cours\'.', {
+                    position: 'bottom-right',
+                    effect: 'slide',
+                    timeout: 5000,
+                    offset: 10
+                });
                 this.props.handleChange();
             })
     };
 
-    hasBeenSeen = (notification) => {
-        if (notification && notification.hasBeenSeen === false) {
-            fetch(notification['@id'], {
+    declineOffer = (offer) => {
+        fetch(offer['@id'], {
+            method: 'PUT',
+            headers: new Headers({ 'Content-Type': 'application/ld+json' }),
+            body: JSON.stringify({ status: 'declined' })
+        })
+            .then(() => {
+                Alert.success('Nous vous confirmons que vous avez refusé une demande.', {
+                    position: 'bottom-right',
+                    effect: 'slide',
+                    timeout: 5000,
+                    offset: 10
+                });
+                this.props.handleChange();
+            })
+    };
+
+    hasBeenSeen = (offer) => {
+        if (offer && offer.hasBeenSeen === false) {
+            fetch(offer['@id'], {
                 method: 'PUT',
                 headers: new Headers({ 'Content-Type': 'application/ld+json' }),
                 body: JSON.stringify({ hasBeenSeen:true })
@@ -34,45 +66,26 @@ export default class FoodstuffsToConfirmTable extends React.Component {
 
     render() {
         const confirmTableRows = this.props.foodstuffsToConfirm &&
-            this.props.foodstuffsToConfirm['hydra:member'].map(foodstuff => (
-                <tr key={foodstuff['@id']}
-                    onMouseOver={() => this.hasBeenSeen(foodstuff.foodStuffNotifications[0])}
+            this.props.foodstuffsToConfirm['hydra:member'].map(offer => (
+                <div key={offer['@id']}
+                    onMouseOver={() => this.hasBeenSeen(offer)}
                     className={
-                        (foodstuff.foodStuffNotifications[0] &&
-                        foodstuff.foodStuffNotifications[0].hasBeenSeen === false) ? 'has-not-been-seen' : ''
+                        (offer.hasBeenSeen === false) ? 'has-not-been-seen' : ''
                     }
                 >
-                    <td>
-                        {foodstuff.image &&
-                        <img src={ENTRYPOINT + '/medias/' + foodstuff.image.contentUrl} alt=""/>
-                        }
-                    </td>
-                    <td>{foodstuff.name}</td>
-                    <td>{displayLocaleDateString(foodstuff.expirationDate)}</td>
-                    <td>{foodstuff.owner.firstName}</td>
-                    <td>
-                        <button className="form-btn" onClick={this.hasBeenTaken} value={JSON.stringify(foodstuff)} type="button" name="button">Je confirme que ce produit a été pris</button>
-                    </td>
-                </tr>
+                    <p><span className="important-information">{offer.askingUser.firstName}</span> aimerait obtenir <span className="important-information">{offer.foodstuff.name}</span> qui expire le <span className="important-information">{displayLocaleDateString(offer.foodstuff.expirationDate)}</span></p>
+                    <div>
+                        <button className="form-btn btn-success" onClick={() => this.acceptOffer(offer)} type="button" name="button">Accepter</button>
+                        <button className="ml-2 form-btn btn-danger" onClick={() => this.declineOffer(offer)} type="button" name="button">Refuser</button>
+                    </div>
+                </div>
             ))
         ;
         return(
             <div className="col-12">
                 <div className="product-to-confirm">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Image</th>
-                            <th>Nom</th>
-                            <th>Date de péremption</th>
-                            <th>Il/Elle a besoin de vous</th>
-                            <th>Confirmer la demande</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {confirmTableRows}
-                        </tbody>
-                    </table>
+                    <span id="dashboard-page-title">À confirmer</span>
+                    {confirmTableRows}
                 </div>
             </div>
         );

@@ -3,8 +3,8 @@ import {
 } from '../../utils/dataAccess';
 import { ENTRYPOINT } from '../../config/entrypoint';
 
-export function findAllByUser(userId) {
-    return fetch(`${ENTRYPOINT}/food_stuff_notifications?notifiedUser=${userId}&hasBeenSeen=false`)
+export function findInProgress(userId) {
+    return fetch(`${ENTRYPOINT}/food_stuff_offers?owner=${userId}&status=accepted`)
         .then(response => response.json())
         .catch(e => {
             throw e;

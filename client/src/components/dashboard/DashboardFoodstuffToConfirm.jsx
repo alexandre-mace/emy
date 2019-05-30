@@ -1,12 +1,12 @@
 import React from 'react';
 import { authenticationService } from '../../services';
 import FoodstuffsToConfirmTable from './FoodstuffsToConfirmTable.jsx';
-import {getToConfirm} from "../../actions/foodstuff/getToConfirm";
 import {getOne} from "../../actions/user/getOne";
 import DashboardHeader from "./DashboardHeader.jsx";
 import ReactPlaceholder from 'react-placeholder';
 import "react-placeholder/lib/reactPlaceholder.css";
-import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate.jsx';
+import {findAllByUser} from "../../actions/foodstuffOffer/findAllByUser";
+import phrasialPlaceholderTemplate from "../block/phrasialPlaceholderTemplate";
 
 export default class DashboardFoodstuffToConfirm extends React.Component {
     constructor(){
@@ -27,7 +27,7 @@ export default class DashboardFoodstuffToConfirm extends React.Component {
 
     static triggerAllFetches(user) {
         return Promise.all([
-            getToConfirm(user),
+            findAllByUser(user['@id']),
         ])
     }
     componentDidMount = () => {
@@ -66,7 +66,7 @@ export default class DashboardFoodstuffToConfirm extends React.Component {
                 <DashboardHeader/>
                 <div id="dashboard" className="container">
                         <div className="row">
-                            <ReactPlaceholder showLoadingAnimation customPlaceholder={tablePlaceholderTemplate} ready={this.state.user !== null}>
+                            <ReactPlaceholder showLoadingAnimation customPlaceholder={phrasialPlaceholderTemplate} ready={this.state.user !== null}>
                                 <FoodstuffsToConfirmTable foodstuffsToConfirm={this.state.foodstuffsToConfirm} handleChange={this.handleChange}/>
                             </ReactPlaceholder>
                         </div>

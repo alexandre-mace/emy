@@ -4,7 +4,7 @@ import LoginModal from "../login/LoginModal.jsx";
 import Alert from 'react-s-alert';
 import { authenticationService } from '../../services';
 import { withTranslation } from 'react-i18next';
-import {findAllByUser} from "../../actions/foodstuffNotification/findAllbyUser";
+import { findAllNotSeenByUser } from "../../actions/foodstuffOffer/findAllNotSeenByUser";
 import FullScreenLoader from "../utils/FullScreenLoader";
 
 export const LayoutContext = React.createContext();
@@ -49,6 +49,12 @@ class Layout extends React.Component {
             this.setState({
                 currentUser: authenticationService.currentUserValue['@id']
             })
+            Alert.success('Hey, nous sommes heureux de vous voir !', {
+                position: 'bottom-right',
+                effect: 'slide',
+                timeout: 5000,
+                offset: 10
+            });
         }
     };
 
@@ -61,7 +67,7 @@ class Layout extends React.Component {
     componentDidMount() {
         document.getElementsByClassName('fullscreenLoader')[0].classList.add('visible');
         if (authenticationService.currentUserValue) {
-            findAllByUser(authenticationService.currentUserValue['@id'])
+            findAllNotSeenByUser(authenticationService.currentUserValue['@id'])
                 .then(notificationsTotal => {
                     if (this.state.notificationsTotal !== notificationsTotal['hydra:totalItems']) {
                         this.setState({
@@ -80,7 +86,7 @@ class Layout extends React.Component {
             document.getElementsByClassName('page')[0].classList.add('fadeIn');
         }
         if (authenticationService.currentUserValue) {
-            findAllByUser(authenticationService.currentUserValue['@id'])
+            findAllNotSeenByUser(authenticationService.currentUserValue['@id'])
                 .then(notificationsTotal => {
                     if (this.state.notificationsTotal !== notificationsTotal['hydra:totalItems']) {
                         this.setState({

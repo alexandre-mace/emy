@@ -1,6 +1,7 @@
 @import '../../assets/sass/variables.scss';
 
 #dashboard-header {
+  height: 70px;
   color: $secondary-color;
   background: $primary-color;
   font-size: 1.2rem;
@@ -20,5 +21,11 @@
     padding: 15px 30px;
     font-size:14px;
     font-weight: 600;
+  }
+  li.active {
+    a {
+      background-color: $primary-color;
+      color: $secondary-color;
+    }
   }
 }
