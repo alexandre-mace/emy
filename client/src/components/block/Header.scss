@@ -9,6 +9,15 @@
   -moz-box-shadow: 0 2px 35px -8px rgba(0, 0, 0, 0.29);
   box-shadow: 0 2px 35px -8px rgba(0, 0, 0, 0.29);
   position: relative;
+  #foodstuff-list-search {
+    display: block;
+    background: #f9f9f9 url('../../assets/img/glass.png') 10px 12px/28px no-repeat;
+    border: 0;
+    height: 60px;
+    padding-left: 50px;
+    outline: none;
+    border-bottom:1px solid #E8E8E8;
+  }
   #header-links {
     display: flex;
     align-items: center;

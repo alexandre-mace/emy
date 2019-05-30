@@ -3,7 +3,7 @@ import {list} from "../../actions/user/list";
 import ReactPlaceholder from 'react-placeholder';
 import "react-placeholder/lib/reactPlaceholder.css";
 import tablePlaceholderTemplate from '../block/tablePlaceholderTemplate';
-import {getAllGiven} from "../../actions/foodstuff/getAllGiven";
+import {findGiven} from "../../actions/foodstuff/findGiven";
 import './Donors.scss';
 
 export default class Donors extends React.Component {
@@ -18,7 +18,7 @@ export default class Donors extends React.Component {
 
     componentDidMount = () => {
         const listPromise = list();
-        const totalFoodstuffGivenPromise = getAllGiven();
+        const totalFoodstuffGivenPromise = findGiven();
         Promise.all([listPromise, totalFoodstuffGivenPromise]).then(values => {
             this.setState({
                 donors: values[0],

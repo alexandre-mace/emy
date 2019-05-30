@@ -1,7 +1,7 @@
 import React from 'react';
-import FoodstuffsToManageTableRow from "./FoodstuffsToManageTableRow";
+import ToManageTableRow from "./ToManageTableRow.jsx";
 
-export default class FoodstuffsToManageTable extends React.Component {
+export default class ToManageTable extends React.Component {
     render() {
         return(
             <div className="col-12">
@@ -16,9 +16,9 @@ export default class FoodstuffsToManageTable extends React.Component {
                         </tr>
                         </thead>
                         <tbody>
-                            {this.props.foodstuffsToManage &&
-                            this.props.foodstuffsToManage['hydra:member'].map((foodstuff, i) => (
-                                <FoodstuffsToManageTableRow foodstuff={foodstuff} key={i} handleChange={this.props.handleChange} />
+                            {this.props.foodstuffs &&
+                            this.props.foodstuffs['hydra:member'].map((foodstuff, i) => (
+                                <ToManageTableRow foodstuff={foodstuff} key={i} handleChange={this.props.handleChange} />
                             ))
                             }
                         </tbody>

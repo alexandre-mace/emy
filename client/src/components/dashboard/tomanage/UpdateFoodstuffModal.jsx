@@ -1,9 +1,9 @@
 import React from 'react';
 import Modal from 'react-awesome-modal';
 import PropTypes from 'prop-types';
-import { update } from '../../actions/foodstuff/update';
+import { update } from '../../../actions/foodstuff/update';
 import { connect } from 'react-redux';
-import Update from '../foodstuff/Update'
+import Update from '../../foodstuff/Update'
 import './UpdateFoodstuffModal.scss';
 
 class UpdateFoodstuffModal extends React.Component {
@@ -35,12 +35,12 @@ class UpdateFoodstuffModal extends React.Component {
         return(
             <>
                 <button onClick={this.props.openModal} value={JSON.stringify(this.props.foodstuff)}  className="form-btn btn-edit" type="button" name="button">
-                    <img alt="Modifier le produit" src={require('../../assets/img/edit-white.png')} className="img-manage" />
+                    <img alt="Modifier le produit" src={require('../../../assets/img/edit-white.png')} className="img-manage" />
                 </button>
                 <div className="update-foodstuff-modal">
                     <Modal width="800" visible={this.props.visible} effect="fadeInUp" onClickAway={this.props.closeModal}>
                         <div className="modal-style">
-                            <img src={require('../../assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={this.props.closeModal}/>
+                            <img src={require('../../../assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={this.props.closeModal}/>
                             <h3 className="modal-style-title">Modifier votre produit</h3>
                             <Update
                                 closeModal={this.props.closeModal}

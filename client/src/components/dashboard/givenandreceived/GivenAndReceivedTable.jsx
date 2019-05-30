@@ -1,26 +1,9 @@
 import React from 'react';
-import { ENTRYPOINT } from '../../config/entrypoint';
-import {
-    fetch,
-} from '../../utils/dataAccess';
-import displayLocaleDateString from "../../utils/displayLocaleDateString";
 
-export default class FoodstuffsGivenAndReceivedTable extends React.Component {
-
-    hasBeenTaken = (event) => {
-        let foodstuff = JSON.parse(event.target.value);
-        fetch(foodstuff['@id'], {
-            method: 'PUT',
-            headers: new Headers({ 'Content-Type': 'application/ld+json' }),
-            body: JSON.stringify({ isAwaiting:false, hasBeenGiven: true, owner: foodstuff.askingToOwn['@id'] })
-        })
-            .then(() => {
-                this.props.handleChange();
-            })
-    };
+export default class GivenAndReceivedTable extends React.Component {
 
     render() {
-        const confirmTableRows = this.props.foodstuffs &&
+        const tableRows = this.props.foodstuffs &&
             this.props.foodstuffs.map(foodstuff => (
                 <div key={Math.random().toString(16).slice(2)} className="mb-3">
                     {(() => {
@@ -39,7 +22,7 @@ export default class FoodstuffsGivenAndReceivedTable extends React.Component {
         return(
             <div className="col-12">
                 <span id="dashboard-page-title">Donnés et reçus</span>
-                {confirmTableRows}
+                {tableRows}
             </div>
         );
     }

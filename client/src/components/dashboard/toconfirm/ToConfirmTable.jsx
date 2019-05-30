@@ -2,11 +2,11 @@ import React from 'react';
 import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
-import {fetch} from "../../utils/dataAccess";
-import displayLocaleDateString from "../../utils/displayLocaleDateString";
-import {LayoutContext} from "../block/Layout";
+import {fetch} from "../../../utils/dataAccess";
+import displayLocaleDateString from "../../../utils/displayLocaleDateString";
+import {LayoutContext} from "../../block/Layout";
 
-export default class FoodstuffsToConfirmTable extends React.Component {
+export default class ToConfirmTable extends React.Component {
     static contextType = LayoutContext;
 
     acceptOffer = (offer) => {
@@ -23,7 +23,7 @@ export default class FoodstuffsToConfirmTable extends React.Component {
                 })
             })
             .then(() => {
-                Alert.success('Vous venez d\'accepter une demande, échangez avec l\{autre personne dans la catégorie \'en cours\'.', {
+                Alert.success('Vous venez d\'accepter une demande, échangez avec l\'autre personne dans la catégorie \'en cours\'.', {
                     position: 'bottom-right',
                     effect: 'slide',
                     timeout: 5000,
@@ -65,8 +65,8 @@ export default class FoodstuffsToConfirmTable extends React.Component {
     }
 
     render() {
-        const confirmTableRows = this.props.foodstuffsToConfirm &&
-            this.props.foodstuffsToConfirm['hydra:member'].map(offer => (
+        const tableRows = this.props.foodstuffs &&
+            this.props.foodstuffs['hydra:member'].map(offer => (
                 <div key={offer['@id']}
                     onMouseOver={() => this.hasBeenSeen(offer)}
                     className={
@@ -85,7 +85,7 @@ export default class FoodstuffsToConfirmTable extends React.Component {
             <div className="col-12">
                 <div className="product-to-confirm">
                     <span id="dashboard-page-title">À confirmer</span>
-                    {confirmTableRows}
+                    {tableRows}
                 </div>
             </div>
         );

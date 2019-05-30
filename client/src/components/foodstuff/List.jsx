@@ -9,7 +9,6 @@ import CreateFoodStuffModal from './CreateFoodStuffModal.jsx';
 import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
-import filterList from "../../utils/filterList";
 import Loader from "../utils/Loader.jsx";
 import foodstuffListPlaceholderTemplate from "../block/foodstuffListPlaceholderTemplate.jsx";
 import ReactPlaceholder from 'react-placeholder';
@@ -92,17 +91,16 @@ class List extends Component {
                     <div className="foodstuff-list-container">
                         <div className="foodstuff-list-commands">
                             <CreateFoodStuffModal handleProductAdded = {this.handleProductAdded} />
-                            <input type="text" id="foodstuff-list-search" onKeyUp={filterList} placeholder="Chercher facilement un produit"/>
                         </div>
-                        <ul className="foodstuff-list">
+                        <ul id="foodstuff-list">
                             <ReactPlaceholder showLoadingAnimation customPlaceholder={foodstuffListPlaceholderTemplate} ready={this.props.retrieved !== null}>
-                                <>
+                                <React.Fragment>
                                     {this.props.retrieved &&
                                         this.props.retrieved['hydra:member'].map(item => (
                                             <FoodstuffListItem item={item} key={item.id} handleProductTaken = {this.handleProductTaken} />
                                         ))
                                     }
-                                </>
+                                </React.Fragment>
                             </ReactPlaceholder>
                             {this.pagination()}
                         </ul>

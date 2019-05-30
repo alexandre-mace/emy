@@ -6,19 +6,9 @@
   .foodstuff-list-container {
     width: 500px;
   }
-  #foodstuff-list-search {
-    width: 100%;
-    display: block;
-    background: #f9f9f9 url('../../assets/img/glass.png') 10px 12px/28px no-repeat;
-    border: 0;
-    height: 60px;
-    padding-left: 50px;
-    outline: none;
-    border-bottom:1px solid #E8E8E8;
-  }
-  .foodstuff-list {
+  #foodstuff-list {
     list-style: none;
-    height: calc(100% - 120px);
+    height: calc(100% - 60px);
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
@@ -35,16 +25,16 @@
     }
   }
   /* custom scroll bar */
-  .foodstuff-list::-webkit-scrollbar {
+  #foodstuff-list::-webkit-scrollbar {
     width: 10px;
   }
-  .foodstuff-list::-webkit-scrollbar-track {
+  #foodstuff-list::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
-  .foodstuff-list::-webkit-scrollbar-thumb {
+  #foodstuff-list::-webkit-scrollbar-thumb {
     background: orangered;
   }
-  .foodstuff-list::-webkit-scrollbar-thumb:hover {
+  #foodstuff-list::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
 }

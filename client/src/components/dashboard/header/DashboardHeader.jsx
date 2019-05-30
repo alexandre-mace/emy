@@ -1,8 +1,8 @@
 import React from 'react';
-import UserRank from "./UserRank.jsx";
-import {getOne} from "../../actions/user/getOne";
+import UserRank from "../userRank/UserRank.jsx";
 import { Link }from 'react-router-dom';
 import './DashboardHeader.scss';
+import { authenticationService } from '../../../services/index';
 
 export default class DashboardHeader extends React.Component {
     constructor(){
@@ -19,27 +19,24 @@ export default class DashboardHeader extends React.Component {
         })
     }
 
-    componentDidMount = () => {
-        const currentUser = localStorage.getItem('currentUser');
+    componentDidMount() {
+        const currentUser = authenticationService.currentUserValue;
         if (currentUser) {
-                getOne(JSON.parse(currentUser)['@id'])
-                    .then(user => {
-                        this.setState({
-                            user: user,
-                        })
-                    })
-            }
+            this.setState({
+                user: currentUser,
+            })
+        }
     };
 
     componentDidUpdate() {
-        if (this.state.refresh && this.state.user) {
-            getOne(this.state.user['@id'])
-                .then(user => {
-                    this.setState({
-                        user: user,
-                        refresh: false
-                    })
+        if (this.state.refresh) {
+            const currentUser = authenticationService.currentUserValue;
+            if (currentUser) {
+                this.setState({
+                    user: currentUser,
+                    refresh: false
                 })
+            }
         }
     }
 

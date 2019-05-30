@@ -3,6 +3,7 @@ import { authenticationService } from '../../services';
 import { Link }from 'react-router-dom';
 import './Header.scss'
 import NotificationsTotal from "./NotificationsTotal";
+import filterList from "../../utils/filterList";
 
 class Header extends Component {
     constructor(props) {
@@ -63,6 +64,7 @@ class Header extends Component {
                         }
                     </h2>
                 </Link>
+                <input type="text" id="foodstuff-list-search" onKeyUp={filterList} placeholder="Recherche"/>
 
                 {this.state.currentUser &&
                     <Link to="/tableau-de-bord/produits-en-cours" className="btn btn-dashboard d-flex align-items-center">
