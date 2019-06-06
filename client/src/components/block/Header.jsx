@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { authenticationService } from '../../services';
 import { Link }from 'react-router-dom';
+import './Header.scss'
+import NotificationsTotal from "./NotificationsTotal";
+import filterList from "../../utils/filterList";
 
 class Header extends Component {
     constructor(props) {
@@ -22,16 +25,16 @@ class Header extends Component {
     };
 
     componentDidUpdate() {
-        if (authenticationService.currentUserValue &&
+        if ((authenticationService.currentUserValue &&
             this.state.currentUser &&
-            authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) {
-            this.setState({currentUser: authenticationService.currentUserValue})
-        } else if ((
-            !authenticationService.currentUserValue &&
-            this.state.currentUser) || (
-            authenticationService.currentUserValue &&
-            !this.state.currentUser)) {
-            this.setState({currentUser: authenticationService.currentUserValue})
+            authenticationService.currentUserValue['@id'] !== this.state.currentUser['@id']) ||
+            (authenticationService.currentUserValue && !this.state.currentUser) ||
+            (!authenticationService.currentUserValue &&
+                this.state.currentUser)
+        ) {
+            this.setState({
+                currentUser: authenticationService.currentUserValue,
+            })
         }
     }
 
@@ -49,21 +52,25 @@ class Header extends Component {
 
     render() {
         return (
-            <header>
+            <header id="header">
                 <Link to="/">
-                    <h2>
-                        Emy<span className="black">.</span>
+                    <h2 id="header-app-name">
+                        Emy<span id="header-app-name-dot">.</span>
                         {this.state.currentUser &&
-                         <span> 
+                         <span id="header-hello-user">
                             <img alt="icon bonjour" src={require('../../assets/img/hello.png')} />
                             Hello {this.state.currentUser.firstName}
                          </span>
                         }
                     </h2>
                 </Link>
+                <input type="text" id="foodstuff-list-search" onKeyUp={filterList} placeholder="Recherche"/>
 
                 {this.state.currentUser &&
-                    <Link to="/tableau-de-bord" className="btn btnDashboard">Tableau de bord</Link>
+                    <Link to="/tableau-de-bord/produits-en-cours" className="btn btn-dashboard d-flex align-items-center">
+                        Tableau de bord
+                        <NotificationsTotal notificationsTotal={this.props.notificationsTotal}/>
+                    </Link>
                 }
                 <nav className={this.state.activeBurgerMenu ? 'nav-display': null}>
                     <ul id="header-links">
@@ -87,7 +94,6 @@ class Header extends Component {
                     <span></span>
                     <span></span>
                 </div>
-
             </header>
         )
     }

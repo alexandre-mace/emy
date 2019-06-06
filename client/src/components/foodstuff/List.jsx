@@ -4,17 +4,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { list, reset } from '../../actions/foodstuff/list';
 import FoodstuffListItem from './FoodstuffListItem.jsx';
-import '../../App.css';
 import LeafletMap from "../map/LeafletMap.jsx";
 import CreateFoodStuffModal from './CreateFoodStuffModal.jsx';
 import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
-import filterList from "../../utils/filterList";
 import Loader from "../utils/Loader.jsx";
 import foodstuffListPlaceholderTemplate from "../block/foodstuffListPlaceholderTemplate.jsx";
 import ReactPlaceholder from 'react-placeholder';
 import "react-placeholder/lib/reactPlaceholder.css";
+import './List.scss';
 
 class List extends Component {
     static propTypes = {
@@ -92,19 +91,18 @@ class List extends Component {
                     <div className="foodstuff-list-container">
                         <div className="foodstuff-list-commands">
                             <CreateFoodStuffModal handleProductAdded = {this.handleProductAdded} />
-                            <input type="text" id="foodstuff-list-search" onKeyUp={filterList} placeholder="Chercher facilement un produit"/>
                         </div>
-                        <ul className="foodstuff-list" id="myUL">
+                        <ul id="foodstuff-list">
                             <ReactPlaceholder showLoadingAnimation customPlaceholder={foodstuffListPlaceholderTemplate} ready={this.props.retrieved !== null}>
-                                <>
+                                <React.Fragment>
                                     {this.props.retrieved &&
                                         this.props.retrieved['hydra:member'].map(item => (
                                             <FoodstuffListItem item={item} key={item.id} handleProductTaken = {this.handleProductTaken} />
                                         ))
                                     }
-                                </>
+                                </React.Fragment>
                             </ReactPlaceholder>
-                            {/*{this.pagination()}*/}
+                            {this.pagination()}
                         </ul>
                     </div>
                     <div id="map-container">
@@ -134,12 +132,12 @@ class List extends Component {
         } = view;
 
         return (
-            <nav aria-label="Page navigation">
+            <nav className="foodstuff-pagination mt-auto" aria-label="Page navigation">
                 <Link
                     to="."
                     className={`btn btn-primary${previous ? '' : ' disabled'}`}
                 >
-                    <span aria-hidden="true">&lArr;</span> First
+                    <span aria-hidden="true">&lArr;</span>
                 </Link>
                 <Link
                     to={
@@ -147,19 +145,19 @@ class List extends Component {
                     }
                     className={`btn btn-primary${previous ? '' : ' disabled'}`}
                 >
-                    <span aria-hidden="true">&larr;</span> Previous
+                    <span aria-hidden="true">&larr;</span>
                 </Link>
                 <Link
                     to={next ? encodeURIComponent(next) : '#'}
                     className={`btn btn-primary${next ? '' : ' disabled'}`}
                 >
-                    Next <span aria-hidden="true">&rarr;</span>
+                    <span aria-hidden="true">&rarr;</span>
                 </Link>
                 <Link
                     to={last ? encodeURIComponent(last) : '#'}
                     className={`btn btn-primary${next ? '' : ' disabled'}`}
                 >
-                    Last <span aria-hidden="true">&rArr;</span>
+                    <span aria-hidden="true">&rArr;</span>
                 </Link>
             </nav>
         );

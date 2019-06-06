@@ -6,17 +6,32 @@ use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(attributes={
- *     "formats"={"jsonld"},
- *     "normalization_context"={"groups"={"food_stuff", "food_stuff:read"}},
- *     "denormalizationContext"={"groups"={"food_stuff", "food_stuff:write"}}})
+ * @ApiResource(
+ *     attributes={
+ *         "formats"={"jsonld"},
+ *         "normalization_context"={"groups"={"food_stuff", "food_stuff:read"}},
+ *         "denormalizationContext"={"groups"={"food_stuff", "food_stuff:write"}}
+ *     },
+ *     collectionOperations={
+ *         "get",
+ *         "post"={"access_control"="is_granted('ROLE_USER')", "access_control_message"="Seulement les utilisateurs inscrits peuvent ajouter un produit."}
+ *     },
+ *     itemOperations={
+ *         "get"={"method"="GET", "access_control"="is_granted('ROLE_USER')", "access_control_message"="Seulement les utilisateurs inscrits peuvent accéder au détail d'un produit."},
+ *         "put"={"method"="PUT", "access_control"="is_granted('ROLE_USER')", "access_control_message"="Seulement les utilisateurs inscrits peuvent modifier un produit."},
+ *         "delete"={"method"="DELETE", "access_control"="is_granted('ROLE_USER') and object.provider == user", "access_control_message"="Seulement les utilisateurs inscrits peuvent ajouter un produit."}
+ *     }
+ * )
+ *
  * @ORM\Entity(repositoryClass="App\Repository\FoodStuffRepository")
- * @ApiFilter(SearchFilter::class, properties={"provider": "exact", "owner": "exact", "askingToOwn": "exact"})
+ * @ApiFilter(SearchFilter::class, properties={"provider": "exact", "owner": "exact"})
  * @ApiFilter(BooleanFilter::class, properties={"isAwaiting", "hasBeenGiven"})
  */
 class FoodStuff
@@ -25,21 +40,21 @@ class FoodStuff
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"food_stuff:read"})
+     * @Groups({"food_stuff:read", "offer:read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
-     * @Groups({"food_stuff"})
+     * @Groups({"food_stuff", "offer:read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="date")
      * @Assert\NotNull
-     * @Groups({"food_stuff"})
+     * @Groups({"food_stuff", "offer:read"})
      */
     private $expirationDate;
 
@@ -65,7 +80,7 @@ class FoodStuff
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist", "remove"})
-     * @Groups({"food_stuff"})
+     * @Groups({"food_stuff", "offer:read"})
      */
     private $image;
 
@@ -74,7 +89,7 @@ class FoodStuff
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"food_stuff"})
      */
-    private $provider;
+    public $provider;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="foodStuffsOwned")
@@ -96,10 +111,15 @@ class FoodStuff
     private $hasBeenGiven = false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="askingToOwnFoodstuffs")
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuffOffer", mappedBy="foodstuff", orphanRemoval=true)
      * @Groups({"food_stuff:read"})
      */
-    private $askingToOwn = null;
+    private $foodStuffOffers;
+
+    public function __construct()
+    {
+        $this->foodStuffOffers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -226,14 +246,33 @@ class FoodStuff
         return $this;
     }
 
-    public function getAskingToOwn(): ?User
+    /**
+     * @return Collection|FoodStuffOffer[]
+     */
+    public function getFoodStuffOffers(): Collection
     {
-        return $this->askingToOwn;
+        return $this->foodStuffOffers;
     }
 
-    public function setAskingToOwn(?User $askingToOwn): self
+    public function addFoodStuffOffer(FoodStuffOffer $foodStuffOffer): self
     {
-        $this->askingToOwn = $askingToOwn;
+        if (!$this->foodStuffOffers->contains($foodStuffOffer)) {
+            $this->foodStuffOffers[] = $foodStuffOffer;
+            $foodStuffOffer->setFoodstuff($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFoodStuffOffer(FoodStuffOffer $foodStuffOffer): self
+    {
+        if ($this->foodStuffOffers->contains($foodStuffOffer)) {
+            $this->foodStuffOffers->removeElement($foodStuffOffer);
+            // set the owning side to null (unless already changed)
+            if ($foodStuffOffer->getFoodstuff() === $this) {
+                $foodStuffOffer->setFoodstuff(null);
+            }
+        }
 
         return $this;
     }

@@ -57,13 +57,8 @@ class User implements UserInterface
     private $foodStuffsOwned;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuff", mappedBy="askingToOwn")
-     */
-    private $askingToOwnFoodstuffs;
-
-    /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"food_stuff:read"})
+     * @Groups({"food_stuff:read", "offer:read"})
      */
     private $firstName;
 
@@ -82,10 +77,21 @@ class User implements UserInterface
      */
     private $grade = 'bronze';
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuffOffer", mappedBy="askingUser", orphanRemoval=true)
+     */
+    private $foodStuffOffers;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FoodStuffOffer", mappedBy="owner", orphanRemoval=true)
+     */
+    private $owningFoodstuffOffers;
+
     public function __construct()
     {
         $this->foodStuffs = new ArrayCollection();
-        $this->askingToOwnFoodstuffs = new ArrayCollection();
+        $this->foodStuffOffers = new ArrayCollection();
+        $this->owningFoodstuffOffers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -227,37 +233,6 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection|FoodStuff[]
-     */
-    public function getAskingToOwnFoodstuffs(): Collection
-    {
-        return $this->askingToOwnFoodstuffs;
-    }
-
-    public function addAskingToOwnFoodstuff(FoodStuff $askingToOwnFoodstuff): self
-    {
-        if (!$this->askingToOwnFoodstuffs->contains($askingToOwnFoodstuff)) {
-            $this->askingToOwnFoodstuffs[] = $askingToOwnFoodstuff;
-            $askingToOwnFoodstuff->setAskingToOwn($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAskingToOwnFoodstuff(FoodStuff $askingToOwnFoodstuff): self
-    {
-        if ($this->askingToOwnFoodstuffs->contains($askingToOwnFoodstuff)) {
-            $this->askingToOwnFoodstuffs->removeElement($askingToOwnFoodstuff);
-            // set the owning side to null (unless already changed)
-            if ($askingToOwnFoodstuff->getAskingToOwn() === $this) {
-                $askingToOwnFoodstuff->setAskingToOwn(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getFirstName(): ?string
     {
         return $this->firstName;
@@ -302,6 +277,68 @@ class User implements UserInterface
     public function setGrade(string $grade): self
     {
         $this->grade = $grade;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FoodStuffOffer[]
+     */
+    public function getFoodStuffOffers(): Collection
+    {
+        return $this->foodStuffOffers;
+    }
+
+    public function addFoodStuffOffer(FoodStuffOffer $foodStuffOffer): self
+    {
+        if (!$this->foodStuffOffers->contains($foodStuffOffer)) {
+            $this->foodStuffOffers[] = $foodStuffOffer;
+            $foodStuffOffer->setAskingUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFoodStuffOffer(FoodStuffOffer $foodStuffOffer): self
+    {
+        if ($this->foodStuffOffers->contains($foodStuffOffer)) {
+            $this->foodStuffOffers->removeElement($foodStuffOffer);
+            // set the owning side to null (unless already changed)
+            if ($foodStuffOffer->getAskingUser() === $this) {
+                $foodStuffOffer->setAskingUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FoodStuffOffer[]
+     */
+    public function getOwningFoodstuffOffers(): Collection
+    {
+        return $this->owningFoodstuffOffers;
+    }
+
+    public function addOwningFoodstuffOffer(FoodStuffOffer $owningFoodstuffOffer): self
+    {
+        if (!$this->owningFoodstuffOffers->contains($owningFoodstuffOffer)) {
+            $this->owningFoodstuffOffers[] = $owningFoodstuffOffer;
+            $owningFoodstuffOffer->setOwner($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOwningFoodstuffOffer(FoodStuffOffer $owningFoodstuffOffer): self
+    {
+        if ($this->owningFoodstuffOffers->contains($owningFoodstuffOffer)) {
+            $this->owningFoodstuffOffers->removeElement($owningFoodstuffOffer);
+            // set the owning side to null (unless already changed)
+            if ($owningFoodstuffOffer->getOwner() === $this) {
+                $owningFoodstuffOffer->setOwner(null);
+            }
+        }
 
         return $this;
     }

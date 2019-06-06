@@ -1,0 +1,96 @@
+@import '../../assets/sass/variables.scss';
+
+.foodstuff-list-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 0 25px 0;
+  border-bottom: 1px solid #f2f2f2;
+  border-top: 1px solid #f2f2f2;
+  .foodstuff-list-item-image {
+    width: 100px;
+    margin-left: 20px;
+  }
+  .foodstuff-list-item-description {
+    margin-left: 20px;
+    margin-right: 20px;
+    .foodstuff-name {
+      padding-bottom: 5px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .calendar-img, .marker-img {
+      width: 13px;
+      position: relative;
+      margin-right: 6px;
+      top:1px;
+    }
+  }
+  .foodstuff-list-item-button {
+    display: flex;
+    justify-content: space-between;
+    margin-top:20px;
+  }
+  .localize-it {
+    background: transparent;
+    color: black;
+    font-size:14px;
+    font-weight: 400;
+    img {
+      display: inline-block;
+      width: 16px;
+      height: auto;
+      position: relative;
+      top: -1px;
+    }
+  }
+  .expirationDate {
+    font-size:14px;
+    font-weight: 500;
+  }
+  &.selected {
+    background-color: $primary-color;
+    color: $secondary-color;
+    .foodstuff-name {
+      color: $secondary-color;
+    }
+    button.take-it {
+      color: $primary-color;
+      background-color: $secondary-color;
+    }
+    button.localize-it {
+      color: $secondary-color;
+    }
+  }
+}
+@media screen and (max-width: 460px){
+  .foodstuff-list-item-image{
+    width: 80px;
+  }
+  .foodstuff-list-item-description .take-it,.foodstuff-list-item-description .localize-it{
+    padding:8px 14px !important;
+  }
+  .foodstuff-list-item-description .foodstuff-name{
+    font-size:16px;
+    padding-bottom: 0;
+  }
+  .foodstuff-list-item-button{
+    margin-top:13px;
+  }
+  .foodstuff-list-item-description .expirationDate{
+    font-size:13px;
+  }
+  .foodstuff-list-item-description .calendar-alt{
+    width:11px;
+    top:2px;
+  }
+}
+@media screen and (max-width: 360px){
+  .foodstuff-list-item-image{
+    width:60px;
+  }
+}
+@media screen and (max-width: 330px){
+  .foodstuff-list-item-description .take-it, .foodstuff-list-item-description .localize-it{
+    padding: 5px 8px !important;
+  }
+}

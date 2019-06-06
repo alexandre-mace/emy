@@ -30,7 +30,7 @@ export function list(page = '/food_stuffs?isAwaiting=false&hasBeenGiven=false') 
           .then(retrieved => ({ retrieved, hubURL: extractHubURL(response) }))
       )
       .then(({ retrieved, hubURL }) => {
-        retrieved = normalize(retrieved);
+        // retrieved = normalize(retrieved);
 
         dispatch(loading(false));
         dispatch(success(retrieved));

@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Map, TileLayer } from 'react-leaflet'
 import {GoogleApiWrapper} from 'google-maps-react';
 import LeafletMarker from './LeafletMarker.jsx';
+import './LeafletMap.scss';
+import 'react-leaflet-markercluster/dist/styles.min.css'; // css
+import MarkerClusterGroup from 'react-leaflet-markercluster';
 import MapSearchAutoComplete from './MapSearchAutoComplete';
 
 type State = {
@@ -69,7 +72,6 @@ export class LeafletMap extends Component<{}, State> {
     }
 
     goToAddress = (coordinates) => {
-        console.log(coordinates)
         this.setState({
             coordinates: {lat: coordinates.lat, lng: coordinates.lng}
         });
@@ -79,18 +81,20 @@ export class LeafletMap extends Component<{}, State> {
         const coordinates = this.state.coordinates
         ? [ this.state.coordinates.lat, this.state.coordinates.lng ]
         : [ 44.8337080, -0.5821208]
-        
+
         window.dispatchEvent(new Event('resize'));
         return (
             <>
-            <Map center={coordinates} zoom={this.state.zoom}>
+            <Map center={coordinates} zoom={this.state.zoom}  maxZoom={22}>
                 <TileLayer
                     url='http://{s}.tile.openstreetmap.fr/openriverboatmap/{z}/{x}/{y}.png'
                     attribution='map data © [[http://osm.org/copyright|OpenStreetMap contributors]] under ODbL  - tiles OpenRiverboatMap'
                 />
+                <MarkerClusterGroup>
                 {this.state.markers.map(marker => (
                     <LeafletMarker key={marker[0]} marker={marker} productAdded={this.state.productAdded}></LeafletMarker>
                 ))}
+                </MarkerClusterGroup>
             </Map>
             {
                 !this.state.coordinates &&
@@ -100,7 +104,7 @@ export class LeafletMap extends Component<{}, State> {
                     </div>
                 </div>
             }
-           
+
             </>
         )
     }

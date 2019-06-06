@@ -1,0 +1,19 @@
+@import '../../assets/sass/variables.scss';
+
+.custom-file-input {
+  opacity: 1;
+  height: auto;
+  .label-file {
+    cursor: pointer;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .input-file {
+    z-index: -1;
+    position: absolute;
+    opacity: 0;
+  }
+}
+

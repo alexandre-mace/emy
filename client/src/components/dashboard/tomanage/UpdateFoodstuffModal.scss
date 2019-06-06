@@ -1,0 +1,13 @@
+@import "../../../assets/sass/variables";
+
+.img-manage{
+  width:auto !important;
+  height:20px !important;
+  display: block;
+}
+.btn-edit{
+  background: $edit-color;
+}
+.update-foodstuff-modal {
+  position: absolute;
+}

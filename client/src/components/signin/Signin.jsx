@@ -12,7 +12,7 @@ import {
 export default class Signin extends React.Component {
     render() {
         return(
-            <div className="content container">
+            <div className="content-page container">
                 <div className="row">
                     <div className="col-md-6 m-auto">
                         <h1 className="mb-4 text-center">Rejoindre Emy</h1>

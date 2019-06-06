@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-awesome-modal';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { authenticationService } from '../../services';
 import { TextField } from 'formik-material-ui';
@@ -20,7 +20,7 @@ export default class LoginModal extends React.Component {
             <div>
                 <Modal visible={this.props.visible} width="600" className="modal-popup" effect="fadeInUp" onClickAway={this.props.closeModal}>
                     <div className="modal-style">
-                        <img src={require('../foodstuff/assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={this.props.closeModal}/>
+                        <img src={require('../../assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={this.props.closeModal}/>
                         <h3 className="modal-style-title">Se connecter</h3>
                         <p>Connectez-vous pour ajouter des produits et accéder à votre tableau de bord.</p>
                         <Formik
@@ -29,8 +29,8 @@ export default class LoginModal extends React.Component {
                                 password: ''
                             }}
                             validationSchema={Yup.object().shape({
-                                email: Yup.string().required('Email is required'),
-                                password: Yup.string().required('Password is required')
+                                email: Yup.string().required('L\'email est requis'),
+                                password: Yup.string().required('Le mot de passe est requis')
                             })}
                             onSubmit={({ email, password }, { setStatus, setSubmitting }) => {
                                 setStatus();
@@ -63,7 +63,7 @@ export default class LoginModal extends React.Component {
                                         )}
                                     </div>
                                     {status &&
-                                    <div className={'alert alert-danger'}>{status}</div>
+                                    <div className={'alert alert-danger'}>{this.props.translation(status)}</div>
                                     }
                                 </Form>
                             )}

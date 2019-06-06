@@ -1,4 +1,5 @@
 import React from 'react';
+import './HelpEmy.scss';
 
 export default class HelpEmy extends React.Component {
     constructor(){
@@ -9,7 +10,7 @@ export default class HelpEmy extends React.Component {
 
     render() {
         return(
-            <div id="helpEmy" className="content container">
+            <div id="helpEmy" className="content-page container">
                 <div className="row">
                     <div className="col">
                         <h3 className="page-title">Soutenir Emy</h3>

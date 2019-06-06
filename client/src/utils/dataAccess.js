@@ -3,6 +3,7 @@ import { SubmissionError } from 'redux-form';
 import get from 'lodash/get';
 import has from 'lodash/has';
 import mapValues from 'lodash/mapValues';
+import { authenticationService } from '../services';
 
 const MIME_TYPE = 'application/ld+json';
 
@@ -10,6 +11,11 @@ export function fetch(id, options = {}) {
   if ('undefined' === typeof options.headers) options.headers = new Headers();
   if (null === options.headers.get('Accept'))
     options.headers.set('Accept', MIME_TYPE);
+
+  const currentUser = authenticationService.currentUserValue;
+  if (currentUser && currentUser.token) {
+      options.headers.set('Authorization', `Bearer ${currentUser.token.token}`);
+  }
 
   if (
     'undefined' !== options.body &&

@@ -10,6 +10,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import displayLocaleDateString from "../../utils/displayLocaleDateString";
+import { Link }from 'react-router-dom';
+import { create as createOffer } from '../../actions/foodstuffOffer/create';
+import './TakeFoodStuffModal.scss';
 
 library.add(fas)
 
@@ -54,36 +57,48 @@ class TakeFoodStuffModal extends React.Component {
     }
 
     askingToOwn = () => {
-        this.props.update(this.props.foodstuff, { isAwaiting: true, askingToOwn: authenticationService.currentUserValue['@id'] })
+            createOffer({
+                foodstuff: this.props.foodstuff['@id'],
+                askingUser: authenticationService.currentUserValue['@id'],
+                owner: this.props.foodstuff.provider['@id'],
+                status: 'waiting'
+            })
             .then(() => {
                 this.props.handleProductTaken();
                 this.closeModal();
-            });
+            })
     };
 
     render() {
         return(
             <>
                 {this.state.currentUser ? (
-                    <button className="take-it" value="Open" onClick={() => this.openModal()}>Je prends !</button>
+                    <>
+                    {(this.state.currentUser['@id'] === this.props.foodstuff.provider['@id']) ? (
+                        <Link to="/tableau-de-bord/gerer-vos-produits"><button className="take-it">Gérer mon produit</button></Link>
+                    ) : (
+                        <button className="take-it" value="Open" onClick={() => this.openModal()}>Je demande ce produit</button>
+                    )}
+                    </>
                 ) : (
                     <button className="take-it" value="Open" onClick={this.context.openLoginModal}>Je prends !</button>
                 )}
                 <Modal width="800" visible={this.state.visible} effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div className="modal-style">
-                        <img src={require('./assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
+                        <img src={require('../../assets/img/close.png')} className="close-popup" alt="Fermer la popup" onClick={() => this.closeModal()}/>
                         <h3 className="modal-style-title">Planifier le rendez-vous !</h3>
                         <div className="modal-take-it-foodstuff-description">
-                            <div className="m-4">
-                                {this.props.image &&
-                                    <img src={ENTRYPOINT + '/medias/' + this.props.image} className="foodstuff-img" alt=""/>
-                                }                            </div>
+                            {this.props.foodstuff.image &&
+                                <div className="m-4">
+                                    <img src={ENTRYPOINT + '/medias/' + this.props.foodstuff.image.contentUrl} className="foodstuff-img" alt=""/>
+                                </div>
+                            }
                             <div className="d-flex flex-column m-4">
                                 <h4 className="modal-take-it-foodstuff-name">{this.props.foodstuff['name']}</h4>
                                 <p>Disponibilités : {this.props.foodstuff.availabilities}</p>
                                 <span><FontAwesomeIcon icon="calendar-alt" className="calendar-alt" /> {displayLocaleDateString(this.props.foodstuff['expirationDate'])}</span>
                                 <span>Tel :{this.props.foodstuff['phoneNumber']}</span>
-                                <button className="btn form-btn" onClick={this.askingToOwn} type="submit" name="button">Je m'engage à prendre ce produit</button>
+                                <button className="btn form-btn" onClick={this.askingToOwn} type="submit" name="button">J'envoie une demande au propriétaire du produit</button>
                             </div>
                         </div>
                     </div>

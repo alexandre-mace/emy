@@ -1,0 +1,37 @@
+@import './variables.scss';
+
+/* FLOATING LABELS */
+.MuiDialog-root {
+  z-index: 200000 !important;
+}
+.MuiInput-underline:after {
+  border-bottom-color: rgba(0, 0, 0, 0.54) !important;
+}
+.MuiFormLabel-root.Mui-focused, .MuiInput-underline:after  {
+  color: $primary-color!important;
+  border-bottom-color: $primary-color !important;
+}
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: 1px solid $primary-color !important;
+}
+.MuiButton-textPrimary {
+  color: $primary-color !important;
+}
+.MuiPickersToolbar-toolbar, .MuiPickersDay-isSelected {
+  background-color: $primary-color !important;
+}
+.MuiLinearProgress-barColorPrimary {
+  background-color: $primary-color !important;
+}
+.MuiLinearProgress-colorPrimary {
+  background-color: rgba(255, 69, 0, 0.3) !important;
+}
+/* FLOATING LABELS */
+
+/* REACT ALERT */
+.s-alert-success {
+  background-color: orangered !important;
+  color: white !important;
+  font-size: 1.3rem !important;
+}
+/* REACT ALERT */

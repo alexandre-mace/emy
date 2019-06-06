@@ -28,7 +28,7 @@ class Form extends Component {
             <div className={`form-group`}>
                 <label
                     htmlFor={`foodstuff_${data.input.name}`}
-                    className="label-d-none"
+                    className="d-none"
                 >
                     {data.input.name}
                 </label>
